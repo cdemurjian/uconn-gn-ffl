@@ -189,15 +189,10 @@ const teamColumns = [
 
 const START_POS_KEYS = ["QB", "RB", "WR", "TE", "FLEX", "K", "DST"];
 
-// detect touch for tooltip behavior (avoid "?" bubble on mobile)
-const IS_TOUCH_DEVICE =
-  typeof window !== "undefined" &&
-  ("ontouchstart" in window || navigator.maxTouchPoints > 0);
-
 // Bench position inference (every BN player covered)
 function inferBenchPosition(name) {
   const map = {
-    "Lamar Jackson": "QB",
+    Lamar Jackson: "QB",
     "James White": "RB",
     "Damien Williams": "RB",
     "DaeSean Hamilton": "WR",
@@ -249,20 +244,6 @@ function inferBenchPosition(name) {
 
 function safeGet(arr, idx) {
   return arr && arr[idx] ? arr[idx] : "";
-}
-
-// helper: earliest year for a positional entry
-function earliestYear(entry) {
-  if (!entry.entries || !entry.entries.length) return 9999;
-  return Math.min(...entry.entries.map((e) => e.year));
-}
-
-// Apply tooltip only on non-touch devices
-function applyTooltip(el, text) {
-  if (!text) return;
-  if (!IS_TOUCH_DEVICE) {
-    el.title = text;
-  }
 }
 
 // ============================
@@ -400,14 +381,15 @@ function buildAggregatedData() {
     };
   });
 
-  // Sort default player rows by titles desc, then earliest year, then name
+  // Sort default player rows:
+  // 1) titles desc
+  // 2) earliest year asc
+  // 3) name
   PLAYER_DATA.sort((a, b) => {
     if (b.titles !== a.titles) return b.titles - a.titles;
-
-    const aYear = a.years.length ? a.years[0] : 9999;
-    const bYear = b.years.length ? b.years[0] : 9999;
-    if (aYear !== bYear) return aYear - bYear;
-
+    const aFirst = a.years[0] ?? 9999;
+    const bFirst = b.years[0] ?? 9999;
+    if (aFirst !== bFirst) return aFirst - bFirst;
     return a.name.localeCompare(b.name);
   });
 }
@@ -415,6 +397,16 @@ function buildAggregatedData() {
 // Helper for D/ST labeling
 function formatPositionLabel(posKey) {
   return posKey === "DST" ? "D/ST" : posKey;
+}
+
+// ============================
+// TOOLTIP HELPER
+// ============================
+
+function applyTooltip(el, text) {
+  if (!text) return;
+  el.dataset.tooltip = text;
+  el.classList.add("has-tooltip");
 }
 
 // ============================
@@ -449,11 +441,24 @@ function buildPositionalTable() {
 
     const posMap = POSITION_DATA.get(posKey);
     if (posMap && posMap.size > 0) {
-      // Sort players by earliest year they appear at this position
-      const players = Array.from(posMap.values()).sort((a, b) => {
-        const ay = earliestYear(a);
-        const by = earliestYear(b);
-        if (ay !== by) return ay - by;
+      // Build array with sorted entries & years
+      const players = Array.from(posMap.values()).map((entry) => {
+        const sortedEntries = entry.entries
+          .slice()
+          .sort((a, b) => a.year - b.year);
+        const years = sortedEntries.map((e) => e.year);
+        return {
+          ...entry,
+          sortedEntries,
+          years,
+        };
+      });
+
+      // Sort by earliest year, then name
+      players.sort((a, b) => {
+        const aFirst = a.years[0] ?? 9999;
+        const bFirst = b.years[0] ?? 9999;
+        if (aFirst !== bFirst) return aFirst - bFirst;
         return a.name.localeCompare(b.name);
       });
 
@@ -462,15 +467,12 @@ function buildPositionalTable() {
         span.classList.add("pos-player");
         span.textContent = entry.name;
 
-        // Bold / highlight multi-year players at this position
-        if (entry.entries.length > 1) {
+        if (entry.sortedEntries.length > 1) {
           span.classList.add("multi-year");
         }
 
-        // Tooltip: "2018 (starter), 2020 (bench)" – sorted by year
-        const tooltip = entry.entries
-          .slice()
-          .sort((a, b) => a.year - b.year)
+        // Tooltip contents: "2018 (starter), 2020 (bench)"
+        const tooltip = entry.sortedEntries
           .map((e) => `${e.year} (${e.role})`)
           .join(", ");
         applyTooltip(span, tooltip);
@@ -518,11 +520,10 @@ function renderPlayerTable() {
 
   let rows = PLAYER_DATA;
   if (CURRENT_POSITION_FILTER !== "ALL") {
-    rows = rows.filter((r) =>
-      r.positions.includes(CURRENT_POSITION_FILTER)
-    );
+    rows = rows.filter((r) => r.positions.includes(CURRENT_POSITION_FILTER));
   }
 
+  // Already pre-sorted in buildAggregatedData by titles -> earliest year -> name
   rows.forEach((entry) => {
     const tr = document.createElement("tr");
 

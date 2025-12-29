@@ -640,17 +640,48 @@ body {
   font-size: 0.8rem;
 }
 
-/* Positional-view player chips (hover for years + starter/bench) */
+/* Canton: positional chips + tooltips */
+
 .pos-player {
+  position: relative;
+  border-bottom: 1px dotted rgba(148, 163, 184, 0.6);
   cursor: help;
-  border-bottom: 1px dashed rgba(148, 163, 184, 0.4);
+  padding-bottom: 1px;
 }
 
-.pos-player:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-/* Positional view: highlight players who appear in multiple years */
+/* Multi-year players: pop a bit more on dark theme */
 .pos-player.multi-year {
   font-weight: 600;
+  color: var(--accent);
+}
+
+/* Generic tooltip behavior for both desktop + mobile tap */
+.has-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 0;
+  bottom: 110%;
+  max-width: 260px;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.6rem;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  color: var(--text);
+  font-size: 0.7rem;
+  line-height: 1.35;
+  white-space: normal;
+  box-shadow: var(--shadow-subtle);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  z-index: 30;
+}
+
+/* Show tooltip on hover (desktop) and tap/press (mobile) */
+.has-tooltip:hover::after,
+.has-tooltip:focus-visible::after,
+.has-tooltip:active::after {
+  opacity: 1;
+  transform: translateY(0);
 }
