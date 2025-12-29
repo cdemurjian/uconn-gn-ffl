@@ -599,3 +599,18 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
+/* --- Win% styling override --- */
+
+/* Base: all percentage cells are neutral */
+.stats-table td.col-percent {
+  background: transparent !important;
+  color: #e5e7eb !important;  /* same as normal text */
+  font-weight: 400;
+}
+
+/* Winners: ONLY >50% (pct-good) get the green highlight */
+.stats-table td.col-percent.pct-good {
+  background: rgba(34, 197, 94, 0.18) !important;
+  color: #22c55e !important;
+  font-weight: 600;
+}
