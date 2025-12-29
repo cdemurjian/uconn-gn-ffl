@@ -110,6 +110,7 @@ function buildStatsTable(headers, rows) {
   STATS_STATE.headers = headers;
   STATS_STATE.columnClasses = columnClasses;
 
+  // ---------- Build header ----------
   headerRow.innerHTML = "";
 
   headers.forEach((h, idx) => {
@@ -121,25 +122,30 @@ function buildStatsTable(headers, rows) {
     headerRow.appendChild(th);
   });
 
+  // ---------- Build body ----------
   const tbody = table.querySelector("tbody");
   tbody.innerHTML = "";
 
-	row.forEach((value, idx) => {
-	  const td = document.createElement("td");
-	  td.textContent = value;
+  rows.forEach((row, rowIndex) => {
+    const tr = document.createElement("tr");
+    tr.dataset.originalIndex = String(rowIndex);
 
-	  // 🔥 Dynamic percentage coloring
-	  if (columnClasses[idx] === "col-percent") {
-		const num = parseFloat(value.replace("%", ""));
-		if (!isNaN(num)) {
-		  td.classList.add(num >= 50 ? "pct-good" : "pct-bad");
-		}
-	  }
+    row.forEach((value, idx) => {
+      const td = document.createElement("td");
+      td.textContent = value;
 
-	  td.setAttribute("data-label", headers[idx] || "");
-	  if (columnClasses[idx]) td.classList.add(columnClasses[idx]);
-	  tr.appendChild(td);
-	});
+      // 🔥 Dynamic percentage coloring: ONLY >50% is green
+      if (columnClasses[idx] === "col-percent") {
+        const num = parseFloat(String(value).replace("%", ""));
+        if (!isNaN(num) && num > 50) {
+          td.classList.add("pct-good");
+        }
+      }
+
+      td.setAttribute("data-label", headers[idx] || "");
+      if (columnClasses[idx]) td.classList.add(columnClasses[idx]);
+      tr.appendChild(td);
+    });
 
     tbody.appendChild(tr);
   });
