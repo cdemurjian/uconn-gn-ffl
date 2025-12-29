@@ -365,56 +365,23 @@ body {
   background: rgba(15, 23, 42, 0.95);
 }
 
-/* Mobile-friendly stacked layout */
+/* Mobile: keep normal table, just shrink & allow horizontal scroll */
 
 @media (max-width: 640px) {
   .table-responsive {
-    border-radius: 1rem;
-    border: none;
-    background: transparent;
+    border-radius: 0.9rem;
+    border: 1px solid var(--border-subtle);
+    background: rgba(15, 23, 42, 0.96);
   }
 
   .stats-table {
-    min-width: 0;
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 0.6rem;
+    min-width: 600px; /* force sideways scroll instead of stacking */
+    font-size: 0.8rem;
   }
 
-  .stats-table thead {
-    display: none;
-  }
-
-  .stats-table tr {
-    display: block;
-    background: rgba(15, 23, 42, 0.96);
-    border-radius: 1rem;
-    box-shadow: var(--shadow-subtle);
-    overflow: hidden;
-  }
-
+  .stats-table th,
   .stats-table td {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 0.4rem 0.9rem;
-    border-bottom: 1px solid rgba(31, 41, 55, 0.85);
-    font-size: 0.83rem;
-  }
-
-  .stats-table td:last-child {
-    border-bottom: none;
-    padding-bottom: 0.65rem;
-  }
-
-  .stats-table td::before {
-    content: attr(data-label);
-    font-weight: 500;
-    font-size: 0.76rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: #9ca3af;
-    margin-right: 0.75rem;
+    padding: 0.4rem 0.55rem;
   }
 }
 
@@ -506,6 +473,7 @@ body {
 .link-inline:hover {
   text-decoration: underline;
 }
+
 /* Canton toggle view */
 
 .canton-header-row {
