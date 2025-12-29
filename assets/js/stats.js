@@ -48,7 +48,7 @@ function parseCSV(text) {
 
   if (!rows.length) return { headers: [], rows: [] };
 
-  // 🔑 NEW: find first non-empty row as header (skip blank top rows)
+  // 🔑 Find first non-empty row as header (skip blank top rows)
   const headerIndex = rows.findIndex((r) =>
     r.some((v) => v.trim() !== "")
   );
@@ -62,7 +62,6 @@ function parseCSV(text) {
 
   return { headers: headerRow, rows: dataRows };
 }
-
 
 /**
  * Decide a CSS class per column based on header text.
@@ -233,8 +232,10 @@ function setupStatsSorting() {
 
       rows.sort((a, b) => {
         // keep hidden vs visible rows in place (search)
-        const aHidden = a.style.display === "none" || a.style.display === "hidden";
-        const bHidden = b.style.display === "none" || b.style.display === "hidden";
+        const aHidden =
+          a.style.display === "none" || a.style.display === "hidden";
+        const bHidden =
+          b.style.display === "none" || b.style.display === "hidden";
         if (aHidden && !bHidden) return 1;
         if (!aHidden && bHidden) return -1;
 
