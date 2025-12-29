@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>League Stats</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script defer src="assets/js/stats.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="app-header">
+        <div class="app-title">
+          League Stats
+          <span class="app-title-pill">Mobile-first view</span>
+        </div>
+        <p class="app-subtitle">
+          A table that behaves like an app: scrollable, tappable, searchable,
+          and readable on smaller screens.
+        </p>
+        <nav class="app-nav">
+          <a href="index.html"><span class="dot"></span>Home</a>
+          <a class="active" href="stats.html">Stats</a>
+          <a href="canton.html">Canton</a>
+          <a href="ffwrapped.html">FFWrapped</a>
+          <a href="info.html">Info</a>
+        </nav>
+      </header>
+
+      <section class="content-card">
+        <div class="stats-wrapper">
+          <div class="stats-controls">
+            <div class="stats-search">
+              <span class="stats-search-icon">🔎</span>
+              <input
+                id="stats-search-input"
+                type="search"
+                placeholder="Search by manager / team / note…"
+              />
+            </div>
+            <div class="stats-meta">
+              <span id="stats-count-label">0</span> rows
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table id="stats-table" class="stats-table">
+              <thead>
+                <tr>
+                  <th>Team</th>
+                  <th>Manager</th>
+                  <th>W-L</th>
+                  <th>PF</th>
+                  <th>PA</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Sample data; replace with your own via stats.js or directly -->
+                <tr>
+                  <td data-label="Team">Drake Chase's Champions</td>
+                  <td data-label="Manager">Charlie</td>
+                  <td data-label="W-L">10-4</td>
+                  <td data-label="PF">1734.5</td>
+                  <td data-label="PA">1562.9</td>
+                  <td data-label="Notes">Title run</td>
+                </tr>
+                <tr>
+                  <td data-label="Team">Team Bij</td>
+                  <td data-label="Manager">Bij</td>
+                  <td data-label="W-L">4-10</td>
+                  <td data-label="PF">1410.2</td>
+                  <td data-label="PA">1698.4</td>
+                  <td data-label="Notes">Just ass at fantasy</td>
+                </tr>
+                <tr>
+                  <td data-label="Team">The Veto Committee</td>
+                  <td data-label="Manager">Jay</td>
+                  <td data-label="W-L">8-6</td>
+                  <td data-label="PF">1603.1</td>
+                  <td data-label="PA">1588.7</td>
+                  <td data-label="Notes">#VetoTHAT</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="font-size: 0.78rem; color: var(--muted);">
+            On desktop you get a traditional wide table; on phones, each row
+            collapses into a stacked card with labels on the left and values on
+            the right.
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
