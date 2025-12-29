@@ -15,11 +15,11 @@
       <header class="app-header">
         <div class="app-title">
           League Canton
-          <span class="app-title-pill">JSON-driven history</span>
+          <span class="app-title-pill">JSON-driven toggle view</span>
         </div>
         <p class="app-subtitle">
-          Champions, records, and lore rendered from a simple JSON object. Edit
-          one file, the whole page updates.
+          Team, positional, and player views all generated from a single JSON
+          data structure.
         </p>
         <nav class="app-nav">
           <a href="index.html"><span class="dot"></span>Home</a>
@@ -31,27 +31,50 @@
       </header>
 
       <section class="content-card">
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-          "
-        >
+        <div class="canton-header-row">
           <div>
             <div style="font-size: 0.9rem; color: var(--muted);">
-              All sections below are dynamically generated from
-              <span style="font-family: monospace; font-size: 0.8rem;"
-                >canton.js</span
-              >.
+              This page is powered by a single JSON object in
+              <code style="font-size: 0.8rem;">assets/js/canton.js</code>.
             </div>
           </div>
-          <span class="pill">Edit JSON → Refresh → Done</span>
+          <span class="pill">Edit JSON → Refresh</span>
         </div>
 
-        <div id="canton-root" class="toggle-list"></div>
+        <div class="canton-container">
+          <div class="view-toggle-bar">
+            <button class="view-button active" data-view="team">
+              Team View
+            </button>
+            <button class="view-button" data-view="positional">
+              Positional View
+            </button>
+            <button class="view-button" data-view="player">
+              Player View
+            </button>
+          </div>
+
+          <!-- Team View -->
+          <div id="team-view" class="view-container">
+            <div class="table-container">
+              <table id="team-table" class="dataframe team-view"></table>
+            </div>
+          </div>
+
+          <!-- Positional View -->
+          <div id="positional-view" class="view-container">
+            <div class="table-container">
+              <table id="positional-table" class="dataframe position-view"></table>
+            </div>
+          </div>
+
+          <!-- Player View -->
+          <div id="player-view" class="view-container">
+            <div class="table-container">
+              <table id="player-table" class="dataframe player-view"></table>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   </body>
