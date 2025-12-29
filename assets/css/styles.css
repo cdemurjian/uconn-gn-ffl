@@ -574,3 +574,75 @@ body {
     font-size: 0.78rem;
   }
 }
+
+/* Stats column styling inspired by the Google Sheet */
+
+.stats-table td,
+.stats-table th {
+  transition: background 0.15s ease-out, color 0.15s ease-out;
+}
+
+/* Team column: darker + sticky left */
+.stats-table th.col-team,
+.stats-table td.col-team {
+  font-weight: 600;
+  background: radial-gradient(circle at left, #020617 0, #020617 70%);
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+/* Record column */
+.stats-table td.col-record {
+  font-weight: 500;
+}
+
+/* Percent + wins = soft green tint */
+.stats-table td.col-percent,
+.stats-table td.col-win-espn,
+.stats-table td.col-win-sleeper,
+.stats-table td.col-total-wins {
+  background: rgba(16, 185, 129, 0.12);
+  color: #bbf7d0;
+}
+
+/* Loss columns = soft red tint */
+.stats-table td.col-loss-espn,
+.stats-table td.col-loss-sleeper,
+.stats-table td.col-total-losses {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fecaca;
+}
+
+/* Playoffs / rings = soft gold tint */
+.stats-table td.col-playoffs,
+.stats-table td.col-ring,
+.stats-table td.col-playoff-record {
+  background: rgba(250, 204, 21, 0.08);
+  color: #facc15;
+}
+
+/* Header tint alignment */
+.stats-table th.col-percent,
+.stats-table th.col-win-espn,
+.stats-table th.col-win-sleeper,
+.stats-table th.col-total-wins {
+  color: #a7f3d0;
+}
+
+.stats-table th.col-loss-espn,
+.stats-table th.col-loss-sleeper,
+.stats-table th.col-total-losses {
+  color: #fecaca;
+}
+
+.stats-table th.col-playoffs,
+.stats-table th.col-ring,
+.stats-table th.col-playoff-record {
+  color: #fde68a;
+}
+
+/* Hover keeps tint, slightly darker */
+.stats-table tbody tr:hover td {
+  background-color: rgba(15, 23, 42, 0.9);
+}

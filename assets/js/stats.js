@@ -71,11 +71,38 @@ function buildStatsTable(headers, rows) {
   const headerRow = document.getElementById("stats-header-row");
   if (!table || !headerRow) return;
 
+  // Decide a CSS class per column based on header text
+  const columnClasses = headers.map((raw) => {
+    const h = (raw || "").trim().toLowerCase();
+
+    if (h === "team") return "col-team";
+    if (h === "record") return "col-record";
+    if (h === "percentage" || h === "percent") return "col-percent";
+
+    if (h === "playoffs") return "col-playoffs";
+    if (h === "ring" || h === "rings") return "col-ring";
+    if (h === "playoff record") return "col-playoff-record";
+
+    if (h.includes("espn") && h.includes("wins")) return "col-win-espn";
+    if (h.includes("espn") && (h.includes("loss") || h.includes("losses")))
+      return "col-loss-espn";
+
+    if (h.includes("sleeper") && h.includes("wins")) return "col-win-sleeper";
+    if (h.includes("sleeper") && (h.includes("loss") || h.includes("losses")))
+      return "col-loss-sleeper";
+
+    if (h === "total wins") return "col-total-wins";
+    if (h === "total losses") return "col-total-losses";
+
+    return ""; // default
+  });
+
   // Build header
   headerRow.innerHTML = "";
-  headers.forEach((h) => {
+  headers.forEach((h, idx) => {
     const th = document.createElement("th");
     th.textContent = h;
+    if (columnClasses[idx]) th.classList.add(columnClasses[idx]);
     headerRow.appendChild(th);
   });
 
@@ -87,13 +114,14 @@ function buildStatsTable(headers, rows) {
     row.forEach((value, idx) => {
       const td = document.createElement("td");
       td.textContent = value;
-      // data-label only matters if we ever go back to stacked mobile layout
       td.setAttribute("data-label", headers[idx] || "");
+      if (columnClasses[idx]) td.classList.add(columnClasses[idx]);
       tr.appendChild(td);
     });
     tbody.appendChild(tr);
   });
 }
+
 
 function setupStatsSearch() {
   const input = document.getElementById("stats-search-input");
