@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta charset="utf-8" />
     <title>Canton</title>
     <meta
@@ -19,8 +19,7 @@
           <span class="app-title-pill">CHAMPIONS</span>
         </div>
         <p class="app-subtitle">
-          Team, positional, and player views all generated from a single JSON
-          data structure.
+          Team, positional, and player views
         </p>
         <nav class="app-nav">
           <a href="index.html"><span class="dot"></span>Home</a>
@@ -32,7 +31,6 @@
       </header>
 
       <section class="content-card">
-
         <div class="canton-container">
           <div class="view-toggle-bar">
             <button class="view-button active" data-view="team">
@@ -56,12 +54,28 @@
           <!-- Positional View -->
           <div id="positional-view" class="view-container">
             <div class="table-container">
-              <table id="positional-table" class="dataframe position-view"></table>
+              <table
+                id="positional-table"
+                class="dataframe position-view"
+              ></table>
             </div>
           </div>
 
           <!-- Player View -->
           <div id="player-view" class="view-container">
+            <div class="player-filter-bar">
+              <label for="position-filter">Position:</label>
+              <select id="position-filter">
+                <option value="ALL">All positions</option>
+                <option value="QB">QB</option>
+                <option value="RB">RB</option>
+                <option value="WR">WR</option>
+                <option value="TE">TE</option>
+                <option value="FLEX">FLEX</option>
+                <option value="DST">D/ST</option>
+                <option value="K">K</option>
+              </select>
+            </div>
             <div class="table-container">
               <table id="player-table" class="dataframe player-view"></table>
             </div>
