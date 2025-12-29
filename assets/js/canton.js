@@ -189,6 +189,11 @@ const teamColumns = [
 
 const START_POS_KEYS = ["QB", "RB", "WR", "TE", "FLEX", "K", "DST"];
 
+// detect touch for tooltip behavior (avoid "?" bubble on mobile)
+const IS_TOUCH_DEVICE =
+  typeof window !== "undefined" &&
+  ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
 // Bench position inference (every BN player covered)
 function inferBenchPosition(name) {
   const map = {
@@ -244,6 +249,20 @@ function inferBenchPosition(name) {
 
 function safeGet(arr, idx) {
   return arr && arr[idx] ? arr[idx] : "";
+}
+
+// helper: earliest year for a positional entry
+function earliestYear(entry) {
+  if (!entry.entries || !entry.entries.length) return 9999;
+  return Math.min(...entry.entries.map((e) => e.year));
+}
+
+// Apply tooltip only on non-touch devices
+function applyTooltip(el, text) {
+  if (!text) return;
+  if (!IS_TOUCH_DEVICE) {
+    el.title = text;
+  }
 }
 
 // ============================
@@ -381,9 +400,14 @@ function buildAggregatedData() {
     };
   });
 
-  // Sort default player rows by titles desc, then name
+  // Sort default player rows by titles desc, then earliest year, then name
   PLAYER_DATA.sort((a, b) => {
     if (b.titles !== a.titles) return b.titles - a.titles;
+
+    const aYear = a.years.length ? a.years[0] : 9999;
+    const bYear = b.years.length ? b.years[0] : 9999;
+    if (aYear !== bYear) return aYear - bYear;
+
     return a.name.localeCompare(b.name);
   });
 }
@@ -425,23 +449,31 @@ function buildPositionalTable() {
 
     const posMap = POSITION_DATA.get(posKey);
     if (posMap && posMap.size > 0) {
-      // Sort players by name
-      const players = Array.from(posMap.values()).sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
+      // Sort players by earliest year they appear at this position
+      const players = Array.from(posMap.values()).sort((a, b) => {
+        const ay = earliestYear(a);
+        const by = earliestYear(b);
+        if (ay !== by) return ay - by;
+        return a.name.localeCompare(b.name);
+      });
 
       players.forEach((entry, idx) => {
         const span = document.createElement("span");
         span.classList.add("pos-player");
         span.textContent = entry.name;
 
-        // Tooltip: "2018 (starter), 2020 (bench)"
+        // Bold / highlight multi-year players at this position
+        if (entry.entries.length > 1) {
+          span.classList.add("multi-year");
+        }
+
+        // Tooltip: "2018 (starter), 2020 (bench)" – sorted by year
         const tooltip = entry.entries
           .slice()
           .sort((a, b) => a.year - b.year)
           .map((e) => `${e.year} (${e.role})`)
           .join(", ");
-        span.title = tooltip;
+        applyTooltip(span, tooltip);
 
         tdPlayers.appendChild(span);
         if (idx < players.length - 1) {

@@ -650,3 +650,7 @@ body {
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
+/* Positional view: highlight players who appear in multiple years */
+.pos-player.multi-year {
+  font-weight: 600;
+}
