@@ -563,7 +563,39 @@ body {
   font-weight: 600;
 }
 
-.pct-bad {
-  color: #f87171 !important; /* red */
-  font-weight: 600;
+/* Simple Card Styling */
+.card-simple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  border-radius: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.card-simple:hover {
+  border-color: #ff7a45; /* Accent orange on hover */
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: rgba(255, 122, 69, 0.08);
+}
+
+.card-simple h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Keep your grid nice */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }

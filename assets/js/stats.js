@@ -140,6 +140,8 @@ function buildStatsTable(headers, rows) {
         if (!isNaN(num) && num > 50) {
           td.classList.add("pct-good");
         }
+		else {
+		  td.classList.remove("pct-good");}
       }
 
       td.setAttribute("data-label", headers[idx] || "");
