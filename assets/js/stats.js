@@ -124,17 +124,22 @@ function buildStatsTable(headers, rows) {
   const tbody = table.querySelector("tbody");
   tbody.innerHTML = "";
 
-  rows.forEach((row, rowIndex) => {
-    const tr = document.createElement("tr");
-    tr.dataset.originalIndex = String(rowIndex);
+	row.forEach((value, idx) => {
+	  const td = document.createElement("td");
+	  td.textContent = value;
 
-    row.forEach((value, idx) => {
-      const td = document.createElement("td");
-      td.textContent = value;
-      td.setAttribute("data-label", headers[idx] || "");
-      if (columnClasses[idx]) td.classList.add(columnClasses[idx]);
-      tr.appendChild(td);
-    });
+	  // 🔥 Dynamic percentage coloring
+	  if (columnClasses[idx] === "col-percent") {
+		const num = parseFloat(value.replace("%", ""));
+		if (!isNaN(num)) {
+		  td.classList.add(num >= 50 ? "pct-good" : "pct-bad");
+		}
+	  }
+
+	  td.setAttribute("data-label", headers[idx] || "");
+	  if (columnClasses[idx]) td.classList.add(columnClasses[idx]);
+	  tr.appendChild(td);
+	});
 
     tbody.appendChild(tr);
   });
