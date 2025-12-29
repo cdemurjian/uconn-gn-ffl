@@ -5,6 +5,7 @@ const CSV_PATH = "assets/data/stats.csv";
  * - Handles quoted values
  * - Handles commas in quotes
  * - Handles escaped quotes ("")
+ * - Skips leading empty rows and uses the first non-empty row as header
  */
 function parseCSV(text) {
   const rows = [];
@@ -17,6 +18,7 @@ function parseCSV(text) {
 
     if (c === '"') {
       if (inQuotes && text[i + 1] === '"') {
+        // Escaped quote ("")
         cur += '"';
         i++;
       } else {
@@ -38,6 +40,7 @@ function parseCSV(text) {
     }
   }
 
+  // Last cell/row if no trailing newline
   if (cur.length > 0 || row.length) {
     row.push(cur);
     rows.push(row);
@@ -45,14 +48,21 @@ function parseCSV(text) {
 
   if (!rows.length) return { headers: [], rows: [] };
 
-  const headers = rows[0].map((h) => h.trim());
+  // 🔑 NEW: find first non-empty row as header (skip blank top rows)
+  const headerIndex = rows.findIndex((r) =>
+    r.some((v) => v.trim() !== "")
+  );
+  if (headerIndex === -1) return { headers: [], rows: [] };
+
+  const headerRow = rows[headerIndex].map((h) => h.trim());
   const dataRows = rows
-    .slice(1)
+    .slice(headerIndex + 1)
     .filter((r) => r.some((v) => v.trim() !== ""))
     .map((r) => r.map((v) => v.trim()));
 
-  return { headers, rows: dataRows };
+  return { headers: headerRow, rows: dataRows };
 }
+
 
 /**
  * Decide a CSS class per column based on header text.
