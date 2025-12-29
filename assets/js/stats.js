@@ -1,19 +1,69 @@
-// Simple CSV loader + search for stats page
-
+// Path to your exported Google Sheets CSV
 const CSV_PATH = "assets/data/stats.csv";
 
+/**
+ * Robust-ish CSV parser:
+ * - Handles values wrapped in double quotes
+ * - Handles commas inside quoted values
+ * - Handles escaped quotes ("") inside a quoted value
+ * - Handles \n and \r\n line endings
+ */
 function parseCSV(text) {
-  // very basic CSV parser: assumes no commas inside values
-  const lines = text
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter((line) => line.length > 0);
+  const rows = [];
+  let row = [];
+  let cur = "";
+  let inQuotes = false;
 
-  if (!lines.length) return { headers: [], rows: [] };
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
 
-  const headers = lines[0].split(",").map((h) => h.trim());
-  const rows = lines.slice(1).map((line) => line.split(",").map((v) => v.trim()));
-  return { headers, rows };
+    if (c === '"') {
+      if (inQuotes && text[i + 1] === '"') {
+        // Escaped quote ("")
+        cur += '"';
+        i++;
+      } else {
+        // Toggle quote mode
+        inQuotes = !inQuotes;
+      }
+    } else if (c === "," && !inQuotes) {
+      // End of cell
+      row.push(cur);
+      cur = "";
+    } else if ((c === "\n" || c === "\r") && !inQuotes) {
+      // End of row
+      if (cur.length > 0 || row.length) {
+        row.push(cur);
+        rows.push(row);
+        row = [];
+        cur = "";
+      }
+      // Handle CRLF (\r\n)
+      if (c === "\r" && text[i + 1] === "\n") {
+        i++;
+      }
+    } else {
+      cur += c;
+    }
+  }
+
+  // Last cell/row if no trailing newline
+  if (cur.length > 0 || row.length) {
+    row.push(cur);
+    rows.push(row);
+  }
+
+  if (!rows.length) {
+    return { headers: [], rows: [] };
+  }
+
+  const headers = rows[0].map((h) => h.trim());
+  const dataRows = rows
+    .slice(1)
+    .filter((r) => r.some((v) => v.trim() !== ""))
+    .map((r) => r.map((v) => v.trim()));
+
+  return { headers, rows: dataRows };
 }
 
 function buildStatsTable(headers, rows) {
@@ -37,7 +87,7 @@ function buildStatsTable(headers, rows) {
     row.forEach((value, idx) => {
       const td = document.createElement("td");
       td.textContent = value;
-      // For mobile stacked layout, label cells with header name
+      // data-label only matters if we ever go back to stacked mobile layout
       td.setAttribute("data-label", headers[idx] || "");
       tr.appendChild(td);
     });
@@ -80,10 +130,15 @@ async function initStats() {
     if (!resp.ok) throw new Error("Failed to load stats.csv");
     const text = await resp.text();
     const { headers, rows } = parseCSV(text);
+
+    if (!headers.length) {
+      console.warn("No headers parsed from CSV");
+    }
+
     buildStatsTable(headers, rows);
     setupStatsSearch();
   } catch (err) {
-    console.error(err);
+    console.error("Error initializing stats:", err);
   }
 }
 
