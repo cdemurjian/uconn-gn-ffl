@@ -192,7 +192,7 @@ const START_POS_KEYS = ["QB", "RB", "WR", "TE", "FLEX", "K", "DST"];
 // Bench position inference (every BN player covered)
 function inferBenchPosition(name) {
   const map = {
-    Lamar Jackson: "QB",
+    "Lamar Jackson": "QB",
     "James White": "RB",
     "Damien Williams": "RB",
     "DaeSean Hamilton": "WR",
