@@ -655,13 +655,11 @@ body {
   color: var(--accent);
 }
 
-/* Generic tooltip behavior for both desktop + mobile tap */
 .has-tooltip::after {
   content: attr(data-tooltip);
   position: absolute;
   left: 0;
   bottom: 110%;
-  max-width: 260px;
   padding: 0.35rem 0.55rem;
   border-radius: 0.6rem;
   background: rgba(15, 23, 42, 0.98);
@@ -669,7 +667,8 @@ body {
   color: var(--text);
   font-size: 0.7rem;
   line-height: 1.35;
-  white-space: normal;
+  white-space: nowrap;        /* ⬅️ keep it horizontal */
+  max-width: none;            /* ⬅️ no forced wrapping */
   box-shadow: var(--shadow-subtle);
   opacity: 0;
   pointer-events: none;
@@ -677,6 +676,7 @@ body {
   transition: opacity 0.15s ease-out, transform 0.15s ease-out;
   z-index: 30;
 }
+
 
 /* Show tooltip on hover (desktop) and tap/press (mobile) */
 .has-tooltip:hover::after,
