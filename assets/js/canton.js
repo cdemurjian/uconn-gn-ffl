@@ -499,6 +499,7 @@ function buildPositionalTable() {
 // ============================
 
 let CURRENT_POSITION_FILTER = "ALL";
+let CANTON_SEARCH_TERM = "";
 
 function renderPlayerTable() {
   const table = document.getElementById("player-table");
@@ -550,6 +551,58 @@ function renderPlayerTable() {
   });
 
   table.appendChild(tbody);
+  applyCantonSearch();
+}
+
+// ============================
+// SEARCH
+// ============================
+
+function applyCantonSearch() {
+  const activeButton = document.querySelector(".view-button.active");
+  const activeView = activeButton ? activeButton.dataset.view : "team";
+  const countLabel = document.getElementById("canton-count-label");
+  const term = CANTON_SEARCH_TERM;
+  let activeCount = 0;
+
+  ["team-table", "positional-table", "player-table"].forEach((id) => {
+    const table = document.getElementById(id);
+    if (!table) return;
+    const rows = Array.from(table.querySelectorAll("tbody tr"));
+    let visible = 0;
+    rows.forEach((row) => {
+      const match =
+        !term || row.textContent.toLowerCase().includes(term.toLowerCase());
+      row.style.display = match ? "" : "none";
+      if (match) visible += 1;
+    });
+
+    const view = table.closest(".view-container");
+    const viewName =
+      view && view.id && view.id.endsWith("-view")
+        ? view.id.replace("-view", "")
+        : null;
+    if (viewName === activeView) {
+      activeCount = visible;
+    }
+  });
+
+  if (countLabel) {
+    countLabel.textContent = activeCount.toString();
+  }
+}
+
+function setupCantonSearch() {
+  const input = document.getElementById("canton-search-input");
+  if (!input) return;
+
+  const handleSearch = () => {
+    CANTON_SEARCH_TERM = input.value.trim().toLowerCase();
+    applyCantonSearch();
+  };
+
+  input.addEventListener("input", handleSearch);
+  handleSearch();
 }
 
 // ============================
@@ -571,6 +624,7 @@ function showView(view) {
       btn.classList.remove("active");
     }
   });
+  applyCantonSearch();
 }
 
 // ============================
@@ -582,6 +636,7 @@ function initCanton() {
   buildAggregatedData();
   buildPositionalTable();
   renderPlayerTable();
+  setupCantonSearch();
 
   // Wire up buttons
   const buttons = document.querySelectorAll(".view-button");
