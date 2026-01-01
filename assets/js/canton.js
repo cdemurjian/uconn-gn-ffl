@@ -506,13 +506,19 @@ function formatAwardsLabel(awards) {
   return parts.join("; ");
 }
 
-function formatAwardsSummary(awards) {
+function formatAwardsSummary(awards, playerName) {
   if (!awards) return "";
   const mvpYears = normalizeAwardsYears(awards.mvpYears || awards.mvp);
   const sbMvpYears = normalizeAwardsYears(awards.sbMvpYears || awards.sbMvp);
   const parts = [];
-  if (mvpYears.length) parts.push(`🏆 ${mvpYears.join(", ")}`);
-  if (sbMvpYears.length) parts.push(`🏅 ${sbMvpYears.join(", ")}`);
+  if (mvpYears.length) {
+    const label = mvpYears.map((y) => `🏆 ${y}${playerName ? " " + playerName : ""}`).join("; ");
+    parts.push(label);
+  }
+  if (sbMvpYears.length) {
+    const label = sbMvpYears.map((y) => `🏅 ${y}${playerName ? " " + playerName : ""}`).join("; ");
+    parts.push(label);
+  }
   return parts.join(" | ");
 }
 
@@ -560,7 +566,7 @@ function buildPositionalTable() {
 
   const thead = document.createElement("thead");
   const headRow = document.createElement("tr");
-  ["Pos", "Players", "Awards"].forEach((col) => {
+  ["Pos", "Players"].forEach((col) => {
     const th = document.createElement("th");
     th.textContent = col;
     headRow.appendChild(th);
@@ -574,7 +580,6 @@ function buildPositionalTable() {
     const row = document.createElement("tr");
     const tdPos = document.createElement("td");
     const tdPlayers = document.createElement("td");
-    const tdAwards = document.createElement("td");
 
     tdPos.textContent = formatPositionLabel(posKey);
 
@@ -626,29 +631,13 @@ function buildPositionalTable() {
         if (idx < players.length - 1) {
           tdPlayers.appendChild(document.createTextNode(", "));
         }
-
-        const awardSummary = formatAwardsSummary(awards);
-        if (awardSummary) {
-          const summarySpan = document.createElement("span");
-          summarySpan.textContent = `${entry.name} ${awardSummary}`;
-          tdAwards.appendChild(summarySpan);
-          if (idx < players.length - 1) {
-            tdAwards.appendChild(document.createTextNode("; "));
-          }
-        }
       });
-
-      if (!tdAwards.textContent) {
-        tdAwards.textContent = "—";
-      }
     } else {
       tdPlayers.textContent = "—";
-      tdAwards.textContent = "—";
     }
 
     row.appendChild(tdPos);
     row.appendChild(tdPlayers);
-    row.appendChild(tdAwards);
     tbody.appendChild(row);
   });
 
@@ -670,7 +659,7 @@ function renderPlayerTable() {
 
   const thead = document.createElement("thead");
   const headRow = document.createElement("tr");
-  ["Player", "Positions", "Titles", "Years"].forEach((col) => {
+  ["Player", "Positions", "Titles", "Years", "Awards"].forEach((col) => {
     const th = document.createElement("th");
     th.textContent = col;
     headRow.appendChild(th);
@@ -708,10 +697,15 @@ function renderPlayerTable() {
     const tdYears = document.createElement("td");
     tdYears.textContent = entry.years.join(", ");
 
+    const tdAwards = document.createElement("td");
+    const awardSummary = formatAwardsSummary(entry.awards, entry.name);
+    tdAwards.textContent = awardSummary || "—";
+
     tr.appendChild(tdName);
     tr.appendChild(tdPos);
     tr.appendChild(tdTitles);
     tr.appendChild(tdYears);
+    tr.appendChild(tdAwards);
 
     tbody.appendChild(tr);
   });
