@@ -329,7 +329,7 @@ function buildAwardsTable() {
 
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
-  ["Year", "MVP", "MVP Points", "SB MVP", "Championship Performance"].forEach(
+  ["Year", "MVP 🏆", "MVP Points", "SB MVP 🏅", "Championship Performance"].forEach(
     (col) => {
     const th = document.createElement("th");
     th.textContent = col;
@@ -506,6 +506,16 @@ function formatAwardsLabel(awards) {
   return parts.join("; ");
 }
 
+function formatAwardsSummary(awards) {
+  if (!awards) return "";
+  const mvpYears = normalizeAwardsYears(awards.mvpYears || awards.mvp);
+  const sbMvpYears = normalizeAwardsYears(awards.sbMvpYears || awards.sbMvp);
+  const parts = [];
+  if (mvpYears.length) parts.push(`🏆 ${mvpYears.join(", ")}`);
+  if (sbMvpYears.length) parts.push(`🏅 ${sbMvpYears.join(", ")}`);
+  return parts.join(" | ");
+}
+
 function buildAwardIcons(awards) {
   if (!awards) return "";
   const mvpYears = normalizeAwardsYears(awards.mvpYears || awards.mvp);
@@ -550,7 +560,7 @@ function buildPositionalTable() {
 
   const thead = document.createElement("thead");
   const headRow = document.createElement("tr");
-  ["Pos", "Players"].forEach((col) => {
+  ["Pos", "Players", "Awards"].forEach((col) => {
     const th = document.createElement("th");
     th.textContent = col;
     headRow.appendChild(th);
@@ -564,6 +574,7 @@ function buildPositionalTable() {
     const row = document.createElement("tr");
     const tdPos = document.createElement("td");
     const tdPlayers = document.createElement("td");
+    const tdAwards = document.createElement("td");
 
     tdPos.textContent = formatPositionLabel(posKey);
 
@@ -615,13 +626,29 @@ function buildPositionalTable() {
         if (idx < players.length - 1) {
           tdPlayers.appendChild(document.createTextNode(", "));
         }
+
+        const awardSummary = formatAwardsSummary(awards);
+        if (awardSummary) {
+          const summarySpan = document.createElement("span");
+          summarySpan.textContent = `${entry.name} ${awardSummary}`;
+          tdAwards.appendChild(summarySpan);
+          if (idx < players.length - 1) {
+            tdAwards.appendChild(document.createTextNode("; "));
+          }
+        }
       });
+
+      if (!tdAwards.textContent) {
+        tdAwards.textContent = "—";
+      }
     } else {
       tdPlayers.textContent = "—";
+      tdAwards.textContent = "—";
     }
 
     row.appendChild(tdPos);
     row.appendChild(tdPlayers);
+    row.appendChild(tdAwards);
     tbody.appendChild(row);
   });
 

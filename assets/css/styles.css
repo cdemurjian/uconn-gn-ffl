@@ -668,7 +668,7 @@ body {
   content: attr(data-tooltip);
   position: absolute;
   left: 0;
-  bottom: 110%;
+  top: calc(100% + 6px);
   padding: 0.35rem 0.55rem;
   border-radius: 0.6rem;
   background: rgba(15, 23, 42, 0.98);
