@@ -164,16 +164,16 @@ const teamData = [
   },
 ];
 
-// Awards by year (fill MVP / SB MVP values as needed)
+// Awards by year (fill these in as needed)
 const AWARDS_DATA = [
-  { year: 2018, mvp: "Andrew Luck", sbMvp: "Aaron Rodgers" },
-  { year: 2019, mvp: "Michael Thomas", sbMvp: "Saquon Barkley" },
-  { year: 2020, mvp: "Travis Kelce", sbMvp: "Jeff Wilson " },
-  { year: 2021, mvp: "Jamar Chase", sbMvp: "Jamar Chase" },
-  { year: 2022, mvp: "Patrick Mahomes", sbMvp: "Patrick Mahomes" },
-  { year: 2023, mvp: "Justin Fields", sbMvp: "Justin Fields" },
-  { year: 2024, mvp: "Jamar Chase", sbMvp: "Baker Mayfield" },
-  { year: 2025, mvp: "Drake Maye", sbMvp: "Malik Willis" },
+  { year: 2018, mvp: "Andrew Luck", mvpPoints: "327.6", sbMvp: "Aaron Rodgers", sbNotes: "42.9" },
+  { year: 2019, mvp: "Michael Thomas", mvpPoints: "300.1", sbMvp: "Saquon Barkley", sbNotes: "41.9" },
+  { year: 2020, mvp: "Travis Kelce", mvpPoints: "260.26", sbMvp: "Jeff Wilson ", sbNotes: "26.9" },
+  { year: 2021, mvp: "Jamar Chase", mvpPoints: "264.1", sbMvp: "Jamar Chase", sbNotes: "50.1" },
+  { year: 2022, mvp: "Patrick Mahomes", mvpPoints: "416.9", sbMvp: "Patrick Mahomes", sbNotes: "25.02" },
+  { year: 2023, mvp: "Justin Fields", mvpPoints: "230.18", sbMvp: "Justin Fields", sbNotes: "25.22" },
+  { year: 2024, mvp: "Jamar Chase", mvpPoints: "339.5", sbMvp: "Baker Mayfield", sbNotes: "34.56" },
+  { year: 2025, mvp: "Drake Maye", mvpPoints: "335.72", sbMvp: "Malik Willis", sbNotes: "31.52" },
 ];
 
 // Columns for team view
@@ -329,7 +329,8 @@ function buildAwardsTable() {
 
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
-  ["Year", "MVP", "SB MVP"].forEach((col) => {
+  ["Year", "MVP", "MVP Points", "SB MVP", "Championship Performance"].forEach(
+    (col) => {
     const th = document.createElement("th");
     th.textContent = col;
     headerRow.appendChild(th);
@@ -347,12 +348,18 @@ function buildAwardsTable() {
 
     const mvp = document.createElement("td");
     mvp.textContent = entry.mvp || "—";
+    const mvpPts = document.createElement("td");
+    mvpPts.textContent = entry.mvpPoints || "—";
     const sbMvp = document.createElement("td");
     sbMvp.textContent = entry.sbMvp || "—";
+    const sbNotes = document.createElement("td");
+    sbNotes.textContent = entry.sbNotes || "—";
 
     row.appendChild(year);
     row.appendChild(mvp);
+    row.appendChild(mvpPts);
     row.appendChild(sbMvp);
+    row.appendChild(sbNotes);
     tbody.appendChild(row);
   });
 
@@ -504,7 +511,7 @@ function buildAwardIcons(awards) {
   const mvpYears = normalizeAwardsYears(awards.mvpYears || awards.mvp);
   const sbMvpYears = normalizeAwardsYears(awards.sbMvpYears || awards.sbMvp);
   const trophy = mvpYears.length ? "🏆".repeat(mvpYears.length) : "";
-  const ring = sbMvpYears.length ? "💍".repeat(sbMvpYears.length) : "";
+  const ring = sbMvpYears.length ? "🏅".repeat(sbMvpYears.length) : "";
   return `${trophy}${ring}`.trim();
 }
 
