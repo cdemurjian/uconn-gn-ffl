@@ -164,6 +164,18 @@ const teamData = [
   },
 ];
 
+// Awards by year (fill MVP / SB MVP values as needed)
+const AWARDS_DATA = [
+  { year: 2018, mvp: "Andrew Luck", sbMvp: "Aaron Rodgers" },
+  { year: 2019, mvp: "Michael Thomas", sbMvp: "Saquon Barkley" },
+  { year: 2020, mvp: "Travis Kelce", sbMvp: "Jeff Wilson " },
+  { year: 2021, mvp: "Jamar Chase", sbMvp: "Jamar Chase" },
+  { year: 2022, mvp: "Patrick Mahomes", sbMvp: "Patrick Mahomes" },
+  { year: 2023, mvp: "Justin Fields", sbMvp: "Justin Fields" },
+  { year: 2024, mvp: "Jamar Chase", sbMvp: "Baker Mayfield" },
+  { year: 2025, mvp: "Drake Maye", sbMvp: "Malik Willis" },
+];
+
 // Columns for team view
 const teamColumns = [
   "Year",
@@ -306,11 +318,54 @@ function buildTeamTable() {
 }
 
 // ============================
+// AWARDS VIEW
+// ============================
+
+function buildAwardsTable() {
+  const table = document.getElementById("awards-table");
+  if (!table) return;
+
+  table.innerHTML = "";
+
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+  ["Year", "MVP", "SB MVP"].forEach((col) => {
+    const th = document.createElement("th");
+    th.textContent = col;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  const sorted = AWARDS_DATA.slice().sort((a, b) => a.year - b.year);
+  sorted.forEach((entry) => {
+    const row = document.createElement("tr");
+
+    const year = document.createElement("td");
+    year.textContent = entry.year;
+
+    const mvp = document.createElement("td");
+    mvp.textContent = entry.mvp || "—";
+    const sbMvp = document.createElement("td");
+    sbMvp.textContent = entry.sbMvp || "—";
+
+    row.appendChild(year);
+    row.appendChild(mvp);
+    row.appendChild(sbMvp);
+    tbody.appendChild(row);
+  });
+
+  table.appendChild(tbody);
+}
+
+// ============================
 // AGGREGATED DATA (Positional + Player)
 // ============================
 
 let POSITION_DATA = new Map(); // posKey -> Map(name -> { name, entries:[{year, role}] })
-let PLAYER_DATA = []; // array of { name, positions:[...], years:[...], titles }
+let PLAYER_DATA = []; // array of { name, positions:[...], years:[...], titles, awards }
+let AWARD_LOOKUP = new Map(); // name -> { name, mvp:Set, sbMvp:Set }
 
 function buildAggregatedData() {
   POSITION_DATA = new Map();
@@ -333,6 +388,7 @@ function buildAggregatedData() {
         name,
         positions: new Set(),
         years: new Set(),
+        awards: { mvp: new Set(), sbMvp: new Set() },
       });
     }
     return playerMap.get(name);
@@ -369,15 +425,31 @@ function buildAggregatedData() {
     });
   });
 
+  // Awards lookup for later use
+  AWARD_LOOKUP = buildAwardLookup();
+
+  // Attach awards to player map (ensure award winners exist in player map)
+  AWARD_LOOKUP.forEach((awardEntry, name) => {
+    const player = ensurePlayerEntry(name);
+    awardEntry.mvp.forEach((year) => player.awards.mvp.add(year));
+    awardEntry.sbMvp.forEach((year) => player.awards.sbMvp.add(year));
+  });
+
   // Build PLAYER_DATA array
   PLAYER_DATA = Array.from(playerMap.values()).map((p) => {
     const years = Array.from(p.years).sort();
     const positions = Array.from(p.positions);
+    const mvpYears = Array.from(p.awards.mvp).sort();
+    const sbMvpYears = Array.from(p.awards.sbMvp).sort();
     return {
       name: p.name,
       positions,
       years,
       titles: years.length,
+      awards: {
+        mvpYears,
+        sbMvpYears,
+      },
     };
   });
 
@@ -392,6 +464,55 @@ function buildAggregatedData() {
     if (aFirst !== bFirst) return aFirst - bFirst;
     return a.name.localeCompare(b.name);
   });
+}
+
+function buildAwardLookup() {
+  const map = new Map();
+
+  function addAward(name, key, year) {
+    if (!name) return;
+    if (!map.has(name)) {
+      map.set(name, { name, mvp: new Set(), sbMvp: new Set() });
+    }
+    map.get(name)[key].add(year);
+  }
+
+  AWARDS_DATA.forEach((entry) => {
+    addAward(entry.mvp, "mvp", entry.year);
+    addAward(entry.sbMvp, "sbMvp", entry.year);
+  });
+
+  return map;
+}
+
+function formatAwardsLabel(awards) {
+  if (!awards) return "";
+  const mvpYears = normalizeAwardsYears(awards.mvpYears || awards.mvp);
+  const sbMvpYears = normalizeAwardsYears(awards.sbMvpYears || awards.sbMvp);
+  const parts = [];
+  if (mvpYears.length) {
+    parts.push(`MVP ${mvpYears.join(", ")}`);
+  }
+  if (sbMvpYears.length) {
+    parts.push(`SB MVP ${sbMvpYears.join(", ")}`);
+  }
+  return parts.join("; ");
+}
+
+function buildAwardIcons(awards) {
+  if (!awards) return "";
+  const mvpYears = normalizeAwardsYears(awards.mvpYears || awards.mvp);
+  const sbMvpYears = normalizeAwardsYears(awards.sbMvpYears || awards.sbMvp);
+  const trophy = mvpYears.length ? "🏆".repeat(mvpYears.length) : "";
+  const ring = sbMvpYears.length ? "💍".repeat(sbMvpYears.length) : "";
+  return `${trophy}${ring}`.trim();
+}
+
+function normalizeAwardsYears(values) {
+  if (!values) return [];
+  if (Array.isArray(values)) return values;
+  if (values instanceof Set) return Array.from(values);
+  return [];
 }
 
 // Helper for D/ST labeling
@@ -465,17 +586,23 @@ function buildPositionalTable() {
       players.forEach((entry, idx) => {
         const span = document.createElement("span");
         span.classList.add("pos-player");
-        span.textContent = entry.name;
+        const awards = AWARD_LOOKUP.get(entry.name);
+        const icons = buildAwardIcons(awards);
+        span.textContent = icons ? `${entry.name} ${icons}` : entry.name;
 
         if (entry.sortedEntries.length > 1) {
           span.classList.add("multi-year");
         }
 
-        // Tooltip contents: "2018 (starter), 2020 (bench)"
-        const tooltip = entry.sortedEntries
+        // Tooltip contents: "2018 (starter), 2020 (bench)" + awards if present
+        const tooltipParts = entry.sortedEntries
           .map((e) => `${e.year} (${e.role})`)
           .join(", ");
-        applyTooltip(span, tooltip);
+        const awardsLabel = formatAwardsLabel(awards);
+        const tooltipSections = [];
+        if (tooltipParts) tooltipSections.push(tooltipParts);
+        if (awardsLabel) tooltipSections.push(`Awards: ${awardsLabel}`);
+        applyTooltip(span, tooltipSections.join(" | "));
 
         tdPlayers.appendChild(span);
         if (idx < players.length - 1) {
@@ -529,7 +656,12 @@ function renderPlayerTable() {
     const tr = document.createElement("tr");
 
     const tdName = document.createElement("td");
-    tdName.textContent = entry.name;
+    const icons = buildAwardIcons(entry.awards);
+    tdName.textContent = icons ? `${entry.name} ${icons}` : entry.name;
+    const awardsTooltip = formatAwardsLabel(entry.awards);
+    if (awardsTooltip) {
+      applyTooltip(tdName, awardsTooltip);
+    }
 
     const tdPos = document.createElement("td");
     tdPos.textContent = entry.positions
@@ -565,27 +697,29 @@ function applyCantonSearch() {
   const term = CANTON_SEARCH_TERM;
   let activeCount = 0;
 
-  ["team-table", "positional-table", "player-table"].forEach((id) => {
-    const table = document.getElementById(id);
-    if (!table) return;
-    const rows = Array.from(table.querySelectorAll("tbody tr"));
-    let visible = 0;
-    rows.forEach((row) => {
-      const match =
-        !term || row.textContent.toLowerCase().includes(term.toLowerCase());
-      row.style.display = match ? "" : "none";
-      if (match) visible += 1;
-    });
+  ["team-table", "awards-table", "positional-table", "player-table"].forEach(
+    (id) => {
+      const table = document.getElementById(id);
+      if (!table) return;
+      const rows = Array.from(table.querySelectorAll("tbody tr"));
+      let visible = 0;
+      rows.forEach((row) => {
+        const match =
+          !term || row.textContent.toLowerCase().includes(term.toLowerCase());
+        row.style.display = match ? "" : "none";
+        if (match) visible += 1;
+      });
 
-    const view = table.closest(".view-container");
-    const viewName =
-      view && view.id && view.id.endsWith("-view")
-        ? view.id.replace("-view", "")
-        : null;
-    if (viewName === activeView) {
-      activeCount = visible;
+      const view = table.closest(".view-container");
+      const viewName =
+        view && view.id && view.id.endsWith("-view")
+          ? view.id.replace("-view", "")
+          : null;
+      if (viewName === activeView) {
+        activeCount = visible;
+      }
     }
-  });
+  );
 
   if (countLabel) {
     countLabel.textContent = activeCount.toString();
@@ -610,7 +744,7 @@ function setupCantonSearch() {
 // ============================
 
 function showView(view) {
-  const views = ["team", "positional", "player"];
+  const views = ["team", "awards", "positional", "player"];
   views.forEach((v) => {
     const el = document.getElementById(`${v}-view`);
     if (el) el.style.display = v === view ? "block" : "none";
@@ -633,6 +767,7 @@ function showView(view) {
 
 function initCanton() {
   buildTeamTable();
+  buildAwardsTable();
   buildAggregatedData();
   buildPositionalTable();
   renderPlayerTable();
