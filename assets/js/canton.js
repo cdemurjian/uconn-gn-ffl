@@ -506,20 +506,14 @@ function formatAwardsLabel(awards) {
   return parts.join("; ");
 }
 
-function formatAwardsSummary(awards, playerName) {
+function formatAwardsSummary(awards) {
   if (!awards) return "";
   const mvpYears = normalizeAwardsYears(awards.mvpYears || awards.mvp);
   const sbMvpYears = normalizeAwardsYears(awards.sbMvpYears || awards.sbMvp);
   const parts = [];
-  if (mvpYears.length) {
-    const label = mvpYears.map((y) => `🏆 ${y}${playerName ? " " + playerName : ""}`).join("; ");
-    parts.push(label);
-  }
-  if (sbMvpYears.length) {
-    const label = sbMvpYears.map((y) => `🏅 ${y}${playerName ? " " + playerName : ""}`).join("; ");
-    parts.push(label);
-  }
-  return parts.join(" | ");
+  mvpYears.forEach((year) => parts.push(`${year} MVP`));
+  sbMvpYears.forEach((year) => parts.push(`${year} SB MVP`));
+  return parts.join("; ");
 }
 
 function buildAwardIcons(awards) {
@@ -698,7 +692,7 @@ function renderPlayerTable() {
     tdYears.textContent = entry.years.join(", ");
 
     const tdAwards = document.createElement("td");
-    const awardSummary = formatAwardsSummary(entry.awards, entry.name);
+    const awardSummary = formatAwardsSummary(entry.awards);
     tdAwards.textContent = awardSummary || "—";
 
     tr.appendChild(tdName);
