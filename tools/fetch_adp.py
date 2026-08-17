@@ -29,6 +29,8 @@ import os
 import sys
 import urllib.request
 
+import league_scoring
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "assets/data")
 
@@ -57,7 +59,7 @@ def fetch(year):
     return projections, players
 
 
-def build(projections, players, year):
+def build(projections, players, year, scoring):
     board = []
     for entry in projections:
         stats = entry.get("stats") or {}
@@ -77,7 +79,11 @@ def build(projections, players, year):
                 "name": name,
                 "position": player.get("position") or "",
                 "team": player.get("team") or "",
-                "projected": round(stats["pts_half_ppr"], 1)
+                # Projections carry the same stat keys as results, so they
+                # can be re-scored under league rules. Sleeper's generic
+                # figure is kept beside it to show the gap.
+                "projected": league_scoring.score(stats, scoring),
+                "projectedHalfPpr": round(stats["pts_half_ppr"], 1)
                 if stats.get("pts_half_ppr") is not None
                 else None,
                 "age": player.get("age"),
@@ -99,7 +105,9 @@ def build(projections, players, year):
         "caution": (
             "adp is 2QB, which is this league's format. adp1qb is the standard "
             "figure, shown only to make the gap visible: quarterbacks move 20-55 "
-            "picks between the two. Never draft from adp1qb here."
+            "picks between the two. Never draft from adp1qb here. Likewise "
+            "projected is scored with league rules and projectedHalfPpr is the "
+            "generic figure — they diverge on interceptions and return TDs."
         ),
         "players": board,
     }
@@ -133,6 +141,17 @@ def check(doc):
     if not any(p["projected"] for p in board):
         problems.append("no projected points on any player")
 
+    # If league scoring never differs from the generic figure, the scoring
+    # settings did not load and the re-scoring is silently a no-op.
+    if not any(
+        p["projectedHalfPpr"] and abs(p["projected"] - p["projectedHalfPpr"]) > 3
+        for p in board
+    ):
+        problems.append(
+            "league-scored projections match the generic figure for every "
+            "player — check the scoring settings loaded"
+        )
+
     missing = [p["name"] for p in board[:50] if not p["position"]]
     if missing:
         problems.append(f"no position resolved for: {', '.join(missing[:5])}")
@@ -153,15 +172,19 @@ def main():
         print("This endpoint is undocumented and may have changed.", file=sys.stderr)
         sys.exit(1)
 
-    doc = build(projections, players, args.year)
+    doc = build(projections, players, args.year, league_scoring.load_scoring())
     problems = check(doc)
 
     print(f"  {args.year}: {len(doc['players'])} players on the 2QB board")
-    print(f"  {'ADP':>6}{'1QB':>7}  {'POS':<4}{'PLAYER':<24}{'PROJ':>7}")
+    print(
+        f"  {'ADP':>6}{'1QB':>7}  {'POS':<4}{'PLAYER':<24}"
+        f"{'PROJ':>8}{'generic':>9}"
+    )
     for row in doc["players"][:12]:
         print(
             f"  {row['adp']:>6.1f}{(row['adp1qb'] or 0):>7.1f}  {row['position']:<4}"
-            f"{row['name'][:23]:<24}{(row['projected'] or 0):>7.1f}"
+            f"{row['name'][:23]:<24}{(row['projected'] or 0):>8.1f}"
+            f"{(row['projectedHalfPpr'] or 0):>9.1f}"
         )
 
     if problems:

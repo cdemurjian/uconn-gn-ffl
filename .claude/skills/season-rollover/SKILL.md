@@ -366,6 +366,12 @@ picks at the position: Drake Maye goes around 52 in a 1QB league and around 8
 in this one, Caleb Williams 77 versus 23. The file keeps the 1QB number beside
 it as `adp1qb` purely so the gap is visible. Never draft from that column.
 
+`projected` is scored with **this league's rules**, not Sleeper's generic
+half-PPR, with `projectedHalfPpr` beside it for comparison. That matters: the
+house interception rule (-2 rather than -1) and return TDs going to the D/ST
+move real players. In 2025 actuals it flips the overall #1 — Christian
+McCaffrey leads under league scoring, Josh Allen under the generic figure.
+
 The endpoint (`api.sleeper.app/projections/nfl/<year>`) is **undocumented** —
 it is not in Sleeper's published API and may change or disappear. The script
 is defensive about that: as well as checking the response shape, it asserts
@@ -373,6 +379,30 @@ that the top 30 contains at least 4 quarterbacks, because if Sleeper ever
 repoints `adp_2qb` at a 1QB list the shape would still be valid while the
 meaning quietly inverted. It refuses to write on any failure. Nothing on the
 site depends on this file, so a failure here breaks nothing else.
+
+### Historical player production
+
+`tools/fetch_player_stats.py` pulls season stat lines and re-scores them under
+league rules:
+
+```bash
+python3 tools/fetch_player_stats.py            # 2022-2025
+python3 tools/fetch_player_stats.py --years 2026
+```
+
+Writes `assets/data/player-stats-<year>.json` — every fantasy-relevant player
+who scored, with raw counting stats, this league's points, and Sleeper's
+generic figure alongside. Roughly 600 players and 215KB per season.
+
+`tools/league_scoring.py` is the shared scorer, and reads the ruleset straight
+out of the latest season document, so a mid-life scoring change is picked up
+automatically rather than hardcoded. Both this and the ADP tool refuse to write
+if league scoring turns out to match the generic figure for *every* player,
+because that would mean the settings failed to load and the re-scoring silently
+did nothing.
+
+That endpoint (`/v1/stats/nfl/regular/<year>`) **is** documented, unlike the
+projections one.
 
 ## The rules that are permanently manual
 
