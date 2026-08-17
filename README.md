@@ -139,6 +139,18 @@ directly linkable and needs no scraping.
 
 Live, e.g. `https://www.uconn-gn-ffl.com/assets/data/stats.json`.
 
+Every file is pretty-printed with a top-level `schemaVersion` and a `docs`
+link back here, so it reads sensibly when opened straight on GitHub. The
+whitespace costs about 0.4KB gzipped per season file — the browser pays almost
+nothing for it, since GitHub Pages compresses on the way out.
+
+| `schemaVersion` | Files |
+|---|---|
+| `season-view/1` | `2020.json` … `2025.json` |
+| `career-stats/1` | `stats.json` |
+| `overrides/1` | `overrides.json` |
+| `1` (ESPN's own) | `2018.json`, `2019.json` — raw exports, a different shape |
+
 ### The one thing to warn them about
 
 **The season files are not all the same shape.**

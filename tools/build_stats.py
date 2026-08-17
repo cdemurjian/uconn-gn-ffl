@@ -353,6 +353,8 @@ def build(overrides):
         )
 
     return {
+        "schemaVersion": "career-stats/1",
+        "docs": "https://github.com/cdemurjian/uconn-gn-ffl#pointing-someone-at-the-raw-data",
         "generatedAt": datetime.datetime.now(datetime.timezone.utc)
         .replace(microsecond=0)
         .isoformat(),
@@ -391,7 +393,8 @@ def main():
         return
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
-        json.dump(doc, handle, indent=1)
+        json.dump(doc, handle, indent=2, ensure_ascii=False)
+        handle.write("\n")
     print(f"\nwrote {OUTPUT_PATH} for {len(doc['managers'])} managers")
 
 

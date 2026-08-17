@@ -1,465 +1,467 @@
 {
- "generatedAt": "2026-08-17T21:36:25+00:00",
- "seasons": {
-  "espn": [
-   2018,
-   2019
-  ],
-  "sleeper": [
-   2020,
-   2021,
-   2022,
-   2023,
-   2024,
-   2025
-  ]
- },
- "managers": [
-  {
-   "name": "Devin",
-   "espn": {
-    "wins": 20,
-    "losses": 6
-   },
-   "sleeper": {
-    "wins": 41,
-    "losses": 42
-   },
-   "total": {
-    "wins": 61,
-    "losses": 48,
-    "pct": 0.559633
-   },
-   "seasons": 8,
-   "points": {
-    "pf": 15369.12,
-    "pa": 14402.9
-   },
-   "playoffs": {
-    "made": 6,
-    "possible": 8,
-    "years": [
-     2018,
-     2019,
-     2021,
-     2022,
-     2023,
-     2025
+  "schemaVersion": "career-stats/1",
+  "docs": "https://github.com/cdemurjian/uconn-gn-ffl#pointing-someone-at-the-raw-data",
+  "generatedAt": "2026-08-17T22:55:46+00:00",
+  "seasons": {
+    "espn": [
+      2018,
+      2019
     ],
-    "record": {
-     "wins": 3,
-     "losses": 5
-    }
-   },
-   "rings": [
-    {
-     "year": 2021,
-     "mickeyMouse": false,
-     "note": ""
-    }
-   ]
+    "sleeper": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
   },
-  {
-   "name": "Kap",
-   "espn": {
-    "wins": 7,
-    "losses": 19
-   },
-   "sleeper": {
-    "wins": 52,
-    "losses": 31
-   },
-   "total": {
-    "wins": 59,
-    "losses": 50,
-    "pct": 0.541284
-   },
-   "seasons": 8,
-   "points": {
-    "pf": 15271.18,
-    "pa": 14800.64
-   },
-   "playoffs": {
-    "made": 5,
-    "possible": 8,
-    "years": [
-     2020,
-     2021,
-     2022,
-     2023,
-     2025
-    ],
-    "record": {
-     "wins": 3,
-     "losses": 5
-    }
-   },
-   "rings": []
-  },
-  {
-   "name": "Tyler",
-   "espn": {
-    "wins": 12,
-    "losses": 14
-   },
-   "sleeper": {
-    "wins": 44,
-    "losses": 39
-   },
-   "total": {
-    "wins": 56,
-    "losses": 53,
-    "pct": 0.513761
-   },
-   "seasons": 8,
-   "points": {
-    "pf": 14907.56,
-    "pa": 14887.7
-   },
-   "playoffs": {
-    "made": 5,
-    "possible": 8,
-    "years": [
-     2018,
-     2020,
-     2021,
-     2023,
-     2024
-    ],
-    "record": {
-     "wins": 3,
-     "losses": 4
-    }
-   },
-   "rings": [
+  "managers": [
     {
-     "year": 2023,
-     "mickeyMouse": true,
-     "note": "Chaf Council of Shitters Mickey Mouse Ring"
-    }
-   ]
-  },
-  {
-   "name": "Charlie",
-   "espn": {
-    "wins": 15,
-    "losses": 11
-   },
-   "sleeper": {
-    "wins": 39,
-    "losses": 44
-   },
-   "total": {
-    "wins": 54,
-    "losses": 55,
-    "pct": 0.495413
-   },
-   "seasons": 8,
-   "points": {
-    "pf": 14686.4,
-    "pa": 14789.66
-   },
-   "playoffs": {
-    "made": 5,
-    "possible": 8,
-    "years": [
-     2018,
-     2019,
-     2021,
-     2024,
-     2025
-    ],
-    "record": {
-     "wins": 6,
-     "losses": 3
-    }
-   },
-   "rings": [
-    {
-     "year": 2018,
-     "mickeyMouse": true,
-     "note": "Inception of League Mickey Mouse Ring"
+      "name": "Devin",
+      "espn": {
+        "wins": 20,
+        "losses": 6
+      },
+      "sleeper": {
+        "wins": 41,
+        "losses": 42
+      },
+      "total": {
+        "wins": 61,
+        "losses": 48,
+        "pct": 0.559633
+      },
+      "seasons": 8,
+      "points": {
+        "pf": 15369.12,
+        "pa": 14402.9
+      },
+      "playoffs": {
+        "made": 6,
+        "possible": 8,
+        "years": [
+          2018,
+          2019,
+          2021,
+          2022,
+          2023,
+          2025
+        ],
+        "record": {
+          "wins": 3,
+          "losses": 5
+        }
+      },
+      "rings": [
+        {
+          "year": 2021,
+          "mickeyMouse": false,
+          "note": ""
+        }
+      ]
     },
     {
-     "year": 2025,
-     "mickeyMouse": false,
-     "note": ""
-    }
-   ]
-  },
-  {
-   "name": "Jay",
-   "espn": {
-    "wins": 20,
-    "losses": 6
-   },
-   "sleeper": {
-    "wins": 33,
-    "losses": 36
-   },
-   "total": {
-    "wins": 53,
-    "losses": 42,
-    "pct": 0.557895
-   },
-   "seasons": 7,
-   "points": {
-    "pf": 12897.17,
-    "pa": 12781.5
-   },
-   "playoffs": {
-    "made": 5,
-    "possible": 7,
-    "years": [
-     2018,
-     2019,
-     2020,
-     2022,
-     2024
-    ],
-    "record": {
-     "wins": 5,
-     "losses": 4
-    }
-   },
-   "rings": [
+      "name": "Kap",
+      "espn": {
+        "wins": 7,
+        "losses": 19
+      },
+      "sleeper": {
+        "wins": 52,
+        "losses": 31
+      },
+      "total": {
+        "wins": 59,
+        "losses": 50,
+        "pct": 0.541284
+      },
+      "seasons": 8,
+      "points": {
+        "pf": 15271.18,
+        "pa": 14800.64
+      },
+      "playoffs": {
+        "made": 5,
+        "possible": 8,
+        "years": [
+          2020,
+          2021,
+          2022,
+          2023,
+          2025
+        ],
+        "record": {
+          "wins": 3,
+          "losses": 5
+        }
+      },
+      "rings": []
+    },
     {
-     "year": 2022,
-     "mickeyMouse": true,
-     "note": "Damar Hamlin Mickey Mouse Ring"
-    }
-   ]
-  },
-  {
-   "name": "Nick",
-   "espn": {
-    "wins": 0,
-    "losses": 0
-   },
-   "sleeper": {
-    "wins": 52,
-    "losses": 31
-   },
-   "total": {
-    "wins": 52,
-    "losses": 31,
-    "pct": 0.626506
-   },
-   "seasons": 6,
-   "points": {
-    "pf": 11734.24,
-    "pa": 10956.83
-   },
-   "playoffs": {
-    "made": 6,
-    "possible": 6,
-    "years": [
-     2020,
-     2021,
-     2022,
-     2023,
-     2024,
-     2025
-    ],
-    "record": {
-     "wins": 6,
-     "losses": 5
-    }
-   },
-   "rings": [
+      "name": "Tyler",
+      "espn": {
+        "wins": 12,
+        "losses": 14
+      },
+      "sleeper": {
+        "wins": 44,
+        "losses": 39
+      },
+      "total": {
+        "wins": 56,
+        "losses": 53,
+        "pct": 0.513761
+      },
+      "seasons": 8,
+      "points": {
+        "pf": 14907.56,
+        "pa": 14887.7
+      },
+      "playoffs": {
+        "made": 5,
+        "possible": 8,
+        "years": [
+          2018,
+          2020,
+          2021,
+          2023,
+          2024
+        ],
+        "record": {
+          "wins": 3,
+          "losses": 4
+        }
+      },
+      "rings": [
+        {
+          "year": 2023,
+          "mickeyMouse": true,
+          "note": "Chaf Council of Shitters Mickey Mouse Ring"
+        }
+      ]
+    },
     {
-     "year": 2024,
-     "mickeyMouse": false,
-     "note": ""
-    }
-   ]
-  },
-  {
-   "name": "Bij",
-   "espn": {
-    "wins": 16,
-    "losses": 10
-   },
-   "sleeper": {
-    "wins": 34,
-    "losses": 49
-   },
-   "total": {
-    "wins": 50,
-    "losses": 59,
-    "pct": 0.458716
-   },
-   "seasons": 8,
-   "points": {
-    "pf": 14577.16,
-    "pa": 14681.14
-   },
-   "playoffs": {
-    "made": 4,
-    "possible": 8,
-    "years": [
-     2018,
-     2019,
-     2020,
-     2024
-    ],
-    "record": {
-     "wins": 1,
-     "losses": 4
-    }
-   },
-   "rings": []
-  },
-  {
-   "name": "Stove",
-   "espn": {
-    "wins": 11,
-    "losses": 2
-   },
-   "sleeper": {
-    "wins": 35,
-    "losses": 48
-   },
-   "total": {
-    "wins": 46,
-    "losses": 50,
-    "pct": 0.479167
-   },
-   "seasons": 7,
-   "points": {
-    "pf": 12476.34,
-    "pa": 12733.98
-   },
-   "playoffs": {
-    "made": 3,
-    "possible": 7,
-    "years": [
-     2019,
-     2023,
-     2024
-    ],
-    "record": {
-     "wins": 4,
-     "losses": 2
-    }
-   },
-   "rings": [
+      "name": "Charlie",
+      "espn": {
+        "wins": 15,
+        "losses": 11
+      },
+      "sleeper": {
+        "wins": 39,
+        "losses": 44
+      },
+      "total": {
+        "wins": 54,
+        "losses": 55,
+        "pct": 0.495413
+      },
+      "seasons": 8,
+      "points": {
+        "pf": 14686.4,
+        "pa": 14789.66
+      },
+      "playoffs": {
+        "made": 5,
+        "possible": 8,
+        "years": [
+          2018,
+          2019,
+          2021,
+          2024,
+          2025
+        ],
+        "record": {
+          "wins": 6,
+          "losses": 3
+        }
+      },
+      "rings": [
+        {
+          "year": 2018,
+          "mickeyMouse": true,
+          "note": "Inception of League Mickey Mouse Ring"
+        },
+        {
+          "year": 2025,
+          "mickeyMouse": false,
+          "note": ""
+        }
+      ]
+    },
     {
-     "year": 2019,
-     "mickeyMouse": false,
-     "note": ""
-    }
-   ]
-  },
-  {
-   "name": "Chaf",
-   "espn": {
-    "wins": 12,
-    "losses": 14
-   },
-   "sleeper": {
-    "wins": 30,
-    "losses": 25
-   },
-   "total": {
-    "wins": 42,
-    "losses": 39,
-    "pct": 0.518519
-   },
-   "seasons": 6,
-   "points": {
-    "pf": 10884.04,
-    "pa": 10951.08
-   },
-   "playoffs": {
-    "made": 4,
-    "possible": 6,
-    "years": [
-     2019,
-     2021,
-     2022,
-     2023
-    ],
-    "record": {
-     "wins": 4,
-     "losses": 4
-    }
-   },
-   "rings": []
-  },
-  {
-   "name": "Matt",
-   "espn": {
-    "wins": 7,
-    "losses": 19
-   },
-   "sleeper": {
-    "wins": 34,
-    "losses": 49
-   },
-   "total": {
-    "wins": 41,
-    "losses": 68,
-    "pct": 0.376147
-   },
-   "seasons": 8,
-   "points": {
-    "pf": 13982.56,
-    "pa": 14931.12
-   },
-   "playoffs": {
-    "made": 3,
-    "possible": 8,
-    "years": [
-     2020,
-     2022,
-     2025
-    ],
-    "record": {
-     "wins": 3,
-     "losses": 2
-    }
-   },
-   "rings": [
+      "name": "Jay",
+      "espn": {
+        "wins": 20,
+        "losses": 6
+      },
+      "sleeper": {
+        "wins": 33,
+        "losses": 36
+      },
+      "total": {
+        "wins": 53,
+        "losses": 42,
+        "pct": 0.557895
+      },
+      "seasons": 7,
+      "points": {
+        "pf": 12897.17,
+        "pa": 12781.5
+      },
+      "playoffs": {
+        "made": 5,
+        "possible": 7,
+        "years": [
+          2018,
+          2019,
+          2020,
+          2022,
+          2024
+        ],
+        "record": {
+          "wins": 5,
+          "losses": 4
+        }
+      },
+      "rings": [
+        {
+          "year": 2022,
+          "mickeyMouse": true,
+          "note": "Damar Hamlin Mickey Mouse Ring"
+        }
+      ]
+    },
     {
-     "year": 2020,
-     "mickeyMouse": false,
-     "note": ""
+      "name": "Nick",
+      "espn": {
+        "wins": 0,
+        "losses": 0
+      },
+      "sleeper": {
+        "wins": 52,
+        "losses": 31
+      },
+      "total": {
+        "wins": 52,
+        "losses": 31,
+        "pct": 0.626506
+      },
+      "seasons": 6,
+      "points": {
+        "pf": 11734.24,
+        "pa": 10956.83
+      },
+      "playoffs": {
+        "made": 6,
+        "possible": 6,
+        "years": [
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "record": {
+          "wins": 6,
+          "losses": 5
+        }
+      },
+      "rings": [
+        {
+          "year": 2024,
+          "mickeyMouse": false,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "Bij",
+      "espn": {
+        "wins": 16,
+        "losses": 10
+      },
+      "sleeper": {
+        "wins": 34,
+        "losses": 49
+      },
+      "total": {
+        "wins": 50,
+        "losses": 59,
+        "pct": 0.458716
+      },
+      "seasons": 8,
+      "points": {
+        "pf": 14577.16,
+        "pa": 14681.14
+      },
+      "playoffs": {
+        "made": 4,
+        "possible": 8,
+        "years": [
+          2018,
+          2019,
+          2020,
+          2024
+        ],
+        "record": {
+          "wins": 1,
+          "losses": 4
+        }
+      },
+      "rings": []
+    },
+    {
+      "name": "Stove",
+      "espn": {
+        "wins": 11,
+        "losses": 2
+      },
+      "sleeper": {
+        "wins": 35,
+        "losses": 48
+      },
+      "total": {
+        "wins": 46,
+        "losses": 50,
+        "pct": 0.479167
+      },
+      "seasons": 7,
+      "points": {
+        "pf": 12476.34,
+        "pa": 12733.98
+      },
+      "playoffs": {
+        "made": 3,
+        "possible": 7,
+        "years": [
+          2019,
+          2023,
+          2024
+        ],
+        "record": {
+          "wins": 4,
+          "losses": 2
+        }
+      },
+      "rings": [
+        {
+          "year": 2019,
+          "mickeyMouse": false,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "Chaf",
+      "espn": {
+        "wins": 12,
+        "losses": 14
+      },
+      "sleeper": {
+        "wins": 30,
+        "losses": 25
+      },
+      "total": {
+        "wins": 42,
+        "losses": 39,
+        "pct": 0.518519
+      },
+      "seasons": 6,
+      "points": {
+        "pf": 10884.04,
+        "pa": 10951.08
+      },
+      "playoffs": {
+        "made": 4,
+        "possible": 6,
+        "years": [
+          2019,
+          2021,
+          2022,
+          2023
+        ],
+        "record": {
+          "wins": 4,
+          "losses": 4
+        }
+      },
+      "rings": []
+    },
+    {
+      "name": "Matt",
+      "espn": {
+        "wins": 7,
+        "losses": 19
+      },
+      "sleeper": {
+        "wins": 34,
+        "losses": 49
+      },
+      "total": {
+        "wins": 41,
+        "losses": 68,
+        "pct": 0.376147
+      },
+      "seasons": 8,
+      "points": {
+        "pf": 13982.56,
+        "pa": 14931.12
+      },
+      "playoffs": {
+        "made": 3,
+        "possible": 8,
+        "years": [
+          2020,
+          2022,
+          2025
+        ],
+        "record": {
+          "wins": 3,
+          "losses": 2
+        }
+      },
+      "rings": [
+        {
+          "year": 2020,
+          "mickeyMouse": false,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "Leo",
+      "espn": {
+        "wins": 0,
+        "losses": 0
+      },
+      "sleeper": {
+        "wins": 21,
+        "losses": 21
+      },
+      "total": {
+        "wins": 21,
+        "losses": 21,
+        "pct": 0.5
+      },
+      "seasons": 3,
+      "points": {
+        "pf": 5541.08,
+        "pa": 5478.74
+      },
+      "playoffs": {
+        "made": 1,
+        "possible": 3,
+        "years": [
+          2025
+        ],
+        "record": {
+          "wins": 0,
+          "losses": 1
+        }
+      },
+      "rings": []
     }
-   ]
-  },
-  {
-   "name": "Leo",
-   "espn": {
-    "wins": 0,
-    "losses": 0
-   },
-   "sleeper": {
-    "wins": 21,
-    "losses": 21
-   },
-   "total": {
-    "wins": 21,
-    "losses": 21,
-    "pct": 0.5
-   },
-   "seasons": 3,
-   "points": {
-    "pf": 5541.08,
-    "pa": 5478.74
-   },
-   "playoffs": {
-    "made": 1,
-    "possible": 3,
-    "years": [
-     2025
-    ],
-    "record": {
-     "wins": 0,
-     "losses": 1
-    }
-   },
-   "rings": []
-  }
- ]
+  ]
 }

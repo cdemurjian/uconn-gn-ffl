@@ -1,1 +1,2935 @@
-{"schemaVersion":"season-view/1","provider":"sleeper","year":"2020","leagueName":"UconnGreatNeckFFL","providerLeagueId":"596542463120818176","ffwrappedLeagueId":"596542463120818176","settings":{"teams":10,"playoffTeams":6,"playoffWeekStart":14,"rosterPositions":["QB","QB","RB","RB","WR","WR","WR","TE","FLEX","K","DEF","BN","BN","BN","BN","BN","BN"],"scoring":{"sack":1.0,"qb_hit":0.0,"fgm_40_49":4.0,"bonus_rec_te":0.0,"fgm_yds":0.0,"bonus_rec_yd_100":0.0,"bonus_rush_yd_100":0.0,"pass_int":-2.0,"fgmiss_50p":0.0,"pts_allow_0":5.0,"bonus_pass_yd_400":0.0,"pass_2pt":2.0,"rec_0_4":0.0,"yds_allow_450_499":0.0,"st_td":0.0,"rec_30_39":0.0,"pr_td":0.0,"fgm_yds_over_30":0.0,"rec_td":6.0,"yds_allow_400_449":0.0,"tkl_ast":0.0,"rec_20_29":0.0,"idp_blk_kick":0.0,"fgm_30_39":3.0,"kr_td":0.0,"xpmiss":0.0,"rush_td":6.0,"def_pr_td":0.0,"pts_allow":0.0,"idp_tkl":0.0,"yds_allow_550p":0.0,"pass_td_40p":0.0,"def_st_tkl_solo":0.0,"yds_allow_350_399":0.0,"fgm":0.0,"bonus_rush_rec_yd_100":0.0,"rec_2pt":2.0,"bonus_pass_cmp_25":0.0,"idp_tkl_loss":0.0,"rush_fd":0.0,"pass_int_td":0.0,"idp_tkl_solo":0.0,"pass_att":0.0,"st_fum_rec":0.0,"fgmiss":-1.0,"ff":0.0,"idp_int":0.0,"fgmiss_30_39":0.0,"rec":0.5,"yds_allow_200_299":0.0,"idp_safe":0.0,"pts_allow_14_20":1.0,"def_2pt":2.0,"fgm_0_19":3.0,"idp_def_td":0.0,"def_kr_td":0.0,"int":2.0,"def_st_fum_rec":2.0,"fum_lost":-2.0,"pts_allow_1_6":4.0,"rec_fd":0.0,"fgmiss_20_29":0.0,"rush_att":0.0,"st_tkl_solo":0.0,"yds_allow":0.0,"rec_5_9":0.0,"idp_sack":0.0,"fgm_20_29":3.0,"yds_allow_500_549":0.0,"pts_allow_21_27":0.0,"bonus_rec_wr":0.0,"bonus_pass_yd_300":0.0,"xpm":1.0,"pass_sack":0.0,"rec_40p":0.0,"fgmiss_0_19":0.0,"pass_cmp":0.0,"tkl_loss":0.0,"rush_2pt":2.0,"def_pass_def":0.0,"yds_allow_300_349":0.0,"fum_rec":2.0,"idp_pass_def":0.0,"rec_10_19":0.0,"bonus_rec_yd_200":0.0,"def_st_td":6.0,"tkl":0.0,"pass_cmp_40p":0.0,"fgm_50p":5.0,"def_td":6.0,"idp_fum_rec":0.0,"pass_fd":0.0,"rec_td_40p":0.0,"bonus_rush_yd_200":0.0,"safe":2.0,"pass_yd":0.03999999910593033,"fgmiss_40_49":0.0,"blk_kick":2.0,"pass_td":4.0,"tkl_solo":0.0,"bonus_rush_att_20":0.0,"yds_allow_100_199":0.0,"idp_qb_hit":0.0,"rush_yd":0.10000000149011612,"yds_allow_0_100":0.0,"bonus_rec_rb":0.0,"rush_40p":0.0,"fum":0.0,"pts_allow_28_34":-1.0,"pts_allow_35p":-3.0,"bonus_rush_rec_yd_200":0.0,"fum_rec_td":6.0,"rec_yd":0.10000000149011612,"rush_td_40p":0.0,"def_st_ff":0.0,"pass_inc":0.0,"pts_allow_7_13":3.0,"idp_ff":0.0,"st_ff":0.0,"idp_tkl_ast":0.0}},"teams":[{"rosterId":9,"teamName":"Operation Warp Speed","manager":"Matt","displayName":"mattyice185","wins":6,"losses":7,"pointsFor":1732.72,"pointsAgainst":1694.98,"finalRank":1,"playoffSeed":6,"streak":"LLWLLLLWWLWWW"},{"rosterId":4,"teamName":"Toast Malone","manager":"Jay","displayName":"Jkorm0112","wins":6,"losses":7,"pointsFor":1850.4,"pointsAgainst":1946.5,"finalRank":2,"playoffSeed":5,"streak":"WLLLWWWLLWLLW"},{"rosterId":5,"teamName":"Snapped","manager":"Nick","displayName":"nickborn24","wins":11,"losses":2,"pointsFor":2061.12,"pointsAgainst":1834.56,"finalRank":3,"playoffSeed":1,"streak":"LWWWWWWWWLWWW"},{"rosterId":6,"teamName":"MIaMi FoOtBaLl TeAm","manager":"Kap","displayName":"joshkapenhas","wins":9,"losses":4,"pointsFor":1761.7,"pointsAgainst":1576.84,"finalRank":4,"playoffSeed":2,"streak":"WLWWWWLWWWLWL"},{"rosterId":2,"teamName":"Tanking For Trev","manager":"Bij","displayName":"justinbij","wins":7,"losses":6,"pointsFor":1777.1,"pointsAgainst":1757.44,"finalRank":5,"playoffSeed":3,"streak":"WWLLLWLLWWWWL"},{"rosterId":7,"teamName":"The witching hours","manager":"Tyler","displayName":"tylerjhockey","wins":7,"losses":6,"pointsFor":1734.42,"pointsAgainst":1821.88,"finalRank":6,"playoffSeed":4,"streak":"WWLWLLWLWWLLW"},{"rosterId":3,"teamName":"The McRibs","manager":"Chaf","displayName":"mchaf0503","wins":5,"losses":8,"pointsFor":1800.58,"pointsAgainst":1799.0,"finalRank":7,"playoffSeed":0,"streak":"WLLWWLLLLLWLW"},{"rosterId":1,"teamName":"Devastation (2108.1)","manager":"Charlie","displayName":"cdemurjian","wins":5,"losses":8,"pointsFor":1729.78,"pointsAgainst":1758.66,"finalRank":8,"playoffSeed":0,"streak":"LWWWLLLLLWLWL"},{"rosterId":8,"teamName":"gg","manager":"Stove","displayName":"KingStove","wins":5,"losses":8,"pointsFor":1713.16,"pointsAgainst":1831.92,"finalRank":9,"playoffSeed":0,"streak":"LWWLWLWWLLLLL"},{"rosterId":10,"teamName":"To Dare Is to Do","manager":"Devin","displayName":"devinpallanck","wins":4,"losses":9,"pointsFor":1773.04,"pointsAgainst":1912.24,"finalRank":10,"playoffSeed":0,"streak":"LLLLLWWWLLWLL"}],"weeks":[{"week":1,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":7,"away":9,"homePoints":140.5,"awayPoints":123.0,"winnerRosterId":7,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":3,"homePoints":133.24,"awayPoints":170.66,"winnerRosterId":3,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":6,"away":8,"homePoints":136.54,"awayPoints":113.78,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":10,"homePoints":165.62,"awayPoints":149.5,"winnerRosterId":2,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":4,"away":5,"homePoints":146.42,"awayPoints":129.16,"winnerRosterId":4,"homeStarters":[],"awayStarters":[]}]},{"week":2,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":7,"homePoints":148.7,"awayPoints":156.18,"winnerRosterId":7,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":9,"homePoints":135.38,"awayPoints":112.2,"winnerRosterId":1,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":8,"away":10,"homePoints":146.36,"awayPoints":143.44,"winnerRosterId":8,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":5,"away":6,"homePoints":160.32,"awayPoints":144.4,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":4,"homePoints":194.92,"awayPoints":140.34,"winnerRosterId":2,"homeStarters":[],"awayStarters":[]}]},{"week":3,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":7,"homePoints":161.72,"awayPoints":111.96,"winnerRosterId":1,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":9,"homePoints":141.94,"awayPoints":160.78,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":8,"homePoints":116.56,"awayPoints":167.6,"winnerRosterId":8,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":4,"away":6,"homePoints":149.02,"awayPoints":151.58,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":5,"away":10,"homePoints":200.72,"awayPoints":137.18,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]}]},{"week":4,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":7,"away":8,"homePoints":118.1,"awayPoints":117.7,"winnerRosterId":7,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":6,"away":9,"homePoints":149.98,"awayPoints":100.44,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":10,"homePoints":156.36,"awayPoints":138.26,"winnerRosterId":3,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":4,"homePoints":180.98,"awayPoints":155.82,"winnerRosterId":1,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":5,"homePoints":140.82,"awayPoints":173.32,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]}]},{"week":5,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":6,"away":7,"homePoints":160.6,"awayPoints":141.72,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":8,"away":9,"homePoints":134.3,"awayPoints":129.32,"winnerRosterId":8,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":3,"homePoints":93.46,"awayPoints":117.44,"winnerRosterId":3,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":5,"homePoints":120.44,"awayPoints":135.96,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":4,"away":10,"homePoints":181.04,"awayPoints":156.76,"winnerRosterId":4,"homeStarters":[],"awayStarters":[]}]},{"week":6,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":7,"away":10,"homePoints":121.2,"awayPoints":168.6,"winnerRosterId":10,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":9,"homePoints":134.36,"awayPoints":117.84,"winnerRosterId":2,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":5,"homePoints":154.44,"awayPoints":157.72,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":6,"homePoints":105.02,"awayPoints":112.3,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":4,"away":8,"homePoints":153.66,"awayPoints":139.48,"winnerRosterId":4,"homeStarters":[],"awayStarters":[]}]},{"week":7,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":7,"homePoints":116.94,"awayPoints":134.38,"winnerRosterId":7,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":5,"away":9,"homePoints":155.34,"awayPoints":111.64,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":4,"homePoints":150.66,"awayPoints":173.8,"winnerRosterId":4,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":8,"homePoints":167.04,"awayPoints":180.96,"winnerRosterId":8,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":6,"away":10,"homePoints":104.22,"awayPoints":143.94,"winnerRosterId":10,"homeStarters":[],"awayStarters":[]}]},{"week":8,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":5,"away":7,"homePoints":157.68,"awayPoints":141.18,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":4,"away":9,"homePoints":83.42,"awayPoints":162.5,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":8,"homePoints":110.0,"awayPoints":118.52,"winnerRosterId":8,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":10,"homePoints":119.32,"awayPoints":131.08,"winnerRosterId":10,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":6,"homePoints":96.0,"awayPoints":105.52,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]}]},{"week":9,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":4,"away":7,"homePoints":153.42,"awayPoints":160.16,"winnerRosterId":7,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":9,"away":10,"homePoints":141.16,"awayPoints":92.14,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":6,"homePoints":83.56,"awayPoints":141.38,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":2,"homePoints":127.5,"awayPoints":129.3,"winnerRosterId":2,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":5,"away":8,"homePoints":162.3,"awayPoints":139.92,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]}]},{"week":10,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":7,"away":9,"homePoints":110.06,"awayPoints":96.54,"winnerRosterId":7,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":3,"homePoints":137.28,"awayPoints":111.8,"winnerRosterId":1,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":6,"away":8,"homePoints":110.76,"awayPoints":99.72,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":10,"homePoints":149.04,"awayPoints":127.14,"winnerRosterId":2,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":4,"away":5,"homePoints":172.96,"awayPoints":128.02,"winnerRosterId":4,"homeStarters":[],"awayStarters":[]}]},{"week":11,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":7,"homePoints":149.92,"awayPoints":109.98,"winnerRosterId":3,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":9,"homePoints":129.48,"awayPoints":169.7,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":8,"away":10,"homePoints":101.46,"awayPoints":142.9,"winnerRosterId":10,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":5,"away":6,"homePoints":153.52,"awayPoints":133.1,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":4,"homePoints":132.0,"awayPoints":108.8,"winnerRosterId":2,"homeStarters":[],"awayStarters":[]}]},{"week":12,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":7,"homePoints":128.94,"awayPoints":95.2,"winnerRosterId":1,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":9,"homePoints":153.6,"awayPoints":169.78,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":8,"homePoints":147.5,"awayPoints":115.24,"winnerRosterId":2,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":4,"away":6,"homePoints":91.98,"awayPoints":176.84,"winnerRosterId":6,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":5,"away":10,"homePoints":174.24,"awayPoints":133.48,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]}]},{"week":13,"isPlayoffWeek":false,"games":[{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":7,"away":8,"homePoints":193.8,"awayPoints":138.12,"winnerRosterId":7,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":6,"away":9,"homePoints":134.48,"awayPoints":137.82,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":3,"away":10,"homePoints":151.5,"awayPoints":108.62,"winnerRosterId":3,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":1,"away":4,"homePoints":83.44,"awayPoints":141.72,"winnerRosterId":4,"homeStarters":[],"awayStarters":[]},{"tier":"REGULAR","isTitlePath":false,"isConsolation":false,"isBye":false,"home":2,"away":5,"homePoints":160.58,"awayPoints":172.82,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]}]},{"week":14,"isPlayoffWeek":true,"games":[{"tier":"WINNERS_BRACKET","isTitlePath":true,"isConsolation":false,"isBye":false,"home":4,"away":7,"homePoints":159.98,"awayPoints":154.18,"winnerRosterId":4,"homeStarters":[],"awayStarters":[]},{"tier":"WINNERS_BRACKET","isTitlePath":true,"isConsolation":false,"isBye":false,"home":2,"away":9,"homePoints":147.12,"awayPoints":168.78,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"LOSERS_CONSOLATION_LADDER","isTitlePath":false,"isConsolation":true,"isBye":false,"home":3,"away":10,"homePoints":104.84,"awayPoints":132.96,"winnerRosterId":10,"homeStarters":[],"awayStarters":[]},{"tier":"LOSERS_CONSOLATION_LADDER","isTitlePath":false,"isConsolation":true,"isBye":false,"home":1,"away":8,"homePoints":102.26,"awayPoints":102.22,"winnerRosterId":1,"homeStarters":[],"awayStarters":[]},{"tier":"WINNERS_BRACKET","isTitlePath":true,"isConsolation":false,"isBye":true,"home":5,"away":null,"homePoints":144.14,"awayPoints":null,"winnerRosterId":null,"homeStarters":[],"awayStarters":[]},{"tier":"WINNERS_BRACKET","isTitlePath":true,"isConsolation":false,"isBye":true,"home":6,"away":null,"homePoints":94.14,"awayPoints":null,"winnerRosterId":null,"homeStarters":[],"awayStarters":[]}]},{"week":15,"isPlayoffWeek":true,"games":[{"tier":"WINNERS_BRACKET","isTitlePath":true,"isConsolation":false,"isBye":false,"home":5,"away":9,"homePoints":126.66,"awayPoints":160.08,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"WINNERS_BRACKET","isTitlePath":true,"isConsolation":false,"isBye":false,"home":4,"away":6,"homePoints":192.5,"awayPoints":87.92,"winnerRosterId":4,"homeStarters":[],"awayStarters":[]},{"tier":"WINNERS_CONSOLATION_LADDER","isTitlePath":false,"isConsolation":true,"isBye":false,"home":2,"away":7,"homePoints":153.36,"awayPoints":136.36,"winnerRosterId":2,"homeStarters":[],"awayStarters":[]},{"tier":"LOSERS_CONSOLATION_LADDER","isTitlePath":false,"isConsolation":true,"isBye":false,"home":3,"away":8,"homePoints":120.64,"awayPoints":105.76,"winnerRosterId":3,"homeStarters":[],"awayStarters":[]},{"tier":"LOSERS_CONSOLATION_LADDER","isTitlePath":false,"isConsolation":true,"isBye":false,"home":1,"away":10,"homePoints":143.96,"awayPoints":103.52,"winnerRosterId":1,"homeStarters":[],"awayStarters":[]}]},{"week":16,"isPlayoffWeek":true,"games":[{"tier":"WINNERS_BRACKET","isTitlePath":true,"isConsolation":false,"isBye":false,"home":4,"away":9,"homePoints":129.18,"awayPoints":139.6,"winnerRosterId":9,"homeStarters":[],"awayStarters":[]},{"tier":"WINNERS_CONSOLATION_LADDER","isTitlePath":false,"isConsolation":true,"isBye":false,"home":5,"away":6,"homePoints":192.44,"awayPoints":120.32,"winnerRosterId":5,"homeStarters":[],"awayStarters":[]}]}],"draft":{"rounds":17,"teams":10,"picks":[{"pickNo":1,"round":1,"column":1,"rosterId":1,"playerId":"4034","name":"Christian McCaffrey","position":"RB"},{"pickNo":2,"round":1,"column":2,"rosterId":4,"playerId":"4866","name":"Saquon Barkley","position":"RB"},{"pickNo":3,"round":1,"column":3,"rosterId":6,"playerId":"3164","name":"Ezekiel Elliott","position":"RB"},{"pickNo":4,"round":1,"column":4,"rosterId":9,"playerId":"4046","name":"Patrick Mahomes","position":"QB"},{"pickNo":5,"round":1,"column":5,"rosterId":2,"playerId":"4881","name":"Lamar Jackson","position":"QB"},{"pickNo":6,"round":1,"column":6,"rosterId":5,"playerId":"4035","name":"Alvin Kamara","position":"RB"},{"pickNo":7,"round":1,"column":7,"rosterId":3,"playerId":"6820","name":"Clyde Edwards-Helaire","position":"RB"},{"pickNo":8,"round":1,"column":8,"rosterId":8,"playerId":"3199","name":"Michael Thomas","position":"WR"},{"pickNo":9,"round":1,"column":9,"rosterId":7,"playerId":"4029","name":"Dalvin Cook","position":"RB"},{"pickNo":10,"round":1,"column":10,"rosterId":10,"playerId":"3198","name":"Derrick Henry","position":"RB"},{"pickNo":11,"round":2,"column":10,"rosterId":10,"playerId":"6151","name":"Miles Sanders","position":"RB"},{"pickNo":12,"round":2,"column":9,"rosterId":7,"playerId":"5850","name":"Josh Jacobs","position":"RB"},{"pickNo":13,"round":2,"column":8,"rosterId":8,"playerId":"4663","name":"Austin Ekeler","position":"RB"},{"pickNo":14,"round":2,"column":7,"rosterId":3,"playerId":"2133","name":"Davante Adams","position":"WR"},{"pickNo":15,"round":2,"column":6,"rosterId":5,"playerId":"4988","name":"Nick Chubb","position":"RB"},{"pickNo":16,"round":2,"column":5,"rosterId":2,"playerId":"4199","name":"Aaron Jones","position":"RB"},{"pickNo":17,"round":2,"column":4,"rosterId":9,"playerId":"947","name":"Julio Jones","position":"WR"},{"pickNo":18,"round":2,"column":3,"rosterId":6,"playerId":"3321","name":"Tyreek Hill","position":"WR"},{"pickNo":19,"round":2,"column":2,"rosterId":4,"playerId":"1426","name":"DeAndre Hopkins","position":"WR"},{"pickNo":20,"round":2,"column":1,"rosterId":1,"playerId":"4018","name":"Joe Mixon","position":"RB"},{"pickNo":21,"round":3,"column":1,"rosterId":1,"playerId":"2216","name":"Mike Evans","position":"WR"},{"pickNo":22,"round":3,"column":2,"rosterId":4,"playerId":"4037","name":"Chris Godwin","position":"WR"},{"pickNo":23,"round":3,"column":3,"rosterId":6,"playerId":"3242","name":"Kenyan Drake","position":"RB"},{"pickNo":24,"round":3,"column":4,"rosterId":9,"playerId":"1466","name":"Travis Kelce","position":"TE"},{"pickNo":25,"round":3,"column":5,"rosterId":2,"playerId":"2309","name":"Amari Cooper","position":"WR"},{"pickNo":26,"round":3,"column":6,"rosterId":5,"playerId":"4131","name":"Kenny Golladay","position":"WR"},{"pickNo":27,"round":3,"column":7,"rosterId":3,"playerId":"4017","name":"Deshaun Watson","position":"QB"},{"pickNo":28,"round":3,"column":8,"rosterId":8,"playerId":"1234","name":"Russell Wilson","position":"QB"},{"pickNo":29,"round":3,"column":9,"rosterId":7,"playerId":"4217","name":"George Kittle","position":"TE"},{"pickNo":30,"round":3,"column":10,"rosterId":10,"playerId":"1689","name":"Adam Thielen","position":"WR"},{"pickNo":31,"round":4,"column":10,"rosterId":10,"playerId":"4983","name":"D.J. Moore","position":"WR"},{"pickNo":32,"round":4,"column":9,"rosterId":7,"playerId":"3969","name":"Leonard Fournette","position":"RB"},{"pickNo":33,"round":4,"column":8,"rosterId":8,"playerId":"5849","name":"Kyler Murray","position":"QB"},{"pickNo":34,"round":4,"column":7,"rosterId":3,"playerId":"3294","name":"Dak Prescott","position":"QB"},{"pickNo":35,"round":4,"column":6,"rosterId":5,"playerId":"4039","name":"Cooper Kupp","position":"WR"},{"pickNo":36,"round":4,"column":5,"rosterId":2,"playerId":"4273","name":"Chris Carson","position":"RB"},{"pickNo":37,"round":4,"column":4,"rosterId":9,"playerId":"1408","name":"Le'Veon Bell","position":"RB"},{"pickNo":38,"round":4,"column":3,"rosterId":6,"playerId":"2078","name":"Odell Beckham Jr.","position":"WR"},{"pickNo":39,"round":4,"column":2,"rosterId":4,"playerId":"5846","name":"DK Metcalf","position":"WR"},{"pickNo":40,"round":4,"column":1,"rosterId":1,"playerId":"1479","name":"Keenan Allen","position":"WR"},{"pickNo":41,"round":5,"column":1,"rosterId":1,"playerId":"167","name":"Tom Brady","position":"QB"},{"pickNo":42,"round":5,"column":2,"rosterId":4,"playerId":"2315","name":"Todd Gurley II","position":"RB"},{"pickNo":43,"round":5,"column":3,"rosterId":6,"playerId":"4137","name":"James Conner","position":"RB"},{"pickNo":44,"round":5,"column":4,"rosterId":9,"playerId":"1992","name":"Allen Robinson II","position":"WR"},{"pickNo":45,"round":5,"column":5,"rosterId":2,"playerId":"1339","name":"Zach Ertz","position":"TE"},{"pickNo":46,"round":5,"column":6,"rosterId":5,"playerId":"5012","name":"Mark Andrews","position":"TE"},{"pickNo":47,"round":5,"column":7,"rosterId":3,"playerId":"2391","name":"David Johnson","position":"RB"},{"pickNo":48,"round":5,"column":8,"rosterId":8,"playerId":"2374","name":"Tyler Lockett","position":"WR"},{"pickNo":49,"round":5,"column":9,"rosterId":7,"playerId":"5859","name":"A.J. Brown","position":"WR"},{"pickNo":50,"round":5,"column":10,"rosterId":10,"playerId":"1352","name":"Robert Woods","position":"WR"},{"pickNo":51,"round":6,"column":10,"rosterId":10,"playerId":"3161","name":"Carson Wentz","position":"QB"},{"pickNo":52,"round":6,"column":9,"rosterId":7,"playerId":"24","name":"Matt Ryan","position":"QB"},{"pickNo":53,"round":6,"column":8,"rosterId":8,"playerId":"2505","name":"Darren Waller","position":"TE"},{"pickNo":54,"round":6,"column":7,"rosterId":3,"playerId":"2449","name":"Stefon Diggs","position":"WR"},{"pickNo":55,"round":6,"column":6,"rosterId":5,"playerId":"289","name":"Drew Brees","position":"QB"},{"pickNo":56,"round":6,"column":5,"rosterId":2,"playerId":"4981","name":"Calvin Ridley","position":"WR"},{"pickNo":57,"round":6,"column":4,"rosterId":9,"playerId":"6813","name":"Jonathan Taylor","position":"RB"},{"pickNo":58,"round":6,"column":3,"rosterId":6,"playerId":"4066","name":"Evan Engram","position":"TE"},{"pickNo":59,"round":6,"column":2,"rosterId":4,"playerId":"96","name":"Aaron Rodgers","position":"QB"},{"pickNo":60,"round":6,"column":1,"rosterId":1,"playerId":"4984","name":"Josh Allen","position":"QB"},{"pickNo":61,"round":7,"column":1,"rosterId":1,"playerId":"5848","name":"Marquise Brown","position":"WR"},{"pickNo":62,"round":7,"column":2,"rosterId":4,"playerId":"5870","name":"Daniel Jones","position":"QB"},{"pickNo":63,"round":7,"column":3,"rosterId":6,"playerId":"421","name":"Matthew Stafford","position":"QB"},{"pickNo":64,"round":7,"column":4,"rosterId":9,"playerId":"5045","name":"Courtland Sutton","position":"WR"},{"pickNo":65,"round":7,"column":5,"rosterId":2,"playerId":"4892","name":"Baker Mayfield","position":"QB"},{"pickNo":66,"round":7,"column":6,"rosterId":5,"playerId":"5927","name":"Terry McLaurin","position":"WR"},{"pickNo":67,"round":7,"column":7,"rosterId":3,"playerId":"2320","name":"Melvin Gordon III","position":"RB"},{"pickNo":68,"round":7,"column":8,"rosterId":8,"playerId":"2319","name":"DeVante Parker","position":"WR"},{"pickNo":69,"round":7,"column":9,"rosterId":7,"playerId":"4951","name":"DJ Chark Jr.","position":"WR"},{"pickNo":70,"round":7,"column":10,"rosterId":10,"playerId":"5052","name":"Ronald Jones II","position":"RB"},{"pickNo":71,"round":8,"column":10,"rosterId":10,"playerId":"4040","name":"JuJu Smith-Schuster","position":"WR"},{"pickNo":72,"round":8,"column":9,"rosterId":7,"playerId":"3163","name":"Jared Goff","position":"QB"},{"pickNo":73,"round":8,"column":8,"rosterId":8,"playerId":"1110","name":"T.Y. Hilton","position":"WR"},{"pickNo":74,"round":8,"column":7,"rosterId":3,"playerId":"1825","name":"Jarvis Landry","position":"WR"},{"pickNo":75,"round":8,"column":6,"rosterId":5,"playerId":"1837","name":"Jimmy Garoppolo","position":"QB"},{"pickNo":76,"round":8,"column":5,"rosterId":2,"playerId":"6130","name":"Devin Singletary","position":"RB"},{"pickNo":77,"round":8,"column":4,"rosterId":9,"playerId":"1166","name":"Kirk Cousins","position":"QB"},{"pickNo":78,"round":8,"column":3,"rosterId":6,"playerId":"3225","name":"Tyler Boyd","position":"WR"},{"pickNo":79,"round":8,"column":2,"rosterId":4,"playerId":"4098","name":"Kareem Hunt","position":"RB"},{"pickNo":80,"round":8,"column":1,"rosterId":1,"playerId":"6938","name":"Cam Akers","position":"RB"},{"pickNo":81,"round":9,"column":1,"rosterId":1,"playerId":"5038","name":"Michael Gallup","position":"WR"},{"pickNo":82,"round":9,"column":2,"rosterId":4,"playerId":"3202","name":"Austin Hooper","position":"TE"},{"pickNo":83,"round":9,"column":3,"rosterId":6,"playerId":"138","name":"Ben Roethlisberger","position":"QB"},{"pickNo":84,"round":9,"column":4,"rosterId":9,"playerId":"956","name":"Mark Ingram II","position":"RB"},{"pickNo":85,"round":9,"column":5,"rosterId":2,"playerId":"344","name":"Julian Edelman","position":"WR"},{"pickNo":86,"round":9,"column":6,"rosterId":5,"playerId":"5170","name":"Phillip Lindsay","position":"RB"},{"pickNo":87,"round":9,"column":7,"rosterId":3,"playerId":"2749","name":"Raheem Mostert","position":"RB"},{"pickNo":88,"round":9,"column":8,"rosterId":8,"playerId":"6806","name":"J.K. Dobbins","position":"RB"},{"pickNo":89,"round":9,"column":9,"rosterId":7,"playerId":"5872","name":"Deebo Samuel","position":"WR"},{"pickNo":90,"round":9,"column":10,"rosterId":10,"playerId":"954","name":"Cam Newton","position":"QB"},{"pickNo":91,"round":10,"column":10,"rosterId":10,"playerId":"6011","name":"Gardner Minshew II","position":"QB"},{"pickNo":92,"round":10,"column":9,"rosterId":7,"playerId":"1049","name":"Ryan Tannehill","position":"QB"},{"pickNo":93,"round":10,"column":8,"rosterId":8,"playerId":"6786","name":"CeeDee Lamb","position":"WR"},{"pickNo":94,"round":10,"column":7,"rosterId":3,"playerId":"5892","name":"David Montgomery","position":"RB"},{"pickNo":95,"round":10,"column":6,"rosterId":5,"playerId":"5854","name":"Drew Lock","position":"QB"},{"pickNo":96,"round":10,"column":5,"rosterId":2,"playerId":"331","name":"Philip Rivers","position":"QB"},{"pickNo":97,"round":10,"column":4,"rosterId":9,"playerId":"6770","name":"Joe Burrow","position":"QB"},{"pickNo":98,"round":10,"column":3,"rosterId":6,"playerId":"2152","name":"Teddy Bridgewater","position":"QB"},{"pickNo":99,"round":10,"column":2,"rosterId":4,"playerId":"6149","name":"Darius Slayton","position":"WR"},{"pickNo":100,"round":10,"column":1,"rosterId":1,"playerId":"6783","name":"Jerry Jeudy","position":"WR"},{"pickNo":101,"round":11,"column":1,"rosterId":1,"playerId":"6801","name":"Tee Higgins","position":"WR"},{"pickNo":102,"round":11,"column":2,"rosterId":4,"playerId":"2197","name":"Brandin Cooks","position":"WR"},{"pickNo":103,"round":11,"column":3,"rosterId":6,"playerId":"3157","name":"Will Fuller V","position":"WR"},{"pickNo":104,"round":11,"column":4,"rosterId":9,"playerId":"4152","name":"Marlon Mack","position":"RB"},{"pickNo":105,"round":11,"column":5,"rosterId":2,"playerId":"6803","name":"Brandon Aiyuk","position":"WR"},{"pickNo":106,"round":11,"column":6,"rosterId":5,"playerId":"6819","name":"Michael Pittman Jr.","position":"WR"},{"pickNo":107,"round":11,"column":7,"rosterId":3,"playerId":"515","name":"Rob Gronkowski","position":"TE"},{"pickNo":108,"round":11,"column":8,"rosterId":8,"playerId":"4950","name":"Christian Kirk","position":"WR"},{"pickNo":109,"round":11,"column":9,"rosterId":7,"playerId":"6790","name":"D'Andre Swift","position":"RB"},{"pickNo":110,"round":11,"column":10,"rosterId":10,"playerId":"5844","name":"T.J. Hockenson","position":"TE"},{"pickNo":111,"round":12,"column":10,"rosterId":10,"playerId":"4973","name":"Hayden Hurst","position":"TE"},{"pickNo":112,"round":12,"column":9,"rosterId":7,"playerId":"1067","name":"Marvin Jones Jr.","position":"WR"},{"pickNo":113,"round":12,"column":8,"rosterId":8,"playerId":"538","name":"Emmanuel Sanders","position":"WR"},{"pickNo":114,"round":12,"column":7,"rosterId":3,"playerId":"830","name":"A.J. Green","position":"WR"},{"pickNo":115,"round":12,"column":6,"rosterId":5,"playerId":"3306","name":"Jordan Howard","position":"RB"},{"pickNo":116,"round":12,"column":5,"rosterId":2,"playerId":"NE","name":"New England Patriots","position":"DEF"},{"pickNo":117,"round":12,"column":4,"rosterId":9,"playerId":"4082","name":"Curtis Samuel","position":"WR"},{"pickNo":118,"round":12,"column":3,"rosterId":6,"playerId":"4455","name":"Matt Breida","position":"RB"},{"pickNo":119,"round":12,"column":2,"rosterId":4,"playerId":"1848","name":"James White","position":"RB"},{"pickNo":120,"round":12,"column":1,"rosterId":1,"playerId":"4943","name":"Sam Darnold","position":"QB"},{"pickNo":121,"round":13,"column":1,"rosterId":1,"playerId":"5917","name":"Mecole Hardman","position":"WR"},{"pickNo":122,"round":13,"column":2,"rosterId":4,"playerId":"3214","name":"Hunter Henry","position":"TE"},{"pickNo":123,"round":13,"column":3,"rosterId":6,"playerId":"5857","name":"Noah Fant","position":"TE"},{"pickNo":124,"round":13,"column":4,"rosterId":9,"playerId":"6870","name":"Bryan Edwards","position":"WR"},{"pickNo":125,"round":13,"column":5,"rosterId":2,"playerId":"2118","name":"Eric Ebron","position":"TE"},{"pickNo":126,"round":13,"column":6,"rosterId":5,"playerId":"3423","name":"Robby Anderson","position":"WR"},{"pickNo":127,"round":13,"column":7,"rosterId":3,"playerId":"3200","name":"Sterling Shepard","position":"WR"},{"pickNo":128,"round":13,"column":8,"rosterId":8,"playerId":"1476","name":"Latavius Murray","position":"RB"},{"pickNo":129,"round":13,"column":9,"rosterId":7,"playerId":"5937","name":"Diontae Johnson","position":"WR"},{"pickNo":130,"round":13,"column":10,"rosterId":10,"playerId":"5878","name":"N'Keal Harry","position":"WR"},{"pickNo":131,"round":14,"column":10,"rosterId":10,"playerId":"5000","name":"Chase Edmonds","position":"RB"},{"pickNo":132,"round":14,"column":9,"rosterId":7,"playerId":"5987","name":"Alexander Mattison","position":"RB"},{"pickNo":133,"round":14,"column":8,"rosterId":8,"playerId":"4227","name":"Harrison Butker","position":"K"},{"pickNo":134,"round":14,"column":7,"rosterId":3,"playerId":"2028","name":"Derek Carr","position":"QB"},{"pickNo":135,"round":14,"column":6,"rosterId":5,"playerId":"2378","name":"Tevin Coleman","position":"RB"},{"pickNo":136,"round":14,"column":5,"rosterId":2,"playerId":"2238","name":"John Brown","position":"WR"},{"pickNo":137,"round":14,"column":4,"rosterId":9,"playerId":"1817","name":"Sammy Watkins","position":"WR"},{"pickNo":138,"round":14,"column":3,"rosterId":6,"playerId":"6768","name":"Tua Tagovailoa","position":"QB"},{"pickNo":139,"round":14,"column":2,"rosterId":4,"playerId":"5068","name":"Kerryon Johnson","position":"RB"},{"pickNo":140,"round":14,"column":1,"rosterId":1,"playerId":"3271","name":"Tyler Higbee","position":"TE"},{"pickNo":141,"round":15,"column":1,"rosterId":1,"playerId":"6789","name":"Henry Ruggs III","position":"WR"},{"pickNo":142,"round":15,"column":2,"rosterId":4,"playerId":"6814","name":"Laviska Shenault Jr.","position":"WR"},{"pickNo":143,"round":15,"column":3,"rosterId":6,"playerId":"2410","name":"Jamison Crowder","position":"WR"},{"pickNo":144,"round":15,"column":4,"rosterId":9,"playerId":"6794","name":"Justin Jefferson","position":"WR"},{"pickNo":145,"round":15,"column":5,"rosterId":2,"playerId":"6845","name":"Zack Moss","position":"RB"},{"pickNo":146,"round":15,"column":6,"rosterId":5,"playerId":"6828","name":"A.J. Dillon","position":"RB"},{"pickNo":147,"round":15,"column":7,"rosterId":3,"playerId":"6798","name":"Jalen Reagor","position":"WR"},{"pickNo":148,"round":15,"column":8,"rosterId":8,"playerId":"4993","name":"Mike Gesicki","position":"TE"},{"pickNo":149,"round":15,"column":9,"rosterId":7,"playerId":"1264","name":"Justin Tucker","position":"K"},{"pickNo":150,"round":15,"column":10,"rosterId":10,"playerId":"367","name":"Jared Cook","position":"TE"},{"pickNo":151,"round":16,"column":10,"rosterId":10,"playerId":"KC","name":"Kansas City Chiefs","position":"DEF"},{"pickNo":152,"round":16,"column":9,"rosterId":7,"playerId":"SF","name":"San Francisco 49ers","position":"DEF"},{"pickNo":153,"round":16,"column":8,"rosterId":8,"playerId":"333","name":"Ryan Fitzpatrick","position":"QB"},{"pickNo":154,"round":16,"column":7,"rosterId":3,"playerId":"503","name":"Graham Gano","position":"K"},{"pickNo":155,"round":16,"column":6,"rosterId":5,"playerId":"PIT","name":"Pittsburgh Steelers","position":"DEF"},{"pickNo":156,"round":16,"column":5,"rosterId":2,"playerId":"642","name":"Golden Tate","position":"WR"},{"pickNo":157,"round":16,"column":4,"rosterId":9,"playerId":"1266","name":"Greg Zuerlein","position":"K"},{"pickNo":158,"round":16,"column":3,"rosterId":6,"playerId":"BAL","name":"Baltimore Ravens","position":"DEF"},{"pickNo":159,"round":16,"column":2,"rosterId":4,"playerId":"3451","name":"Ka'imi Fairbairn","position":"K"},{"pickNo":160,"round":16,"column":1,"rosterId":1,"playerId":"BUF","name":"Buffalo Bills","position":"DEF"},{"pickNo":161,"round":17,"column":1,"rosterId":1,"playerId":"3678","name":"Wil Lutz","position":"K"},{"pickNo":162,"round":17,"column":2,"rosterId":4,"playerId":"SEA","name":"Seattle Seahawks","position":"DEF"},{"pickNo":163,"round":17,"column":3,"rosterId":6,"playerId":"49","name":"Robbie Gould","position":"K"},{"pickNo":164,"round":17,"column":4,"rosterId":9,"playerId":"CHI","name":"Chicago Bears","position":"DEF"},{"pickNo":165,"round":17,"column":5,"rosterId":2,"playerId":"4233","name":"Zane Gonzalez","position":"K"},{"pickNo":166,"round":17,"column":6,"rosterId":5,"playerId":"4055","name":"O.J. Howard","position":"TE"},{"pickNo":167,"round":17,"column":7,"rosterId":3,"playerId":"NO","name":"New Orleans Saints","position":"DEF"},{"pickNo":168,"round":17,"column":8,"rosterId":8,"playerId":"MIN","name":"Minnesota Vikings","position":"DEF"},{"pickNo":169,"round":17,"column":9,"rosterId":7,"playerId":"4144","name":"Jonnu Smith","position":"TE"},{"pickNo":170,"round":17,"column":10,"rosterId":10,"playerId":"775","name":"Stephen Hauschka","position":"K"}]}}
+{
+  "schemaVersion": "season-view/1",
+  "docs": "https://github.com/cdemurjian/uconn-gn-ffl#pointing-someone-at-the-raw-data",
+  "provider": "sleeper",
+  "year": "2020",
+  "leagueName": "UconnGreatNeckFFL",
+  "providerLeagueId": "596542463120818176",
+  "ffwrappedLeagueId": "596542463120818176",
+  "settings": {
+    "teams": 10,
+    "playoffTeams": 6,
+    "playoffWeekStart": 14,
+    "rosterPositions": [
+      "QB",
+      "QB",
+      "RB",
+      "RB",
+      "WR",
+      "WR",
+      "WR",
+      "TE",
+      "FLEX",
+      "K",
+      "DEF",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN"
+    ],
+    "scoring": {
+      "sack": 1.0,
+      "qb_hit": 0.0,
+      "fgm_40_49": 4.0,
+      "bonus_rec_te": 0.0,
+      "fgm_yds": 0.0,
+      "bonus_rec_yd_100": 0.0,
+      "bonus_rush_yd_100": 0.0,
+      "pass_int": -2.0,
+      "fgmiss_50p": 0.0,
+      "pts_allow_0": 5.0,
+      "bonus_pass_yd_400": 0.0,
+      "pass_2pt": 2.0,
+      "rec_0_4": 0.0,
+      "yds_allow_450_499": 0.0,
+      "st_td": 0.0,
+      "rec_30_39": 0.0,
+      "pr_td": 0.0,
+      "fgm_yds_over_30": 0.0,
+      "rec_td": 6.0,
+      "yds_allow_400_449": 0.0,
+      "tkl_ast": 0.0,
+      "rec_20_29": 0.0,
+      "idp_blk_kick": 0.0,
+      "fgm_30_39": 3.0,
+      "kr_td": 0.0,
+      "xpmiss": 0.0,
+      "rush_td": 6.0,
+      "def_pr_td": 0.0,
+      "pts_allow": 0.0,
+      "idp_tkl": 0.0,
+      "yds_allow_550p": 0.0,
+      "pass_td_40p": 0.0,
+      "def_st_tkl_solo": 0.0,
+      "yds_allow_350_399": 0.0,
+      "fgm": 0.0,
+      "bonus_rush_rec_yd_100": 0.0,
+      "rec_2pt": 2.0,
+      "bonus_pass_cmp_25": 0.0,
+      "idp_tkl_loss": 0.0,
+      "rush_fd": 0.0,
+      "pass_int_td": 0.0,
+      "idp_tkl_solo": 0.0,
+      "pass_att": 0.0,
+      "st_fum_rec": 0.0,
+      "fgmiss": -1.0,
+      "ff": 0.0,
+      "idp_int": 0.0,
+      "fgmiss_30_39": 0.0,
+      "rec": 0.5,
+      "yds_allow_200_299": 0.0,
+      "idp_safe": 0.0,
+      "pts_allow_14_20": 1.0,
+      "def_2pt": 2.0,
+      "fgm_0_19": 3.0,
+      "idp_def_td": 0.0,
+      "def_kr_td": 0.0,
+      "int": 2.0,
+      "def_st_fum_rec": 2.0,
+      "fum_lost": -2.0,
+      "pts_allow_1_6": 4.0,
+      "rec_fd": 0.0,
+      "fgmiss_20_29": 0.0,
+      "rush_att": 0.0,
+      "st_tkl_solo": 0.0,
+      "yds_allow": 0.0,
+      "rec_5_9": 0.0,
+      "idp_sack": 0.0,
+      "fgm_20_29": 3.0,
+      "yds_allow_500_549": 0.0,
+      "pts_allow_21_27": 0.0,
+      "bonus_rec_wr": 0.0,
+      "bonus_pass_yd_300": 0.0,
+      "xpm": 1.0,
+      "pass_sack": 0.0,
+      "rec_40p": 0.0,
+      "fgmiss_0_19": 0.0,
+      "pass_cmp": 0.0,
+      "tkl_loss": 0.0,
+      "rush_2pt": 2.0,
+      "def_pass_def": 0.0,
+      "yds_allow_300_349": 0.0,
+      "fum_rec": 2.0,
+      "idp_pass_def": 0.0,
+      "rec_10_19": 0.0,
+      "bonus_rec_yd_200": 0.0,
+      "def_st_td": 6.0,
+      "tkl": 0.0,
+      "pass_cmp_40p": 0.0,
+      "fgm_50p": 5.0,
+      "def_td": 6.0,
+      "idp_fum_rec": 0.0,
+      "pass_fd": 0.0,
+      "rec_td_40p": 0.0,
+      "bonus_rush_yd_200": 0.0,
+      "safe": 2.0,
+      "pass_yd": 0.03999999910593033,
+      "fgmiss_40_49": 0.0,
+      "blk_kick": 2.0,
+      "pass_td": 4.0,
+      "tkl_solo": 0.0,
+      "bonus_rush_att_20": 0.0,
+      "yds_allow_100_199": 0.0,
+      "idp_qb_hit": 0.0,
+      "rush_yd": 0.10000000149011612,
+      "yds_allow_0_100": 0.0,
+      "bonus_rec_rb": 0.0,
+      "rush_40p": 0.0,
+      "fum": 0.0,
+      "pts_allow_28_34": -1.0,
+      "pts_allow_35p": -3.0,
+      "bonus_rush_rec_yd_200": 0.0,
+      "fum_rec_td": 6.0,
+      "rec_yd": 0.10000000149011612,
+      "rush_td_40p": 0.0,
+      "def_st_ff": 0.0,
+      "pass_inc": 0.0,
+      "pts_allow_7_13": 3.0,
+      "idp_ff": 0.0,
+      "st_ff": 0.0,
+      "idp_tkl_ast": 0.0
+    }
+  },
+  "teams": [
+    {
+      "rosterId": 9,
+      "teamName": "Operation Warp Speed",
+      "manager": "Matt",
+      "displayName": "mattyice185",
+      "wins": 6,
+      "losses": 7,
+      "pointsFor": 1732.72,
+      "pointsAgainst": 1694.98,
+      "finalRank": 1,
+      "playoffSeed": 6,
+      "streak": "LLWLLLLWWLWWW"
+    },
+    {
+      "rosterId": 4,
+      "teamName": "Toast Malone",
+      "manager": "Jay",
+      "displayName": "Jkorm0112",
+      "wins": 6,
+      "losses": 7,
+      "pointsFor": 1850.4,
+      "pointsAgainst": 1946.5,
+      "finalRank": 2,
+      "playoffSeed": 5,
+      "streak": "WLLLWWWLLWLLW"
+    },
+    {
+      "rosterId": 5,
+      "teamName": "Snapped",
+      "manager": "Nick",
+      "displayName": "nickborn24",
+      "wins": 11,
+      "losses": 2,
+      "pointsFor": 2061.12,
+      "pointsAgainst": 1834.56,
+      "finalRank": 3,
+      "playoffSeed": 1,
+      "streak": "LWWWWWWWWLWWW"
+    },
+    {
+      "rosterId": 6,
+      "teamName": "MIaMi FoOtBaLl TeAm",
+      "manager": "Kap",
+      "displayName": "joshkapenhas",
+      "wins": 9,
+      "losses": 4,
+      "pointsFor": 1761.7,
+      "pointsAgainst": 1576.84,
+      "finalRank": 4,
+      "playoffSeed": 2,
+      "streak": "WLWWWWLWWWLWL"
+    },
+    {
+      "rosterId": 2,
+      "teamName": "Tanking For Trev",
+      "manager": "Bij",
+      "displayName": "justinbij",
+      "wins": 7,
+      "losses": 6,
+      "pointsFor": 1777.1,
+      "pointsAgainst": 1757.44,
+      "finalRank": 5,
+      "playoffSeed": 3,
+      "streak": "WWLLLWLLWWWWL"
+    },
+    {
+      "rosterId": 7,
+      "teamName": "The witching hours",
+      "manager": "Tyler",
+      "displayName": "tylerjhockey",
+      "wins": 7,
+      "losses": 6,
+      "pointsFor": 1734.42,
+      "pointsAgainst": 1821.88,
+      "finalRank": 6,
+      "playoffSeed": 4,
+      "streak": "WWLWLLWLWWLLW"
+    },
+    {
+      "rosterId": 3,
+      "teamName": "The McRibs",
+      "manager": "Chaf",
+      "displayName": "mchaf0503",
+      "wins": 5,
+      "losses": 8,
+      "pointsFor": 1800.58,
+      "pointsAgainst": 1799.0,
+      "finalRank": 7,
+      "playoffSeed": 0,
+      "streak": "WLLWWLLLLLWLW"
+    },
+    {
+      "rosterId": 1,
+      "teamName": "Devastation (2108.1)",
+      "manager": "Charlie",
+      "displayName": "cdemurjian",
+      "wins": 5,
+      "losses": 8,
+      "pointsFor": 1729.78,
+      "pointsAgainst": 1758.66,
+      "finalRank": 8,
+      "playoffSeed": 0,
+      "streak": "LWWWLLLLLWLWL"
+    },
+    {
+      "rosterId": 8,
+      "teamName": "gg",
+      "manager": "Stove",
+      "displayName": "KingStove",
+      "wins": 5,
+      "losses": 8,
+      "pointsFor": 1713.16,
+      "pointsAgainst": 1831.92,
+      "finalRank": 9,
+      "playoffSeed": 0,
+      "streak": "LWWLWLWWLLLLL"
+    },
+    {
+      "rosterId": 10,
+      "teamName": "To Dare Is to Do",
+      "manager": "Devin",
+      "displayName": "devinpallanck",
+      "wins": 4,
+      "losses": 9,
+      "pointsFor": 1773.04,
+      "pointsAgainst": 1912.24,
+      "finalRank": 10,
+      "playoffSeed": 0,
+      "streak": "LLLLLWWWLLWLL"
+    }
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 7,
+          "away": 9,
+          "homePoints": 140.5,
+          "awayPoints": 123.0,
+          "winnerRosterId": 7,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 3,
+          "homePoints": 133.24,
+          "awayPoints": 170.66,
+          "winnerRosterId": 3,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 6,
+          "away": 8,
+          "homePoints": 136.54,
+          "awayPoints": 113.78,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 10,
+          "homePoints": 165.62,
+          "awayPoints": 149.5,
+          "winnerRosterId": 2,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 5,
+          "homePoints": 146.42,
+          "awayPoints": 129.16,
+          "winnerRosterId": 4,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 7,
+          "homePoints": 148.7,
+          "awayPoints": 156.18,
+          "winnerRosterId": 7,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 9,
+          "homePoints": 135.38,
+          "awayPoints": 112.2,
+          "winnerRosterId": 1,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 8,
+          "away": 10,
+          "homePoints": 146.36,
+          "awayPoints": 143.44,
+          "winnerRosterId": 8,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 5,
+          "away": 6,
+          "homePoints": 160.32,
+          "awayPoints": 144.4,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 4,
+          "homePoints": 194.92,
+          "awayPoints": 140.34,
+          "winnerRosterId": 2,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 7,
+          "homePoints": 161.72,
+          "awayPoints": 111.96,
+          "winnerRosterId": 1,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 9,
+          "homePoints": 141.94,
+          "awayPoints": 160.78,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 8,
+          "homePoints": 116.56,
+          "awayPoints": 167.6,
+          "winnerRosterId": 8,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 6,
+          "homePoints": 149.02,
+          "awayPoints": 151.58,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 5,
+          "away": 10,
+          "homePoints": 200.72,
+          "awayPoints": 137.18,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 7,
+          "away": 8,
+          "homePoints": 118.1,
+          "awayPoints": 117.7,
+          "winnerRosterId": 7,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 6,
+          "away": 9,
+          "homePoints": 149.98,
+          "awayPoints": 100.44,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 10,
+          "homePoints": 156.36,
+          "awayPoints": 138.26,
+          "winnerRosterId": 3,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 4,
+          "homePoints": 180.98,
+          "awayPoints": 155.82,
+          "winnerRosterId": 1,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 5,
+          "homePoints": 140.82,
+          "awayPoints": 173.32,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 6,
+          "away": 7,
+          "homePoints": 160.6,
+          "awayPoints": 141.72,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 8,
+          "away": 9,
+          "homePoints": 134.3,
+          "awayPoints": 129.32,
+          "winnerRosterId": 8,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 3,
+          "homePoints": 93.46,
+          "awayPoints": 117.44,
+          "winnerRosterId": 3,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 5,
+          "homePoints": 120.44,
+          "awayPoints": 135.96,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 10,
+          "homePoints": 181.04,
+          "awayPoints": 156.76,
+          "winnerRosterId": 4,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 7,
+          "away": 10,
+          "homePoints": 121.2,
+          "awayPoints": 168.6,
+          "winnerRosterId": 10,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 9,
+          "homePoints": 134.36,
+          "awayPoints": 117.84,
+          "winnerRosterId": 2,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 5,
+          "homePoints": 154.44,
+          "awayPoints": 157.72,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 6,
+          "homePoints": 105.02,
+          "awayPoints": 112.3,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 8,
+          "homePoints": 153.66,
+          "awayPoints": 139.48,
+          "winnerRosterId": 4,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 7,
+          "homePoints": 116.94,
+          "awayPoints": 134.38,
+          "winnerRosterId": 7,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 5,
+          "away": 9,
+          "homePoints": 155.34,
+          "awayPoints": 111.64,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 4,
+          "homePoints": 150.66,
+          "awayPoints": 173.8,
+          "winnerRosterId": 4,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 8,
+          "homePoints": 167.04,
+          "awayPoints": 180.96,
+          "winnerRosterId": 8,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 6,
+          "away": 10,
+          "homePoints": 104.22,
+          "awayPoints": 143.94,
+          "winnerRosterId": 10,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 5,
+          "away": 7,
+          "homePoints": 157.68,
+          "awayPoints": 141.18,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 9,
+          "homePoints": 83.42,
+          "awayPoints": 162.5,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 8,
+          "homePoints": 110.0,
+          "awayPoints": 118.52,
+          "winnerRosterId": 8,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 10,
+          "homePoints": 119.32,
+          "awayPoints": 131.08,
+          "winnerRosterId": 10,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 6,
+          "homePoints": 96.0,
+          "awayPoints": 105.52,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 7,
+          "homePoints": 153.42,
+          "awayPoints": 160.16,
+          "winnerRosterId": 7,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 9,
+          "away": 10,
+          "homePoints": 141.16,
+          "awayPoints": 92.14,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 6,
+          "homePoints": 83.56,
+          "awayPoints": 141.38,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 2,
+          "homePoints": 127.5,
+          "awayPoints": 129.3,
+          "winnerRosterId": 2,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 5,
+          "away": 8,
+          "homePoints": 162.3,
+          "awayPoints": 139.92,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 7,
+          "away": 9,
+          "homePoints": 110.06,
+          "awayPoints": 96.54,
+          "winnerRosterId": 7,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 3,
+          "homePoints": 137.28,
+          "awayPoints": 111.8,
+          "winnerRosterId": 1,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 6,
+          "away": 8,
+          "homePoints": 110.76,
+          "awayPoints": 99.72,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 10,
+          "homePoints": 149.04,
+          "awayPoints": 127.14,
+          "winnerRosterId": 2,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 5,
+          "homePoints": 172.96,
+          "awayPoints": 128.02,
+          "winnerRosterId": 4,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 7,
+          "homePoints": 149.92,
+          "awayPoints": 109.98,
+          "winnerRosterId": 3,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 9,
+          "homePoints": 129.48,
+          "awayPoints": 169.7,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 8,
+          "away": 10,
+          "homePoints": 101.46,
+          "awayPoints": 142.9,
+          "winnerRosterId": 10,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 5,
+          "away": 6,
+          "homePoints": 153.52,
+          "awayPoints": 133.1,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 4,
+          "homePoints": 132.0,
+          "awayPoints": 108.8,
+          "winnerRosterId": 2,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 7,
+          "homePoints": 128.94,
+          "awayPoints": 95.2,
+          "winnerRosterId": 1,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 9,
+          "homePoints": 153.6,
+          "awayPoints": 169.78,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 8,
+          "homePoints": 147.5,
+          "awayPoints": 115.24,
+          "winnerRosterId": 2,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 6,
+          "homePoints": 91.98,
+          "awayPoints": 176.84,
+          "winnerRosterId": 6,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 5,
+          "away": 10,
+          "homePoints": 174.24,
+          "awayPoints": 133.48,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "isPlayoffWeek": false,
+      "games": [
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 7,
+          "away": 8,
+          "homePoints": 193.8,
+          "awayPoints": 138.12,
+          "winnerRosterId": 7,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 6,
+          "away": 9,
+          "homePoints": 134.48,
+          "awayPoints": 137.82,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 3,
+          "away": 10,
+          "homePoints": 151.5,
+          "awayPoints": 108.62,
+          "winnerRosterId": 3,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 1,
+          "away": 4,
+          "homePoints": 83.44,
+          "awayPoints": 141.72,
+          "winnerRosterId": 4,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "REGULAR",
+          "isTitlePath": false,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 5,
+          "homePoints": 160.58,
+          "awayPoints": 172.82,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "isPlayoffWeek": true,
+      "games": [
+        {
+          "tier": "WINNERS_BRACKET",
+          "isTitlePath": true,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 7,
+          "homePoints": 159.98,
+          "awayPoints": 154.18,
+          "winnerRosterId": 4,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "WINNERS_BRACKET",
+          "isTitlePath": true,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 2,
+          "away": 9,
+          "homePoints": 147.12,
+          "awayPoints": 168.78,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "LOSERS_CONSOLATION_LADDER",
+          "isTitlePath": false,
+          "isConsolation": true,
+          "isBye": false,
+          "home": 3,
+          "away": 10,
+          "homePoints": 104.84,
+          "awayPoints": 132.96,
+          "winnerRosterId": 10,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "LOSERS_CONSOLATION_LADDER",
+          "isTitlePath": false,
+          "isConsolation": true,
+          "isBye": false,
+          "home": 1,
+          "away": 8,
+          "homePoints": 102.26,
+          "awayPoints": 102.22,
+          "winnerRosterId": 1,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "WINNERS_BRACKET",
+          "isTitlePath": true,
+          "isConsolation": false,
+          "isBye": true,
+          "home": 5,
+          "away": null,
+          "homePoints": 144.14,
+          "awayPoints": null,
+          "winnerRosterId": null,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "WINNERS_BRACKET",
+          "isTitlePath": true,
+          "isConsolation": false,
+          "isBye": true,
+          "home": 6,
+          "away": null,
+          "homePoints": 94.14,
+          "awayPoints": null,
+          "winnerRosterId": null,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "isPlayoffWeek": true,
+      "games": [
+        {
+          "tier": "WINNERS_BRACKET",
+          "isTitlePath": true,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 5,
+          "away": 9,
+          "homePoints": 126.66,
+          "awayPoints": 160.08,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "WINNERS_BRACKET",
+          "isTitlePath": true,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 6,
+          "homePoints": 192.5,
+          "awayPoints": 87.92,
+          "winnerRosterId": 4,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "WINNERS_CONSOLATION_LADDER",
+          "isTitlePath": false,
+          "isConsolation": true,
+          "isBye": false,
+          "home": 2,
+          "away": 7,
+          "homePoints": 153.36,
+          "awayPoints": 136.36,
+          "winnerRosterId": 2,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "LOSERS_CONSOLATION_LADDER",
+          "isTitlePath": false,
+          "isConsolation": true,
+          "isBye": false,
+          "home": 3,
+          "away": 8,
+          "homePoints": 120.64,
+          "awayPoints": 105.76,
+          "winnerRosterId": 3,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "LOSERS_CONSOLATION_LADDER",
+          "isTitlePath": false,
+          "isConsolation": true,
+          "isBye": false,
+          "home": 1,
+          "away": 10,
+          "homePoints": 143.96,
+          "awayPoints": 103.52,
+          "winnerRosterId": 1,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "isPlayoffWeek": true,
+      "games": [
+        {
+          "tier": "WINNERS_BRACKET",
+          "isTitlePath": true,
+          "isConsolation": false,
+          "isBye": false,
+          "home": 4,
+          "away": 9,
+          "homePoints": 129.18,
+          "awayPoints": 139.6,
+          "winnerRosterId": 9,
+          "homeStarters": [],
+          "awayStarters": []
+        },
+        {
+          "tier": "WINNERS_CONSOLATION_LADDER",
+          "isTitlePath": false,
+          "isConsolation": true,
+          "isBye": false,
+          "home": 5,
+          "away": 6,
+          "homePoints": 192.44,
+          "awayPoints": 120.32,
+          "winnerRosterId": 5,
+          "homeStarters": [],
+          "awayStarters": []
+        }
+      ]
+    }
+  ],
+  "draft": {
+    "rounds": 17,
+    "teams": 10,
+    "picks": [
+      {
+        "pickNo": 1,
+        "round": 1,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "4034",
+        "name": "Christian McCaffrey",
+        "position": "RB"
+      },
+      {
+        "pickNo": 2,
+        "round": 1,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "4866",
+        "name": "Saquon Barkley",
+        "position": "RB"
+      },
+      {
+        "pickNo": 3,
+        "round": 1,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "3164",
+        "name": "Ezekiel Elliott",
+        "position": "RB"
+      },
+      {
+        "pickNo": 4,
+        "round": 1,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "4046",
+        "name": "Patrick Mahomes",
+        "position": "QB"
+      },
+      {
+        "pickNo": 5,
+        "round": 1,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "4881",
+        "name": "Lamar Jackson",
+        "position": "QB"
+      },
+      {
+        "pickNo": 6,
+        "round": 1,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "4035",
+        "name": "Alvin Kamara",
+        "position": "RB"
+      },
+      {
+        "pickNo": 7,
+        "round": 1,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "6820",
+        "name": "Clyde Edwards-Helaire",
+        "position": "RB"
+      },
+      {
+        "pickNo": 8,
+        "round": 1,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "3199",
+        "name": "Michael Thomas",
+        "position": "WR"
+      },
+      {
+        "pickNo": 9,
+        "round": 1,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "4029",
+        "name": "Dalvin Cook",
+        "position": "RB"
+      },
+      {
+        "pickNo": 10,
+        "round": 1,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "3198",
+        "name": "Derrick Henry",
+        "position": "RB"
+      },
+      {
+        "pickNo": 11,
+        "round": 2,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "6151",
+        "name": "Miles Sanders",
+        "position": "RB"
+      },
+      {
+        "pickNo": 12,
+        "round": 2,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "5850",
+        "name": "Josh Jacobs",
+        "position": "RB"
+      },
+      {
+        "pickNo": 13,
+        "round": 2,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "4663",
+        "name": "Austin Ekeler",
+        "position": "RB"
+      },
+      {
+        "pickNo": 14,
+        "round": 2,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "2133",
+        "name": "Davante Adams",
+        "position": "WR"
+      },
+      {
+        "pickNo": 15,
+        "round": 2,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "4988",
+        "name": "Nick Chubb",
+        "position": "RB"
+      },
+      {
+        "pickNo": 16,
+        "round": 2,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "4199",
+        "name": "Aaron Jones",
+        "position": "RB"
+      },
+      {
+        "pickNo": 17,
+        "round": 2,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "947",
+        "name": "Julio Jones",
+        "position": "WR"
+      },
+      {
+        "pickNo": 18,
+        "round": 2,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "3321",
+        "name": "Tyreek Hill",
+        "position": "WR"
+      },
+      {
+        "pickNo": 19,
+        "round": 2,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "1426",
+        "name": "DeAndre Hopkins",
+        "position": "WR"
+      },
+      {
+        "pickNo": 20,
+        "round": 2,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "4018",
+        "name": "Joe Mixon",
+        "position": "RB"
+      },
+      {
+        "pickNo": 21,
+        "round": 3,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "2216",
+        "name": "Mike Evans",
+        "position": "WR"
+      },
+      {
+        "pickNo": 22,
+        "round": 3,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "4037",
+        "name": "Chris Godwin",
+        "position": "WR"
+      },
+      {
+        "pickNo": 23,
+        "round": 3,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "3242",
+        "name": "Kenyan Drake",
+        "position": "RB"
+      },
+      {
+        "pickNo": 24,
+        "round": 3,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "1466",
+        "name": "Travis Kelce",
+        "position": "TE"
+      },
+      {
+        "pickNo": 25,
+        "round": 3,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "2309",
+        "name": "Amari Cooper",
+        "position": "WR"
+      },
+      {
+        "pickNo": 26,
+        "round": 3,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "4131",
+        "name": "Kenny Golladay",
+        "position": "WR"
+      },
+      {
+        "pickNo": 27,
+        "round": 3,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "4017",
+        "name": "Deshaun Watson",
+        "position": "QB"
+      },
+      {
+        "pickNo": 28,
+        "round": 3,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "1234",
+        "name": "Russell Wilson",
+        "position": "QB"
+      },
+      {
+        "pickNo": 29,
+        "round": 3,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "4217",
+        "name": "George Kittle",
+        "position": "TE"
+      },
+      {
+        "pickNo": 30,
+        "round": 3,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "1689",
+        "name": "Adam Thielen",
+        "position": "WR"
+      },
+      {
+        "pickNo": 31,
+        "round": 4,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "4983",
+        "name": "D.J. Moore",
+        "position": "WR"
+      },
+      {
+        "pickNo": 32,
+        "round": 4,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "3969",
+        "name": "Leonard Fournette",
+        "position": "RB"
+      },
+      {
+        "pickNo": 33,
+        "round": 4,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "5849",
+        "name": "Kyler Murray",
+        "position": "QB"
+      },
+      {
+        "pickNo": 34,
+        "round": 4,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "3294",
+        "name": "Dak Prescott",
+        "position": "QB"
+      },
+      {
+        "pickNo": 35,
+        "round": 4,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "4039",
+        "name": "Cooper Kupp",
+        "position": "WR"
+      },
+      {
+        "pickNo": 36,
+        "round": 4,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "4273",
+        "name": "Chris Carson",
+        "position": "RB"
+      },
+      {
+        "pickNo": 37,
+        "round": 4,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "1408",
+        "name": "Le'Veon Bell",
+        "position": "RB"
+      },
+      {
+        "pickNo": 38,
+        "round": 4,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "2078",
+        "name": "Odell Beckham Jr.",
+        "position": "WR"
+      },
+      {
+        "pickNo": 39,
+        "round": 4,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "5846",
+        "name": "DK Metcalf",
+        "position": "WR"
+      },
+      {
+        "pickNo": 40,
+        "round": 4,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "1479",
+        "name": "Keenan Allen",
+        "position": "WR"
+      },
+      {
+        "pickNo": 41,
+        "round": 5,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "167",
+        "name": "Tom Brady",
+        "position": "QB"
+      },
+      {
+        "pickNo": 42,
+        "round": 5,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "2315",
+        "name": "Todd Gurley II",
+        "position": "RB"
+      },
+      {
+        "pickNo": 43,
+        "round": 5,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "4137",
+        "name": "James Conner",
+        "position": "RB"
+      },
+      {
+        "pickNo": 44,
+        "round": 5,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "1992",
+        "name": "Allen Robinson II",
+        "position": "WR"
+      },
+      {
+        "pickNo": 45,
+        "round": 5,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "1339",
+        "name": "Zach Ertz",
+        "position": "TE"
+      },
+      {
+        "pickNo": 46,
+        "round": 5,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "5012",
+        "name": "Mark Andrews",
+        "position": "TE"
+      },
+      {
+        "pickNo": 47,
+        "round": 5,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "2391",
+        "name": "David Johnson",
+        "position": "RB"
+      },
+      {
+        "pickNo": 48,
+        "round": 5,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "2374",
+        "name": "Tyler Lockett",
+        "position": "WR"
+      },
+      {
+        "pickNo": 49,
+        "round": 5,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "5859",
+        "name": "A.J. Brown",
+        "position": "WR"
+      },
+      {
+        "pickNo": 50,
+        "round": 5,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "1352",
+        "name": "Robert Woods",
+        "position": "WR"
+      },
+      {
+        "pickNo": 51,
+        "round": 6,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "3161",
+        "name": "Carson Wentz",
+        "position": "QB"
+      },
+      {
+        "pickNo": 52,
+        "round": 6,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "24",
+        "name": "Matt Ryan",
+        "position": "QB"
+      },
+      {
+        "pickNo": 53,
+        "round": 6,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "2505",
+        "name": "Darren Waller",
+        "position": "TE"
+      },
+      {
+        "pickNo": 54,
+        "round": 6,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "2449",
+        "name": "Stefon Diggs",
+        "position": "WR"
+      },
+      {
+        "pickNo": 55,
+        "round": 6,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "289",
+        "name": "Drew Brees",
+        "position": "QB"
+      },
+      {
+        "pickNo": 56,
+        "round": 6,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "4981",
+        "name": "Calvin Ridley",
+        "position": "WR"
+      },
+      {
+        "pickNo": 57,
+        "round": 6,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "6813",
+        "name": "Jonathan Taylor",
+        "position": "RB"
+      },
+      {
+        "pickNo": 58,
+        "round": 6,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "4066",
+        "name": "Evan Engram",
+        "position": "TE"
+      },
+      {
+        "pickNo": 59,
+        "round": 6,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "96",
+        "name": "Aaron Rodgers",
+        "position": "QB"
+      },
+      {
+        "pickNo": 60,
+        "round": 6,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "4984",
+        "name": "Josh Allen",
+        "position": "QB"
+      },
+      {
+        "pickNo": 61,
+        "round": 7,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "5848",
+        "name": "Marquise Brown",
+        "position": "WR"
+      },
+      {
+        "pickNo": 62,
+        "round": 7,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "5870",
+        "name": "Daniel Jones",
+        "position": "QB"
+      },
+      {
+        "pickNo": 63,
+        "round": 7,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "421",
+        "name": "Matthew Stafford",
+        "position": "QB"
+      },
+      {
+        "pickNo": 64,
+        "round": 7,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "5045",
+        "name": "Courtland Sutton",
+        "position": "WR"
+      },
+      {
+        "pickNo": 65,
+        "round": 7,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "4892",
+        "name": "Baker Mayfield",
+        "position": "QB"
+      },
+      {
+        "pickNo": 66,
+        "round": 7,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "5927",
+        "name": "Terry McLaurin",
+        "position": "WR"
+      },
+      {
+        "pickNo": 67,
+        "round": 7,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "2320",
+        "name": "Melvin Gordon III",
+        "position": "RB"
+      },
+      {
+        "pickNo": 68,
+        "round": 7,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "2319",
+        "name": "DeVante Parker",
+        "position": "WR"
+      },
+      {
+        "pickNo": 69,
+        "round": 7,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "4951",
+        "name": "DJ Chark Jr.",
+        "position": "WR"
+      },
+      {
+        "pickNo": 70,
+        "round": 7,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "5052",
+        "name": "Ronald Jones II",
+        "position": "RB"
+      },
+      {
+        "pickNo": 71,
+        "round": 8,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "4040",
+        "name": "JuJu Smith-Schuster",
+        "position": "WR"
+      },
+      {
+        "pickNo": 72,
+        "round": 8,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "3163",
+        "name": "Jared Goff",
+        "position": "QB"
+      },
+      {
+        "pickNo": 73,
+        "round": 8,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "1110",
+        "name": "T.Y. Hilton",
+        "position": "WR"
+      },
+      {
+        "pickNo": 74,
+        "round": 8,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "1825",
+        "name": "Jarvis Landry",
+        "position": "WR"
+      },
+      {
+        "pickNo": 75,
+        "round": 8,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "1837",
+        "name": "Jimmy Garoppolo",
+        "position": "QB"
+      },
+      {
+        "pickNo": 76,
+        "round": 8,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "6130",
+        "name": "Devin Singletary",
+        "position": "RB"
+      },
+      {
+        "pickNo": 77,
+        "round": 8,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "1166",
+        "name": "Kirk Cousins",
+        "position": "QB"
+      },
+      {
+        "pickNo": 78,
+        "round": 8,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "3225",
+        "name": "Tyler Boyd",
+        "position": "WR"
+      },
+      {
+        "pickNo": 79,
+        "round": 8,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "4098",
+        "name": "Kareem Hunt",
+        "position": "RB"
+      },
+      {
+        "pickNo": 80,
+        "round": 8,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "6938",
+        "name": "Cam Akers",
+        "position": "RB"
+      },
+      {
+        "pickNo": 81,
+        "round": 9,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "5038",
+        "name": "Michael Gallup",
+        "position": "WR"
+      },
+      {
+        "pickNo": 82,
+        "round": 9,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "3202",
+        "name": "Austin Hooper",
+        "position": "TE"
+      },
+      {
+        "pickNo": 83,
+        "round": 9,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "138",
+        "name": "Ben Roethlisberger",
+        "position": "QB"
+      },
+      {
+        "pickNo": 84,
+        "round": 9,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "956",
+        "name": "Mark Ingram II",
+        "position": "RB"
+      },
+      {
+        "pickNo": 85,
+        "round": 9,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "344",
+        "name": "Julian Edelman",
+        "position": "WR"
+      },
+      {
+        "pickNo": 86,
+        "round": 9,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "5170",
+        "name": "Phillip Lindsay",
+        "position": "RB"
+      },
+      {
+        "pickNo": 87,
+        "round": 9,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "2749",
+        "name": "Raheem Mostert",
+        "position": "RB"
+      },
+      {
+        "pickNo": 88,
+        "round": 9,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "6806",
+        "name": "J.K. Dobbins",
+        "position": "RB"
+      },
+      {
+        "pickNo": 89,
+        "round": 9,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "5872",
+        "name": "Deebo Samuel",
+        "position": "WR"
+      },
+      {
+        "pickNo": 90,
+        "round": 9,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "954",
+        "name": "Cam Newton",
+        "position": "QB"
+      },
+      {
+        "pickNo": 91,
+        "round": 10,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "6011",
+        "name": "Gardner Minshew II",
+        "position": "QB"
+      },
+      {
+        "pickNo": 92,
+        "round": 10,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "1049",
+        "name": "Ryan Tannehill",
+        "position": "QB"
+      },
+      {
+        "pickNo": 93,
+        "round": 10,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "6786",
+        "name": "CeeDee Lamb",
+        "position": "WR"
+      },
+      {
+        "pickNo": 94,
+        "round": 10,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "5892",
+        "name": "David Montgomery",
+        "position": "RB"
+      },
+      {
+        "pickNo": 95,
+        "round": 10,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "5854",
+        "name": "Drew Lock",
+        "position": "QB"
+      },
+      {
+        "pickNo": 96,
+        "round": 10,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "331",
+        "name": "Philip Rivers",
+        "position": "QB"
+      },
+      {
+        "pickNo": 97,
+        "round": 10,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "6770",
+        "name": "Joe Burrow",
+        "position": "QB"
+      },
+      {
+        "pickNo": 98,
+        "round": 10,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "2152",
+        "name": "Teddy Bridgewater",
+        "position": "QB"
+      },
+      {
+        "pickNo": 99,
+        "round": 10,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "6149",
+        "name": "Darius Slayton",
+        "position": "WR"
+      },
+      {
+        "pickNo": 100,
+        "round": 10,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "6783",
+        "name": "Jerry Jeudy",
+        "position": "WR"
+      },
+      {
+        "pickNo": 101,
+        "round": 11,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "6801",
+        "name": "Tee Higgins",
+        "position": "WR"
+      },
+      {
+        "pickNo": 102,
+        "round": 11,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "2197",
+        "name": "Brandin Cooks",
+        "position": "WR"
+      },
+      {
+        "pickNo": 103,
+        "round": 11,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "3157",
+        "name": "Will Fuller V",
+        "position": "WR"
+      },
+      {
+        "pickNo": 104,
+        "round": 11,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "4152",
+        "name": "Marlon Mack",
+        "position": "RB"
+      },
+      {
+        "pickNo": 105,
+        "round": 11,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "6803",
+        "name": "Brandon Aiyuk",
+        "position": "WR"
+      },
+      {
+        "pickNo": 106,
+        "round": 11,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "6819",
+        "name": "Michael Pittman Jr.",
+        "position": "WR"
+      },
+      {
+        "pickNo": 107,
+        "round": 11,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "515",
+        "name": "Rob Gronkowski",
+        "position": "TE"
+      },
+      {
+        "pickNo": 108,
+        "round": 11,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "4950",
+        "name": "Christian Kirk",
+        "position": "WR"
+      },
+      {
+        "pickNo": 109,
+        "round": 11,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "6790",
+        "name": "D'Andre Swift",
+        "position": "RB"
+      },
+      {
+        "pickNo": 110,
+        "round": 11,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "5844",
+        "name": "T.J. Hockenson",
+        "position": "TE"
+      },
+      {
+        "pickNo": 111,
+        "round": 12,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "4973",
+        "name": "Hayden Hurst",
+        "position": "TE"
+      },
+      {
+        "pickNo": 112,
+        "round": 12,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "1067",
+        "name": "Marvin Jones Jr.",
+        "position": "WR"
+      },
+      {
+        "pickNo": 113,
+        "round": 12,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "538",
+        "name": "Emmanuel Sanders",
+        "position": "WR"
+      },
+      {
+        "pickNo": 114,
+        "round": 12,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "830",
+        "name": "A.J. Green",
+        "position": "WR"
+      },
+      {
+        "pickNo": 115,
+        "round": 12,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "3306",
+        "name": "Jordan Howard",
+        "position": "RB"
+      },
+      {
+        "pickNo": 116,
+        "round": 12,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "NE",
+        "name": "New England Patriots",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 117,
+        "round": 12,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "4082",
+        "name": "Curtis Samuel",
+        "position": "WR"
+      },
+      {
+        "pickNo": 118,
+        "round": 12,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "4455",
+        "name": "Matt Breida",
+        "position": "RB"
+      },
+      {
+        "pickNo": 119,
+        "round": 12,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "1848",
+        "name": "James White",
+        "position": "RB"
+      },
+      {
+        "pickNo": 120,
+        "round": 12,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "4943",
+        "name": "Sam Darnold",
+        "position": "QB"
+      },
+      {
+        "pickNo": 121,
+        "round": 13,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "5917",
+        "name": "Mecole Hardman",
+        "position": "WR"
+      },
+      {
+        "pickNo": 122,
+        "round": 13,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "3214",
+        "name": "Hunter Henry",
+        "position": "TE"
+      },
+      {
+        "pickNo": 123,
+        "round": 13,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "5857",
+        "name": "Noah Fant",
+        "position": "TE"
+      },
+      {
+        "pickNo": 124,
+        "round": 13,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "6870",
+        "name": "Bryan Edwards",
+        "position": "WR"
+      },
+      {
+        "pickNo": 125,
+        "round": 13,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "2118",
+        "name": "Eric Ebron",
+        "position": "TE"
+      },
+      {
+        "pickNo": 126,
+        "round": 13,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "3423",
+        "name": "Robby Anderson",
+        "position": "WR"
+      },
+      {
+        "pickNo": 127,
+        "round": 13,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "3200",
+        "name": "Sterling Shepard",
+        "position": "WR"
+      },
+      {
+        "pickNo": 128,
+        "round": 13,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "1476",
+        "name": "Latavius Murray",
+        "position": "RB"
+      },
+      {
+        "pickNo": 129,
+        "round": 13,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "5937",
+        "name": "Diontae Johnson",
+        "position": "WR"
+      },
+      {
+        "pickNo": 130,
+        "round": 13,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "5878",
+        "name": "N'Keal Harry",
+        "position": "WR"
+      },
+      {
+        "pickNo": 131,
+        "round": 14,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "5000",
+        "name": "Chase Edmonds",
+        "position": "RB"
+      },
+      {
+        "pickNo": 132,
+        "round": 14,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "5987",
+        "name": "Alexander Mattison",
+        "position": "RB"
+      },
+      {
+        "pickNo": 133,
+        "round": 14,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "4227",
+        "name": "Harrison Butker",
+        "position": "K"
+      },
+      {
+        "pickNo": 134,
+        "round": 14,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "2028",
+        "name": "Derek Carr",
+        "position": "QB"
+      },
+      {
+        "pickNo": 135,
+        "round": 14,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "2378",
+        "name": "Tevin Coleman",
+        "position": "RB"
+      },
+      {
+        "pickNo": 136,
+        "round": 14,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "2238",
+        "name": "John Brown",
+        "position": "WR"
+      },
+      {
+        "pickNo": 137,
+        "round": 14,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "1817",
+        "name": "Sammy Watkins",
+        "position": "WR"
+      },
+      {
+        "pickNo": 138,
+        "round": 14,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "6768",
+        "name": "Tua Tagovailoa",
+        "position": "QB"
+      },
+      {
+        "pickNo": 139,
+        "round": 14,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "5068",
+        "name": "Kerryon Johnson",
+        "position": "RB"
+      },
+      {
+        "pickNo": 140,
+        "round": 14,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "3271",
+        "name": "Tyler Higbee",
+        "position": "TE"
+      },
+      {
+        "pickNo": 141,
+        "round": 15,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "6789",
+        "name": "Henry Ruggs III",
+        "position": "WR"
+      },
+      {
+        "pickNo": 142,
+        "round": 15,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "6814",
+        "name": "Laviska Shenault Jr.",
+        "position": "WR"
+      },
+      {
+        "pickNo": 143,
+        "round": 15,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "2410",
+        "name": "Jamison Crowder",
+        "position": "WR"
+      },
+      {
+        "pickNo": 144,
+        "round": 15,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "6794",
+        "name": "Justin Jefferson",
+        "position": "WR"
+      },
+      {
+        "pickNo": 145,
+        "round": 15,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "6845",
+        "name": "Zack Moss",
+        "position": "RB"
+      },
+      {
+        "pickNo": 146,
+        "round": 15,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "6828",
+        "name": "A.J. Dillon",
+        "position": "RB"
+      },
+      {
+        "pickNo": 147,
+        "round": 15,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "6798",
+        "name": "Jalen Reagor",
+        "position": "WR"
+      },
+      {
+        "pickNo": 148,
+        "round": 15,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "4993",
+        "name": "Mike Gesicki",
+        "position": "TE"
+      },
+      {
+        "pickNo": 149,
+        "round": 15,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "1264",
+        "name": "Justin Tucker",
+        "position": "K"
+      },
+      {
+        "pickNo": 150,
+        "round": 15,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "367",
+        "name": "Jared Cook",
+        "position": "TE"
+      },
+      {
+        "pickNo": 151,
+        "round": 16,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "KC",
+        "name": "Kansas City Chiefs",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 152,
+        "round": 16,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "SF",
+        "name": "San Francisco 49ers",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 153,
+        "round": 16,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "333",
+        "name": "Ryan Fitzpatrick",
+        "position": "QB"
+      },
+      {
+        "pickNo": 154,
+        "round": 16,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "503",
+        "name": "Graham Gano",
+        "position": "K"
+      },
+      {
+        "pickNo": 155,
+        "round": 16,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "PIT",
+        "name": "Pittsburgh Steelers",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 156,
+        "round": 16,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "642",
+        "name": "Golden Tate",
+        "position": "WR"
+      },
+      {
+        "pickNo": 157,
+        "round": 16,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "1266",
+        "name": "Greg Zuerlein",
+        "position": "K"
+      },
+      {
+        "pickNo": 158,
+        "round": 16,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "BAL",
+        "name": "Baltimore Ravens",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 159,
+        "round": 16,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "3451",
+        "name": "Ka'imi Fairbairn",
+        "position": "K"
+      },
+      {
+        "pickNo": 160,
+        "round": 16,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "BUF",
+        "name": "Buffalo Bills",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 161,
+        "round": 17,
+        "column": 1,
+        "rosterId": 1,
+        "playerId": "3678",
+        "name": "Wil Lutz",
+        "position": "K"
+      },
+      {
+        "pickNo": 162,
+        "round": 17,
+        "column": 2,
+        "rosterId": 4,
+        "playerId": "SEA",
+        "name": "Seattle Seahawks",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 163,
+        "round": 17,
+        "column": 3,
+        "rosterId": 6,
+        "playerId": "49",
+        "name": "Robbie Gould",
+        "position": "K"
+      },
+      {
+        "pickNo": 164,
+        "round": 17,
+        "column": 4,
+        "rosterId": 9,
+        "playerId": "CHI",
+        "name": "Chicago Bears",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 165,
+        "round": 17,
+        "column": 5,
+        "rosterId": 2,
+        "playerId": "4233",
+        "name": "Zane Gonzalez",
+        "position": "K"
+      },
+      {
+        "pickNo": 166,
+        "round": 17,
+        "column": 6,
+        "rosterId": 5,
+        "playerId": "4055",
+        "name": "O.J. Howard",
+        "position": "TE"
+      },
+      {
+        "pickNo": 167,
+        "round": 17,
+        "column": 7,
+        "rosterId": 3,
+        "playerId": "NO",
+        "name": "New Orleans Saints",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 168,
+        "round": 17,
+        "column": 8,
+        "rosterId": 8,
+        "playerId": "MIN",
+        "name": "Minnesota Vikings",
+        "position": "DEF"
+      },
+      {
+        "pickNo": 169,
+        "round": 17,
+        "column": 9,
+        "rosterId": 7,
+        "playerId": "4144",
+        "name": "Jonnu Smith",
+        "position": "TE"
+      },
+      {
+        "pickNo": 170,
+        "round": 17,
+        "column": 10,
+        "rosterId": 10,
+        "playerId": "775",
+        "name": "Stephen Hauschka",
+        "position": "K"
+      }
+    ]
+  }
+}

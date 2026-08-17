@@ -351,6 +351,7 @@ def build_season(league):
 
     return {
         "schemaVersion": SCHEMA,
+        "docs": "https://github.com/cdemurjian/uconn-gn-ffl#pointing-someone-at-the-raw-data",
         "provider": "sleeper",
         "year": league["season"],
         "leagueName": league.get("name") or "",
@@ -442,7 +443,10 @@ def main():
         if not args.check and not problems:
             path = os.path.join(DATA, f"{doc['year']}.json")
             with open(path, "w", encoding="utf-8") as handle:
-                json.dump(doc, handle, separators=(",", ":"))
+                # Pretty and unescaped: these are browsed on GitHub, and the
+                # whitespace compresses away over the wire (+0.4KB gzipped).
+                json.dump(doc, handle, indent=2, ensure_ascii=False)
+                handle.write("\n")
 
     if all_problems:
         print("\nPROBLEMS:")

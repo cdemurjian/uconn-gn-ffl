@@ -1,4 +1,7 @@
 {
+  "schemaVersion": "overrides/1",
+  "docs": "https://github.com/cdemurjian/uconn-gn-ffl#the-only-hand-maintained-data",
+
   "_comment": "The entire hand-maintained surface of the generated stats. Everything else is derived. Read by tools/build_seasons.py and tools/build_stats.py - this is the single source of truth for manager identity.",
 
   "leagueId": "1354540358725308416",
