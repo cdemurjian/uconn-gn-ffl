@@ -517,12 +517,13 @@ body {
 
 .view-container {
   display: none;
-  overflow: hidden;
+  /* Not overflow:hidden - it clipped the positional tooltips. */
 }
 
 .table-container {
   max-height: 70vh;
   overflow-y: auto;
+  overflow-x: auto;
   border-radius: 0.9rem;
   border: 1px solid var(--rule-soft);
   background: var(--surface);
@@ -668,9 +669,26 @@ body {
 
 .pos-player {
   position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
   border-bottom: 1px dotted var(--rule);
   cursor: help;
   padding-bottom: 1px;
+}
+
+.pos-player:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Years are visible, not hidden behind a hover-only tooltip. A trailing
+   middle dot marks a bench year. */
+.pos-player-years {
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 /* Multi-year players: pop a bit more on dark theme */
@@ -703,12 +721,18 @@ body {
 }
 
 
-/* Show tooltip on hover (desktop) and tap/press (mobile) */
+/* Hover for a mouse, focus for a keyboard, .is-open for a tap. :active alone
+   never fired on iOS for a non-interactive element, which left the tooltip
+   unreachable on a phone. */
 .has-tooltip:hover::after,
 .has-tooltip:focus-visible::after,
-.has-tooltip:active::after {
+.has-tooltip.is-open::after {
   opacity: 1;
   transform: translateY(0);
+}
+
+.has-tooltip.is-open::after {
+  z-index: 40;
 }
 
 /* Home hero logo. index.html only — inner pages stay text-first.

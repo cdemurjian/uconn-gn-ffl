@@ -263,7 +263,19 @@ function inferBenchPosition(name) {
     "Kenyan Drake": "RB",
   };
 
-  return map[name] || "BN";
+  const position = map[name];
+  if (!position) {
+    // "BN" is not a rendered bucket: Positional view iterates a fixed list of
+    // real positions and the filter has no BN option, so an unmapped player
+    // would disappear with no trace. Say so, and park him in FLEX where he
+    // stays visible.
+    console.warn(
+      `Canton: no bench position mapped for "${name}"; ` +
+        "add it to inferBenchPosition. Falling back to FLEX."
+    );
+    return "FLEX";
+  }
+  return position;
 }
 
 function safeGet(arr, idx) {
@@ -457,8 +469,18 @@ function buildAggregatedData() {
   AWARD_LOOKUP = buildAwardLookup();
 
   // Attach awards to player map (ensure award winners exist in player map)
+  // Attach awards to players who are actually on a roster. An award name
+  // that matches nobody is a data error, not a new player: creating one here
+  // is what turned a stray trailing space into a phantom zero-title row.
   AWARD_LOOKUP.forEach((awardEntry, name) => {
-    const player = ensurePlayerEntry(name);
+    const player = playerMap.get(name);
+    if (!player) {
+      console.warn(
+        `Canton: award winner "${name}" is not on any championship roster; ` +
+          "check AWARDS_DATA against teamData."
+      );
+      return;
+    }
     awardEntry.mvp.forEach((year) => player.awards.mvp.add(year));
     awardEntry.sbMvp.forEach((year) => player.awards.sbMvp.add(year));
   });
@@ -569,6 +591,22 @@ function applyTooltip(el, text) {
   if (!text) return;
   el.dataset.tooltip = text;
   el.classList.add("has-tooltip");
+  // Focusable so the tooltip opens on keyboard focus, and tappable so it
+  // opens on touch: :hover alone reaches neither.
+  el.setAttribute("tabindex", "0");
+  el.setAttribute("role", "button");
+  el.setAttribute("aria-label", `${el.textContent}. ${text}`);
+  el.addEventListener("click", (evt) => {
+    evt.stopPropagation();
+    const open = el.classList.contains("is-open");
+    document
+      .querySelectorAll(".has-tooltip.is-open")
+      .forEach((n) => n.classList.remove("is-open"));
+    el.classList.toggle("is-open", !open);
+  });
+  el.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") el.classList.remove("is-open");
+  });
 }
 
 // ============================
@@ -629,13 +667,27 @@ function buildPositionalTable() {
         span.classList.add("pos-player");
         const awards = AWARD_LOOKUP.get(entry.name);
         const icons = buildAwardIcons(awards);
-        span.textContent = icons ? `${entry.name} ${icons}` : entry.name;
+
+        // The years are rendered inline, not left to a hover tooltip. A CSS
+        // tooltip cannot be opened by touch and is clipped by the scroll
+        // container, so it must never be the only place data lives.
+        const label = document.createElement("span");
+        label.className = "pos-player-name";
+        label.textContent = icons ? `${entry.name} ${icons}` : entry.name;
+        span.appendChild(label);
+
+        const years = document.createElement("span");
+        years.className = "pos-player-years";
+        years.textContent = entry.sortedEntries
+          .map((e) => (e.role === "bench" ? `${e.year}\u00b7` : String(e.year)))
+          .join(" ");
+        span.appendChild(years);
 
         if (entry.sortedEntries.length > 1) {
           span.classList.add("multi-year");
         }
 
-        // Tooltip contents: "2018 (starter), 2020 (bench)" + awards if present
+        // The tooltip now only elaborates: full years with roles, plus awards.
         const tooltipParts = entry.sortedEntries
           .map((e) => `${e.year} (${e.role})`)
           .join(", ");
@@ -645,9 +697,22 @@ function buildPositionalTable() {
         if (awardsLabel) tooltipSections.push(`Awards: ${awardsLabel}`);
         applyTooltip(span, tooltipSections.join(" | "));
 
+        // Searchable text, so a year query matches here as it does elsewhere.
+        span.dataset.search = [
+          entry.name,
+          entry.sortedEntries.map((e) => `${e.year} ${e.role}`).join(" "),
+          awardsLabel,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+
         tdPlayers.appendChild(span);
         if (idx < players.length - 1) {
-          tdPlayers.appendChild(document.createTextNode(", "));
+          const sep = document.createElement("span");
+          sep.className = "pos-sep";
+          sep.textContent = ", ";
+          tdPlayers.appendChild(sep);
         }
       });
     } else {
@@ -743,29 +808,46 @@ function applyCantonSearch() {
   const term = CANTON_SEARCH_TERM;
   let activeCount = 0;
 
-  ["team-table", "awards-table", "positional-table", "player-table"].forEach(
-    (id) => {
-      const table = document.getElementById(id);
-      if (!table) return;
-      const rows = Array.from(table.querySelectorAll("tbody tr"));
-      let visible = 0;
-      rows.forEach((row) => {
-        const match =
-          !term || row.textContent.toLowerCase().includes(term.toLowerCase());
-        row.style.display = match ? "" : "none";
-        if (match) visible += 1;
-      });
+  // Row-based views: hide whole rows.
+  ["team-table", "awards-table", "player-table"].forEach((id) => {
+    const table = document.getElementById(id);
+    if (!table) return;
+    let visible = 0;
+    Array.from(table.querySelectorAll("tbody tr")).forEach((row) => {
+      const match = !term || row.textContent.toLowerCase().includes(term);
+      row.style.display = match ? "" : "none";
+      if (match) visible += 1;
+    });
+    const view = table.closest(".view-container");
+    const name = view && view.id ? view.id.replace("-view", "") : null;
+    if (name === activeView) activeCount = visible;
+  });
 
-      const view = table.closest(".view-container");
-      const viewName =
-        view && view.id && view.id.endsWith("-view")
-          ? view.id.replace("-view", "")
-          : null;
-      if (viewName === activeView) {
-        activeCount = visible;
-      }
-    }
-  );
+  // Positional view: a row IS a position, so filtering by row would leave
+  // every non-matching player on screen and count positions, not players.
+  const positional = document.getElementById("positional-table");
+  if (positional) {
+    let visiblePlayers = 0;
+    Array.from(positional.querySelectorAll("tbody tr")).forEach((row) => {
+      let shown = 0;
+      Array.from(row.querySelectorAll(".pos-player")).forEach((player) => {
+        const haystack = player.dataset.search || player.textContent.toLowerCase();
+        const match = !term || haystack.includes(term);
+        player.style.display = match ? "" : "none";
+        if (match) shown += 1;
+      });
+      // Separators follow the player before them.
+      const players = Array.from(row.querySelectorAll(".pos-player"));
+      Array.from(row.querySelectorAll(".pos-sep")).forEach((sep, idx) => {
+        const before = players[idx];
+        sep.style.display =
+          before && before.style.display !== "none" ? "" : "none";
+      });
+      row.style.display = shown ? "" : "none";
+      visiblePlayers += shown;
+    });
+    if (activeView === "positional") activeCount = visiblePlayers;
+  }
 
   if (countLabel) {
     countLabel.textContent = activeCount.toString();
