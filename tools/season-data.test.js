@@ -40,7 +40,7 @@ test("teams are sorted by final rank", () => {
   const s = load("2018");
   assert.strictEqual(s.teams[0].finalRank, 1);
   assert.strictEqual(s.teams[0].teamName, "Storrs Seducers");
-  assert.strictEqual(s.teams[0].manager, "Charlie Demurjian");
+  assert.strictEqual(s.teams[0].manager, "Charlie");
 });
 
 test("streak is the regular season only and matches the W-L", () => {
@@ -68,7 +68,8 @@ test("regular season records balance league-wide", () => {
 test("managers without a site nickname still get a real name", () => {
   const s = load("2018");
   const names = s.teams.map((t) => t.manager);
-  assert.ok(names.includes("Brandon Wilbur"), "Wilbur present");
+  assert.ok(names.includes("Brandon Wilbur"), "Wilbur keeps his real name");
+  assert.ok(names.includes("Charlie"), "mapped managers use the nickname");
   assert.ok(
     names.every((n) => n && n.trim().length > 0),
     "no blank manager names"
@@ -211,4 +212,70 @@ test("every draft column holds exactly one pick per round", () => {
       assert.deepStrictEqual(cols, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], `${year} round ${r}`);
     }
   }
+});
+
+// Two producers, one shape: 2018/2019 are normalized here from raw ESPN
+// exports, 2020+ are pre-normalized by tools/build_seasons.py. Both must
+// satisfy the same contract or seasons.js has to branch, which it does not.
+const ALL_YEARS = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"];
+
+test("every season conforms to one view-model contract", () => {
+  for (const year of ALL_YEARS) {
+    const s = load(year);
+    assert.strictEqual(s.schemaVersion, "season-view/1", `${year} schema`);
+    assert.strictEqual(s.year, year, `${year} year`);
+    assert.ok(s.leagueName.length > 0, `${year} league name`);
+    assert.strictEqual(s.teams.length, 10, `${year} teams`);
+    assert.ok(s.weeks.length >= 15, `${year} weeks`);
+    assert.ok(s.draft.picks.length > 0, `${year} draft`);
+
+    const ranks = s.teams.map((t) => t.finalRank).sort((a, b) => a - b);
+    assert.deepStrictEqual(ranks, [1,2,3,4,5,6,7,8,9,10], `${year} ranks`);
+
+    const regular = s.settings.playoffWeekStart - 1;
+    for (const t of s.teams) {
+      assert.strictEqual(typeof t.wins, "number", `${year} ${t.teamName} wins`);
+      assert.strictEqual(typeof t.pointsFor, "number", `${year} ${t.teamName} pf`);
+      assert.ok(t.manager.length > 0, `${year} ${t.teamName} manager`);
+      assert.strictEqual(t.streak.length, regular, `${year} ${t.teamName} streak`);
+      assert.strictEqual(
+        (t.streak.match(/W/g) || []).length, t.wins,
+        `${year} ${t.teamName} streak wins`);
+    }
+
+    const w = s.teams.reduce((n, t) => n + t.wins, 0);
+    const l = s.teams.reduce((n, t) => n + t.losses, 0);
+    assert.strictEqual(w, l, `${year} league-wide balance`);
+
+    for (const wk of s.weeks) {
+      for (const g of wk.games) {
+        assert.strictEqual(g.isTitlePath && g.isConsolation, false,
+          `${year} wk${wk.week} both paths`);
+        if (g.isBye) assert.strictEqual(g.away, null, `${year} bye has no opponent`);
+      }
+    }
+
+    const cols = {};
+    for (const p of s.draft.picks) {
+      cols[p.rosterId] = cols[p.rosterId] ?? p.column;
+      assert.strictEqual(p.column, cols[p.rosterId], `${year} column drift`);
+    }
+  }
+});
+
+test("ffwrapped links exist only for the Sleeper era", () => {
+  for (const year of ALL_YEARS) {
+    const s = load(year);
+    if (year === "2018" || year === "2019") {
+      assert.strictEqual(s.ffwrappedLeagueId, null, `${year} must have no link`);
+    } else {
+      assert.ok(s.ffwrappedLeagueId, `${year} needs a league id`);
+    }
+  }
+});
+
+test("each season has its own ffwrapped league id", () => {
+  const ids = ALL_YEARS.map((y) => load(y).ffwrappedLeagueId).filter(Boolean);
+  assert.strictEqual(new Set(ids).size, ids.length, "league ids must be distinct");
+  assert.strictEqual(ids.length, 6, "six Sleeper seasons");
 });

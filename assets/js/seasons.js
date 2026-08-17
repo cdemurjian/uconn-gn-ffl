@@ -1,7 +1,7 @@
 // Renders the season view model produced by season-data.js.
 // See docs/superpowers/specs/2026-08-17-logo-theme-seasons-stats-design.md §5.
 
-const VIEWS = ["standings", "matchups", "draft", "settings"];
+const VIEWS = ["standings", "matchups", "draft"];
 
 const TIER_LABEL = {
   WINNERS_BRACKET: "Playoffs",
@@ -9,7 +9,10 @@ const TIER_LABEL = {
   LOSERS_CONSOLATION_LADDER: "Toilet bowl",
 };
 
-let CURRENT_YEAR = "2018";
+const YEARS = ["2018","2019","2020","2021","2022","2023","2024","2025"];
+const DEFAULT_YEAR = YEARS[YEARS.length - 1];
+
+let CURRENT_YEAR = DEFAULT_YEAR;
 let CURRENT_VIEW = "standings";
 let CURRENT_SEASON = null;
 
@@ -93,11 +96,14 @@ function renderStandings(season) {
     ["Rank", "Team", "Manager", "Record", "PF", "PA", "Streak"],
     rows
   );
+  // The regular season is 13 weeks in some years and 14 in others, so this
+  // is derived rather than stated.
+  const lastRegular = season.settings.playoffWeekStart - 1;
   container.appendChild(
     el(
       "div",
       "view-legend",
-      "Record and streak are regular season only (weeks 1–13)."
+      `Record and streak are regular season only (weeks 1–${lastRegular}).`
     )
   );
 }
@@ -221,50 +227,27 @@ function renderDraft(season) {
 }
 
 // ============================
-// SETTINGS
-// ============================
-
-function renderSettings(season) {
-  const container = document.getElementById("settings-view");
-  const s = season.settings;
-
-  const slots = {};
-  s.rosterPositions.forEach((p) => {
-    slots[p] = (slots[p] || 0) + 1;
-  });
-  const slotText = Object.keys(slots)
-    .map((k) => (slots[k] > 1 ? `${slots[k]}×${k}` : k))
-    .join(", ");
-
-  const scoringRows = Object.keys(s.scoring)
-    .sort()
-    .map((k) => [k, s.scoring[k]]);
-
-  container.innerHTML = "";
-
-  const summary = el("div", "settings-summary");
-  [
-    ["League", season.leagueName],
-    ["Teams", s.teams],
-    ["Playoff teams", s.playoffTeams],
-    ["Playoffs start", `week ${s.playoffWeekStart}`],
-    ["Roster", slotText],
-  ].forEach(([label, value]) => {
-    const row = el("div", "settings-row");
-    row.appendChild(el("span", "settings-label", label));
-    row.appendChild(el("span", "settings-value", value));
-    summary.appendChild(row);
-  });
-  container.appendChild(summary);
-
-  const scoring = el("div");
-  buildTable(scoring, ["Scoring rule", "Points"], scoringRows);
-  container.appendChild(scoring);
-}
-
-// ============================
 // SHELL
 // ============================
+
+// ffwrapped can only read the Sleeper era, so 2018 and 2019 carry no link
+// and the row is simply absent for them rather than showing a dead control.
+function renderSeasonMeta(season) {
+  const node = document.getElementById("season-meta");
+  if (!node) return;
+  node.innerHTML = "";
+
+  const label = el("span", "season-meta-league", season.leagueName);
+  node.appendChild(label);
+
+  if (season.ffwrappedLeagueId) {
+    const link = el("a", "season-meta-link", `FFWrapped ${season.year} \u2197`);
+    link.href = `https://ffwrapped.com/?leagueId=${season.ffwrappedLeagueId}`;
+    link.rel = "noopener";
+    link.target = "_blank";
+    node.appendChild(link);
+  }
+}
 
 function setStatus(message, isError) {
   const node = document.getElementById("season-status");
@@ -293,7 +276,6 @@ function renderCurrentView() {
   if (CURRENT_VIEW === "standings") renderStandings(CURRENT_SEASON);
   if (CURRENT_VIEW === "matchups") renderMatchups(CURRENT_SEASON);
   if (CURRENT_VIEW === "draft") renderDraft(CURRENT_SEASON);
-  if (CURRENT_VIEW === "settings") renderSettings(CURRENT_SEASON);
 }
 
 function showYear(year) {
@@ -311,6 +293,7 @@ function showYear(year) {
       if (CURRENT_YEAR !== year) return; // a later click won
       CURRENT_SEASON = season;
       setStatus("", false);
+      renderSeasonMeta(season);
       renderCurrentView();
     })
     .catch((err) => {
@@ -336,7 +319,7 @@ function initSeasons() {
   });
 
   const hash = (location.hash || "").replace("#", "");
-  const startYear = hash === "2019" ? "2019" : "2018";
+  const startYear = YEARS.indexOf(hash) !== -1 ? hash : DEFAULT_YEAR;
   setViewVisibility(CURRENT_VIEW);
   markActive(".view-toggle-bar .view-button", "view", CURRENT_VIEW);
   showYear(startYear);

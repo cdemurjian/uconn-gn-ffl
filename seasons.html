@@ -9,37 +9,42 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script defer src="assets/js/season-data.js?v=1"></script>
-    <script defer src="assets/js/seasons.js?v=1"></script>
+    <script defer src="assets/js/season-data.js?v=2"></script>
+    <script defer src="assets/js/seasons.js?v=2"></script>
   </head>
   <body>
     <main class="page-shell">
       <header class="app-header">
         <div class="app-title">
           SEASONS
-          <span class="app-title-pill">ESPN ARCHIVE</span>
+          <span class="app-title-pill">2018 &ndash; 2025</span>
         </div>
         <p class="app-subtitle">
-          Standings, weekly matchups, draft boards and league settings from the
-          2018 and 2019 ESPN seasons.
+          Standings, weekly matchups and draft boards for every season — 2018 and
+          2019 from ESPN, 2020 onward from Sleeper.
         </p>
         <nav class="app-nav">
           <a href="index.html">HOME</a>
           <a href="stats.html">STATS</a>
           <a class="active" href="seasons.html">SEASONS</a>
           <a href="canton.html">CANTON</a>
-          <a href="https://ffwrapped.com/?leagueId=1218604624068497408"
-            >FFWRAPPED</a
-          >
           <a href="docs.html">DOCS</a>
         </nav>
       </header>
 
       <section class="content-card">
         <div class="year-toggle-bar">
-          <button class="view-button active" data-year="2018">2018</button>
+          <button class="view-button" data-year="2018">2018</button>
           <button class="view-button" data-year="2019">2019</button>
+          <button class="view-button" data-year="2020">2020</button>
+          <button class="view-button" data-year="2021">2021</button>
+          <button class="view-button" data-year="2022">2022</button>
+          <button class="view-button" data-year="2023">2023</button>
+          <button class="view-button" data-year="2024">2024</button>
+          <button class="view-button active" data-year="2025">2025</button>
         </div>
+
+        <div id="season-meta" class="season-meta"></div>
 
         <div class="view-toggle-bar">
           <button class="view-button active" data-view="standings">
@@ -47,7 +52,6 @@
           </button>
           <button class="view-button" data-view="matchups">Matchups</button>
           <button class="view-button" data-view="draft">Draft</button>
-          <button class="view-button" data-view="settings">Settings</button>
         </div>
 
         <div id="season-status" class="season-status"></div>
@@ -55,7 +59,6 @@
         <div id="standings-view" class="view-container"></div>
         <div id="matchups-view" class="view-container"></div>
         <div id="draft-view" class="view-container"></div>
-        <div id="settings-view" class="view-container"></div>
       </section>
     </main>
   </body>

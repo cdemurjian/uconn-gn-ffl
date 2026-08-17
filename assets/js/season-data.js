@@ -5,10 +5,27 @@
 // The title path. Consolation tiers contribute to no record: spec §6.4.1.
 const TITLE_TIER = "WINNERS_BRACKET";
 
+// The ESPN exports store real names; the rest of the site speaks in
+// nicknames, and tools/build_seasons.py already resolves the Sleeper years.
+// Anyone not listed here (Wilbur, Bob The Builder) keeps their real name.
+const ESPN_NICKNAMES = {
+  "Charlie Demurjian": "Charlie",
+  "Stephen Macejko": "Stove",
+  "Matthew Fuchs": "Matt",
+  "gordon korman": "Jay",
+  "Jay Korman": "Jay",
+  "Tyler Huhtanen": "Tyler",
+  "devin pallanck": "Devin",
+  "Joe  Foe": "Kap",
+  "Justin Bijari": "Bij",
+  "Max Chafiian": "Chaf",
+};
+
 function fullName(user) {
   const meta = (user && user.metadata) || {};
   const name = [meta.first_name, meta.last_name].filter(Boolean).join(" ").trim();
-  return name || (user && user.display_name) || "Unknown";
+  const resolved = name || (user && user.display_name) || "Unknown";
+  return ESPN_NICKNAMES[resolved] || resolved;
 }
 
 function playerLabel(players, playerId) {
@@ -167,7 +184,16 @@ function normalizeDraft(season) {
   };
 }
 
+// Seasons from 2020 on are pre-normalized by tools/build_seasons.py, because
+// Sleeper has no single-document export to normalize. They arrive in exactly
+// this module's output shape, so they pass straight through.
+const VIEW_SCHEMA = "season-view/1";
+
 function normalizeSeason(raw, year) {
+  if (raw && raw.schemaVersion === VIEW_SCHEMA) {
+    return raw;
+  }
+
   const season = raw.seasons[String(year)];
   if (!season) {
     throw new Error(`export has no season ${year}`);
@@ -181,9 +207,13 @@ function normalizeSeason(raw, year) {
   const league = season.league;
 
   return {
+    schemaVersion: VIEW_SCHEMA,
+    provider: "espn",
     year: String(year),
     leagueName: league.name,
     providerLeagueId: (league.metadata || {}).espn_league_id || "",
+    // ffwrapped cannot read the ESPN era, so these years carry no link.
+    ffwrappedLeagueId: null,
     settings: {
       teams: league.settings.num_teams,
       playoffTeams: league.settings.playoff_teams,
