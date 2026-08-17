@@ -348,6 +348,32 @@ Commit `assets/data/`, `assets/js/canton.js`, `assets/js/seasons.js`, the five
 
 ---
 
+---
+
+## Before the draft (not part of the rollover)
+
+`tools/fetch_adp.py` pulls next season's draft board — average draft position
+and projected half-PPR points:
+
+```bash
+python3 tools/fetch_adp.py             # -> assets/data/adp-2026.json
+python3 tools/fetch_adp.py --check     # verify without writing
+```
+
+**It reads `adp_2qb`, and that matters more than anything else about it.**
+This league starts two quarterbacks, and standard ADP is wrong here by 20-55
+picks at the position: Drake Maye goes around 52 in a 1QB league and around 8
+in this one, Caleb Williams 77 versus 23. The file keeps the 1QB number beside
+it as `adp1qb` purely so the gap is visible. Never draft from that column.
+
+The endpoint (`api.sleeper.app/projections/nfl/<year>`) is **undocumented** —
+it is not in Sleeper's published API and may change or disappear. The script
+is defensive about that: as well as checking the response shape, it asserts
+that the top 30 contains at least 4 quarterbacks, because if Sleeper ever
+repoints `adp_2qb` at a 1QB list the shape would still be valid while the
+meaning quietly inverted. It refuses to write on any failure. Nothing on the
+site depends on this file, so a failure here breaks nothing else.
+
 ## The rules that are permanently manual
 
 These cannot be derived and will never be automated:

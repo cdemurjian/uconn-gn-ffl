@@ -136,6 +136,7 @@ directly linkable and needs no scraping.
 | `/assets/data/overrides.json` | the hand-maintained layer: identity, credits, ring lore |
 | `/assets/data/stats-25.csv` | spreadsheet-friendly snapshot through 2025 |
 | `/assets/data/stats-25-he.csv` | the pre-generation hand-kept table |
+| `/assets/data/adp-2026.json` | next season's draft board — **2QB** ADP and projections |
 
 Live, e.g. `https://www.uconn-gn-ffl.com/assets/data/stats.json`.
 
@@ -225,6 +226,7 @@ record. Neither file is loaded by anything or read by any build.
 | `build_seasons.py` | Pulls the Sleeper chain, writes one normalized season doc per completed year. The only script that uses the network. |
 | `build_stats.py` | Merges both eras into `stats.json`. Aborts rather than write a figure that disagrees with the league's record. |
 | `export_stats_csv.py` | Freezes `stats.json` into a CSV snapshot. |
+| `fetch_adp.py` | Pulls next season's 2QB ADP and projections. Optional; nothing depends on it. |
 | `check_theme.py` | Fails on any colour literal outside `:root`. |
 | `make_logo.py`, `make_favicon.py` | Rebuild the logo and favicon from the source image. |
 | `season-data.test.js` | 20 tests over the season view model, both producers. |
