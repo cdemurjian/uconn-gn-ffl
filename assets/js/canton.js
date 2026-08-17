@@ -27,14 +27,20 @@ const teamData = [
     year: 2019,
     manager: "Stove",
     roster: {
-      QB: ["Patrick Mahomes"],
+      QB: ["Patrick Mahomes", "Carson Wentz"],
       RB: ["Leonard Fournette", "Saquon Barkley"],
-      WR: ["Michael Thomas", "Julio Jones"],
+      WR: ["Michael Thomas", "DeVante Parker", "Tyreek Hill"],
       TE: ["Travis Kelce"],
-      FLEX: ["Sammy Watkins"],
-      K: [],
-      DST: [],
-      BN: [],
+      FLEX: ["Mike Boone"],
+      K: ["Harrison Butker"],
+      DST: ["49ers"],
+      BN: [
+        "Sammy Watkins",
+        "Sony Michel",
+        "Anthony Miller",
+        "Tarik Cohen",
+        "Alexander Mattison",
+      ],
     },
   },
   {
@@ -168,7 +174,7 @@ const teamData = [
 const AWARDS_DATA = [
   { year: 2018, mvp: "Andrew Luck", mvpPoints: "327.6", sbMvp: "Aaron Rodgers", sbNotes: "42.9" },
   { year: 2019, mvp: "Michael Thomas", mvpPoints: "300.1", sbMvp: "Saquon Barkley", sbNotes: "41.9" },
-  { year: 2020, mvp: "Travis Kelce", mvpPoints: "260.26", sbMvp: "Jeff Wilson ", sbNotes: "26.9" },
+  { year: 2020, mvp: "Travis Kelce", mvpPoints: "260.26", sbMvp: "Jeff Wilson", sbNotes: "26.9" },
   { year: 2021, mvp: "Jamar Chase", mvpPoints: "264.1", sbMvp: "Jamar Chase", sbNotes: "50.1" },
   { year: 2022, mvp: "Patrick Mahomes", mvpPoints: "416.9", sbMvp: "Patrick Mahomes", sbNotes: "25.02" },
   { year: 2023, mvp: "Justin Fields", mvpPoints: "230.18", sbMvp: "Justin Fields", sbNotes: "25.22" },
@@ -204,6 +210,12 @@ const START_POS_KEYS = ["QB", "RB", "WR", "TE", "FLEX", "K", "DST"];
 // Bench position inference (every BN player covered)
 function inferBenchPosition(name) {
   const map = {
+    // 2019 (positions taken from the ESPN export's player dictionary)
+    "Sammy Watkins": "WR",
+    "Sony Michel": "RB",
+    "Anthony Miller": "WR",
+    "Tarik Cohen": "RB",
+
     "Lamar Jackson": "QB",
     "James White": "RB",
     "Damien Williams": "RB",
@@ -305,9 +317,18 @@ function buildTeamTable() {
       safeGet(r.BN, 5),
     ];
 
-    cells.forEach((val) => {
+    cells.forEach((val, idx) => {
       const td = document.createElement("td");
-      td.textContent = val;
+      // The 2018 and 2019 champions have a full season archive. Spec §5.7.
+      if (idx === 0 && (val === 2018 || val === 2019)) {
+        const link = document.createElement("a");
+        link.className = "champ-link";
+        link.href = `seasons.html#${val}`;
+        link.textContent = String(val);
+        td.appendChild(link);
+      } else {
+        td.textContent = val;
+      }
       row.appendChild(td);
     });
 
@@ -476,7 +497,10 @@ function buildAggregatedData() {
 function buildAwardLookup() {
   const map = new Map();
 
-  function addAward(name, key, year) {
+  function addAward(rawName, key, year) {
+    // Trim: a stray trailing space used to fork a player into a phantom
+    // zero-title row while the real player lost his award icon entirely.
+    const name = (rawName || "").trim();
     if (!name) return;
     if (!map.has(name)) {
       map.set(name, { name, mvp: new Set(), sbMvp: new Set() });

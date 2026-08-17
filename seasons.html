@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta charset="utf-8" />
+    <title>SEASONS</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script defer src="assets/js/season-data.js?v=1"></script>
+    <script defer src="assets/js/seasons.js?v=1"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="app-header">
+        <div class="app-title">
+          SEASONS
+          <span class="app-title-pill">ESPN ARCHIVE</span>
+        </div>
+        <p class="app-subtitle">
+          Standings, weekly matchups, draft boards and league settings from the
+          2018 and 2019 ESPN seasons.
+        </p>
+        <nav class="app-nav">
+          <a href="index.html">HOME</a>
+          <a href="stats.html">STATS</a>
+          <a class="active" href="seasons.html">SEASONS</a>
+          <a href="canton.html">CANTON</a>
+          <a href="https://ffwrapped.com/?leagueId=1218604624068497408"
+            >FFWRAPPED</a
+          >
+          <a href="docs.html">DOCS</a>
+        </nav>
+      </header>
+
+      <section class="content-card">
+        <div class="year-toggle-bar">
+          <button class="view-button active" data-year="2018">2018</button>
+          <button class="view-button" data-year="2019">2019</button>
+        </div>
+
+        <div class="view-toggle-bar">
+          <button class="view-button active" data-view="standings">
+            Standings
+          </button>
+          <button class="view-button" data-view="matchups">Matchups</button>
+          <button class="view-button" data-view="draft">Draft</button>
+          <button class="view-button" data-view="settings">Settings</button>
+        </div>
+
+        <div id="season-status" class="season-status"></div>
+
+        <div id="standings-view" class="view-container"></div>
+        <div id="matchups-view" class="view-container"></div>
+        <div id="draft-view" class="view-container"></div>
+        <div id="settings-view" class="view-container"></div>
+      </section>
+    </main>
+  </body>
+</html>

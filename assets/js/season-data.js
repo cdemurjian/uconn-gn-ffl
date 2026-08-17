@@ -217,7 +217,13 @@ function loadSeason(year) {
   return SEASON_CACHE[year];
 }
 
-// Browser: defines globals via a plain <script> tag. Node: require()-able.
+// Node: require()-able for the tests. Browser: a top-level `const` in a
+// classic script is script-scoped and does NOT become a window property, so
+// the namespace has to be attached explicitly.
+const SeasonData = { normalizeSeason, loadSeason, TITLE_TIER };
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { normalizeSeason, loadSeason, TITLE_TIER };
+  module.exports = SeasonData;
+} else if (typeof window !== "undefined") {
+  window.SeasonData = SeasonData;
 }

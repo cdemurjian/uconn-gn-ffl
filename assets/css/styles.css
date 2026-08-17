@@ -735,3 +735,146 @@ body {
 .page-shell > .app-header:has(.app-logo) .app-nav {
   justify-content: center;
 }
+
+/* =========================
+   SEASONS
+   ========================= */
+
+.year-toggle-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.season-status {
+  display: none;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--rule-soft);
+  background: var(--surface-2);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+.season-status.is-error {
+  border-color: var(--accent-strong);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.settings-summary {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 0.9rem;
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.1rem;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.settings-label {
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.champ-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.champ-link:hover {
+  text-decoration: underline;
+}
+
+.week-block {
+  margin-bottom: 1.1rem;
+}
+
+.week-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+}
+
+.game-card {
+  border: 1px solid var(--rule-soft);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  padding: 0.45rem 0.65rem;
+  margin-bottom: 0.4rem;
+}
+
+.game-card.is-consolation {
+  background: var(--surface-2);
+}
+
+.game-tier {
+  display: inline-block;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  margin-bottom: 0.25rem;
+}
+
+.game-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.86rem;
+  padding: 0.12rem 0;
+}
+
+.game-row.is-winner {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.game-row.is-bye .game-points {
+  color: var(--ink-muted);
+  letter-spacing: 0.1em;
+}
+
+.game-points {
+  font-variant-numeric: tabular-nums;
+}
+
+.draft-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  min-width: 6.5rem;
+}
+
+.draft-name {
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.draft-pos {
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+#draft-view .dataframe {
+  font-size: 0.78rem;
+}
+
+#draft-view .table-container {
+  overflow-x: auto;
+}
