@@ -913,3 +913,22 @@ body {
   text-align: center;
   color: var(--ink-muted);
 }
+
+.streak {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.streak-sep {
+  color: var(--rule);
+}
+
+/* The championship run, set apart so a title is not mistaken for a week-14 loss. */
+.streak-playoff {
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}

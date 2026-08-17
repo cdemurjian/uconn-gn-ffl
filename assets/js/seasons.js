@@ -70,6 +70,26 @@ function teamLookup(season) {
 // STANDINGS
 // ============================
 
+// The streak column is regular season only, so a champion's row ends on
+// whatever week 14 did — which reads as wrong unless the title run is shown
+// beside it. Title-path games only: consolation counts for nothing.
+function playoffRun(season, rosterId) {
+  const marks = [];
+  season.weeks.forEach((wk) => {
+    if (!wk.isPlayoffWeek) return;
+    wk.games.forEach((game) => {
+      if (!game.isTitlePath) return;
+      if (game.home !== rosterId && game.away !== rosterId) return;
+      if (game.isBye) {
+        marks.push("·");
+        return;
+      }
+      marks.push(game.winnerRosterId === rosterId ? "W" : "L");
+    });
+  });
+  return marks.join("");
+}
+
 function renderStandings(season) {
   const container = document.getElementById("standings-view");
   const rows = season.teams.map((t) => {
@@ -81,6 +101,14 @@ function renderStandings(season) {
       link.textContent = `🏆 ${t.teamName}`;
       nameCell = link;
     }
+    const streakCell = el("span", "streak");
+    streakCell.appendChild(el("span", "streak-regular", t.streak));
+    const run = playoffRun(season, t.rosterId);
+    if (run) {
+      streakCell.appendChild(el("span", "streak-sep", "|"));
+      streakCell.appendChild(el("span", "streak-playoff", run));
+    }
+
     return [
       t.finalRank,
       nameCell,
@@ -88,12 +116,12 @@ function renderStandings(season) {
       `${t.wins}-${t.losses}`,
       t.pointsFor.toFixed(2),
       t.pointsAgainst.toFixed(2),
-      t.streak,
+      streakCell,
     ];
   });
   buildTable(
     container,
-    ["Rank", "Team", "Manager", "Record", "PF", "PA", "Streak"],
+    ["Rank", "Team", "Manager", "Record", "PF", "PA", "Streak · Playoffs"],
     rows
   );
   // The regular season is 13 weeks in some years and 14 in others, so this
@@ -103,7 +131,9 @@ function renderStandings(season) {
     el(
       "div",
       "view-legend",
-      `Record and streak are regular season only (weeks 1–${lastRegular}).`
+      `Record and streak are regular season only (weeks 1–${lastRegular}). ` +
+        "After the bar is the championship run — consolation games are excluded, " +
+        "and · is a first-round bye."
     )
   );
 }
