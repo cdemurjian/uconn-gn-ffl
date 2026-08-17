@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-17T21:05:45+00:00",
+ "generatedAt": "2026-08-17T21:36:25+00:00",
  "seasons": {
   "espn": [
    2018,
@@ -29,6 +29,11 @@
     "wins": 61,
     "losses": 48,
     "pct": 0.559633
+   },
+   "seasons": 8,
+   "points": {
+    "pf": 15369.12,
+    "pa": 14402.9
    },
    "playoffs": {
     "made": 6,
@@ -69,6 +74,11 @@
     "losses": 50,
     "pct": 0.541284
    },
+   "seasons": 8,
+   "points": {
+    "pf": 15271.18,
+    "pa": 14800.64
+   },
    "playoffs": {
     "made": 5,
     "possible": 8,
@@ -100,6 +110,11 @@
     "wins": 56,
     "losses": 53,
     "pct": 0.513761
+   },
+   "seasons": 8,
+   "points": {
+    "pf": 14907.56,
+    "pa": 14887.7
    },
    "playoffs": {
     "made": 5,
@@ -138,6 +153,11 @@
     "wins": 54,
     "losses": 55,
     "pct": 0.495413
+   },
+   "seasons": 8,
+   "points": {
+    "pf": 14686.4,
+    "pa": 14789.66
    },
    "playoffs": {
     "made": 5,
@@ -182,6 +202,11 @@
     "losses": 42,
     "pct": 0.557895
    },
+   "seasons": 7,
+   "points": {
+    "pf": 12897.17,
+    "pa": 12781.5
+   },
    "playoffs": {
     "made": 5,
     "possible": 7,
@@ -219,6 +244,11 @@
     "wins": 52,
     "losses": 31,
     "pct": 0.626506
+   },
+   "seasons": 6,
+   "points": {
+    "pf": 11734.24,
+    "pa": 10956.83
    },
    "playoffs": {
     "made": 6,
@@ -259,6 +289,11 @@
     "losses": 59,
     "pct": 0.458716
    },
+   "seasons": 8,
+   "points": {
+    "pf": 14577.16,
+    "pa": 14681.14
+   },
    "playoffs": {
     "made": 4,
     "possible": 8,
@@ -289,6 +324,11 @@
     "wins": 46,
     "losses": 50,
     "pct": 0.479167
+   },
+   "seasons": 7,
+   "points": {
+    "pf": 12476.34,
+    "pa": 12733.98
    },
    "playoffs": {
     "made": 3,
@@ -326,6 +366,11 @@
     "losses": 39,
     "pct": 0.518519
    },
+   "seasons": 6,
+   "points": {
+    "pf": 10884.04,
+    "pa": 10951.08
+   },
    "playoffs": {
     "made": 4,
     "possible": 6,
@@ -356,6 +401,11 @@
     "wins": 41,
     "losses": 68,
     "pct": 0.376147
+   },
+   "seasons": 8,
+   "points": {
+    "pf": 13982.56,
+    "pa": 14931.12
    },
    "playoffs": {
     "made": 3,
@@ -392,6 +442,11 @@
     "wins": 21,
     "losses": 21,
     "pct": 0.5
+   },
+   "seasons": 3,
+   "points": {
+    "pf": 5541.08,
+    "pa": 5478.74
    },
    "playoffs": {
     "made": 1,

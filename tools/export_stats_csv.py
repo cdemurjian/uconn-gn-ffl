@@ -25,6 +25,7 @@ HEADERS = [
     "Team", "RECORD", "PERCENTAGE", "PLAYOFFS", "RING", "PLAYOFF RECORD",
     "ESPN WINS", "ESPN LOSS", "SLEEPER WINS", "SLEEPER LOSS",
     "TOTAL WINS", "TOTAL LOSSES",
+    "SEASONS", "TOTAL PF", "TOTAL PA", "PF PER SEASON", "PA PER SEASON",
 ]
 
 
@@ -59,6 +60,11 @@ def row(manager):
         manager["sleeper"]["losses"],
         total["wins"],
         total["losses"],
+        manager["seasons"],
+        f"{manager['points']['pf']:.2f}",
+        f"{manager['points']['pa']:.2f}",
+        f"{manager['points']['pf'] / manager['seasons']:.1f}",
+        f"{manager['points']['pa'] / manager['seasons']:.1f}",
     ]
 
 

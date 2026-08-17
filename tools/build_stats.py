@@ -77,6 +77,8 @@ def blank():
     return {
         "wins": 0,
         "losses": 0,
+        "pointsFor": 0.0,
+        "pointsAgainst": 0.0,
         "playoffWins": 0,
         "playoffLosses": 0,
         "playoffYears": set(),
@@ -115,6 +117,9 @@ def espn_era(ids):
             # Regular season only. standings[].record covers all 16 weeks.
             entry["wins"] += settings.get("wins", 0)
             entry["losses"] += settings.get("losses", 0)
+            # fpts is regular season only, matching the W/L beside it.
+            entry["pointsFor"] += settings.get("fpts", 0.0)
+            entry["pointsAgainst"] += settings.get("fpts_against", 0.0)
 
         for week_entries in season["matchups_by_week"].values():
             for entry in week_entries:
@@ -188,6 +193,8 @@ def sleeper_era(overrides):
                 entry["seasons"].add(int(year))
                 entry["wins"] += team["wins"]
                 entry["losses"] += team["losses"]
+                entry["pointsFor"] += team["pointsFor"]
+                entry["pointsAgainst"] += team["pointsAgainst"]
             if team["finalRank"] == 1:
                 # Credit the ring to whoever the season belongs to, which is
                 # not the roster owner when the season was transferred.
@@ -237,8 +244,33 @@ def check_season_docs_agree(overrides, ids):
         )
 
 
+def check_points_balance(ids):
+    """League-wide points for must equal points against.
+
+    Recomputed from the raw inputs rather than from the output, because the
+    output excludes the two 2018/2019 managers who never joined the current
+    league — their points must still be counted for the books to balance.
+    """
+    pf = pa = 0.0
+    for year in ESPN_YEARS:
+        season = load_json(os.path.join(DATA, f"{year}.json"))["seasons"][year]
+        for roster in season["rosters"]:
+            settings = roster.get("settings") or {}
+            pf += settings.get("fpts", 0.0)
+            pa += settings.get("fpts_against", 0.0)
+    for year in sleeper_years():
+        for team in load_json(os.path.join(DATA, f"{year}.json"))["teams"]:
+            pf += team["pointsFor"]
+            pa += team["pointsAgainst"]
+    if abs(pf - pa) > 0.05:
+        raise SelfCheckError(
+            f"league points do not balance: for {pf:.2f} vs against {pa:.2f}"
+        )
+
+
 def build(overrides):
     ids = resolve_identities(overrides)
+    check_points_balance(ids)
     check_season_docs_agree(overrides, ids)
     espn = espn_era(ids)
     sleeper, champions = sleeper_era(overrides)
@@ -287,6 +319,14 @@ def build(overrides):
                     "wins": wins,
                     "losses": losses,
                     "pct": round(wins / (wins + losses), 6) if wins + losses else 0.0,
+                },
+                # Career points, regular season only in both eras. `seasons` is
+                # the denominator for the per-season figures and the thing that
+                # stops a long career being mistaken for a good one.
+                "seasons": len(tenure),
+                "points": {
+                    "pf": round(a["pointsFor"] + b["pointsFor"], 2),
+                    "pa": round(a["pointsAgainst"] + b["pointsAgainst"], 2),
                 },
                 "playoffs": {
                     "made": len(years),

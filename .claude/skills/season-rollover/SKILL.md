@@ -113,6 +113,52 @@ wrong — and is what the two existing entries do.
 
 ---
 
+### What the stats table now carries
+
+Sixteen columns, in seven groups. Two of them are points, and they are
+deliberately named so they cannot be confused:
+
+| Group | Columns | Meaning |
+|---|---|---|
+| `PTS / SEASON` | PF, PA | career points ÷ active seasons — **the comparable figure** |
+| `CAREER PTS` | SZNS, PF, PA | raw career totals — mostly a measure of longevity |
+
+They rank differently and that is the point: Nick leads points per season while
+sitting 9th on the career total, having played 6 seasons to Devin's 8. The
+table keeps them apart structurally — per-season is tinted and sits with the
+rate stats, career totals are muted and sit last, with the season count
+immediately to their left.
+
+Points are **regular season only** in both eras, matching the W-L beside them.
+Verified: ESPN `settings.fpts` and Sleeper `pointsFor` each sum exactly to
+their regular weeks.
+
+Two caveats worth knowing before anyone argues about them:
+
+- Season length is not constant — 2018–2020 were **13** games, 2021 onward
+  **14**. Per-season averages are therefore not perfectly comparable across
+  eras; per-game would be, if the league ever wants it.
+- ESPN-era and Sleeper-era scoring settings differ, so cross-era point
+  comparisons carry that caveat too. The W-L columns do not have this problem.
+
+**Points obey the roster-credit rule exactly as records do.** A transferred
+season takes its PF, PA and its place in the season count with it — 2021's
+points are Leo's, not Jay's. Nothing extra to do; it falls out of the same
+`rosterCredits` entry.
+
+`build_stats.py` enforces a matching invariant: **league points for must equal
+league points against**, because every point scored is a point allowed. It is
+checked against the raw inputs rather than the output, since the output
+excludes the two 2018/2019 managers who never joined the current league — their
+points still have to be counted for the books to balance. If you see
+
+```
+ABORTED: league points do not balance: for ... vs against ...
+```
+
+a season document is truncated or a roster is missing; re-run
+`build_seasons.py` before anything else.
+
 ## Step 4 — Update `overrides.json` for anything the data cannot know
 
 This file is the **only** hand-maintained input. Four things live here.
@@ -289,7 +335,10 @@ python3 -m http.server 8123
 - `/seasons` — the new year is present, selected, and its standings, matchups
   and draft all render. Check the **year toggle wraps** rather than pushing
   early years off-screen; that broke once when the row grew.
-- `/stats` — the new season is reflected; sort a few columns.
+- `/stats` — the new season is reflected; sort a few columns. Check the
+  **COLUMNS** toggle switches between the core set and all sixteen, and that
+  tapping a row opens its playoff years and ring lore. On a phone the core set
+  should need well under one swipe.
 - `/canton` — the new champion's row is complete, and Positional View shows the
   new players with their years.
 - Console clean on every page.

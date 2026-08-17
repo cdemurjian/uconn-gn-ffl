@@ -179,6 +179,61 @@ class TestBuild(unittest.TestCase):
         years = [r["year"] for m in self.doc["managers"] for r in m["rings"]]
         self.assertEqual(sorted(years), list(range(2018, 2026)))
 
+    def test_points_are_present_and_positive(self):
+        for m in self.doc["managers"]:
+            self.assertGreater(m["points"]["pf"], 0, m["name"])
+            self.assertGreater(m["points"]["pa"], 0, m["name"])
+            self.assertGreater(m["seasons"], 0, m["name"])
+
+    def test_seasons_matches_the_playoff_denominator(self):
+        """One row must not claim two different career lengths."""
+        for m in self.doc["managers"]:
+            self.assertEqual(m["seasons"], m["playoffs"]["possible"], m["name"])
+
+    def test_points_follow_the_transferred_season(self):
+        """2021 is Leo's, so its points must not also be on Jay's line."""
+        self.assertEqual(self.by_name["Jay"]["seasons"], 7)
+        self.assertEqual(self.by_name["Leo"]["seasons"], 3)
+        self.assertAlmostEqual(self.by_name["Jay"]["points"]["pf"], 12897.17, places=2)
+        self.assertAlmostEqual(self.by_name["Leo"]["points"]["pf"], 5541.08, places=2)
+
+    def test_league_points_balance(self):
+        """Every point scored is a point allowed. Raises if not."""
+        ids = build_stats.resolve_identities(OVERRIDES)
+        build_stats.check_points_balance(ids)  # must not raise
+
+    def test_a_points_imbalance_aborts(self):
+        real = build_stats.load_json
+
+        def tampered(path):
+            doc = copy.deepcopy(real(path))
+            if os.path.basename(path) == "2025.json":
+                doc["teams"][0]["pointsFor"] += 500
+            return doc
+
+        build_stats.load_json = tampered
+        try:
+            with self.assertRaises(build_stats.SelfCheckError):
+                build_stats.check_points_balance(
+                    build_stats.resolve_identities(OVERRIDES))
+        finally:
+            build_stats.load_json = real
+
+    def test_per_season_average_reorders_against_the_career_total(self):
+        """The whole reason both figures exist: they rank differently.
+
+        Nick is 9th on career PF and 1st per season. A design that let one be
+        mistaken for the other would mislead about who is actually good.
+        """
+        by_total = [m["name"] for m in
+                    sorted(self.doc["managers"], key=lambda m: -m["points"]["pf"])]
+        by_avg = [m["name"] for m in
+                  sorted(self.doc["managers"],
+                         key=lambda m: -m["points"]["pf"] / m["seasons"])]
+        self.assertNotEqual(by_total, by_avg)
+        self.assertEqual(by_avg[0], "Nick")
+        self.assertGreater(by_total.index("Nick"), 5)
+
     def test_selfcheck_aborts_on_an_unexplained_mismatch(self):
         broken = copy.deepcopy(OVERRIDES)
         broken["curatedPlayoffRecords"]["Nick"] = "99-0"

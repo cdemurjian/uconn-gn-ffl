@@ -9,8 +9,8 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <!-- CSS + JS from assets/ with cache-busting -->
-    <link rel="stylesheet" href="/assets/css/styles.css?v=10" />
-    <script src="/assets/js/stats.js?v=10" defer></script>
+    <link rel="stylesheet" href="/assets/css/styles.css?v=11" />
+    <script src="/assets/js/stats.js?v=11" defer></script>
   </head>
   <body>
     <main class="page-shell">
@@ -43,26 +43,30 @@
               />
             </div>
             <div class="stats-meta">
+              <button
+                id="stats-cols-toggle"
+                class="stats-toggle"
+                type="button"
+                aria-pressed="true"
+              >
+                COLUMNS: CORE
+              </button>
               <span id="stats-count-label">0</span> rows
             </div>
           </div>
 
           <div class="table-responsive">
             <table id="stats-table" class="stats-table">
-              <thead>
-                <tr id="stats-header-row">
-                  <!-- populated from CSV first row -->
-                </tr>
-              </thead>
-              <tbody>
-                <!-- populated from CSV -->
-              </tbody>
+              <!-- Both rows are built by assets/js/stats.js: a spanning
+                   group row, then the sortable leaf columns. -->
+              <thead></thead>
+              <tbody></tbody>
             </table>
           </div>
 
           <div style="font-size: 0.78rem; color: var(--ink-muted);">
-            Tip: tap a column header to sort; drag sideways on mobile to see all
-            columns.
+            Tip: tap a column header to sort, or a row for its playoff years and ring
+            lore. The COLUMNS button switches between the core set and every column.
           </div>
         </div>
       </section>
