@@ -124,6 +124,51 @@ snapshot — including what to do when the build deliberately aborts.
 In Claude Code, ask for the season rollover and the skill loads. Otherwise read
 it as a checklist; every command in it is copy-pasteable.
 
+## Pointing someone at the raw data
+
+None of the numbers live in the HTML — every page fetches JSON, so the data is
+directly linkable and needs no scraping.
+
+| URL | What |
+|---|---|
+| `/assets/data/stats.json` | the whole career table, 11 managers |
+| `/assets/data/2018.json` … `2025.json` | one season each |
+| `/assets/data/overrides.json` | the hand-maintained layer: identity, credits, ring lore |
+| `/assets/data/stats-25.csv` | spreadsheet-friendly snapshot through 2025 |
+| `/assets/data/stats-25-he.csv` | the pre-generation hand-kept table |
+
+Live, e.g. `https://www.uconn-gn-ffl.com/assets/data/stats.json`.
+
+### The one thing to warn them about
+
+**The season files are not all the same shape.**
+
+- **2018, 2019** are *raw ESPN exports*, ~750KB each. The season sits nested at
+  `["seasons"]["2018"]`, and inside it are ESPN's own field names
+  (`matchups_by_week`, `roster.settings.fpts`, `playoff_tier_type`). They also
+  carry per-player detail the Sleeper years do not: every starter, their points,
+  and a full player dictionary.
+- **2020 onward** are *normalized* to this repo's own view model, ~38KB each,
+  flat, tagged `"schemaVersion": "season-view/1"`. Keys are `teams`, `weeks`,
+  `draft`, `settings`. Per-player starters are intentionally empty — that is
+  what keeps them small.
+
+`assets/js/season-data.js` is the reference for reading both: it converts the
+first shape into the second and passes the second through untouched.
+
+### Two things that will bite a naive reader
+
+1. **`streak` / `record` strings.** In the raw ESPN files, `standings[].record`
+   runs all 16 weeks, so it bakes in playoff *and consolation* results and is
+   15 or 16 characters depending on whether the team had a bye. Regular-season
+   W/L comes from `roster.settings.wins/losses`. The normalized files have
+   already truncated `streak` to the regular season.
+2. **Consolation games count for nothing here.** Playoff records, appearances
+   and rings use the title path only — ESPN's `WINNERS_BRACKET` tier, or a
+   Sleeper `winners_bracket` match with no placement or `p == 1`. A bye is not
+   a game and never a loss. Anyone recomputing from `weeks[].games[]` should
+   filter on `isTitlePath` or they will get different numbers than the site.
+
 ## Every file, and what it is
 
 **Pages** — each a directory with an `index.html`; the root `<name>.html` files
