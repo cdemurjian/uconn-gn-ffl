@@ -141,11 +141,16 @@ def sleeper_era(overrides):
     out = {}
     champions = {}
 
+    # A roster credit reassigns a season. "transfer" (the default) means the
+    # season belongs to the named manager INSTEAD of the roster owner, so the
+    # league totals still balance; "share" credits both and deliberately
+    # double-counts.
     credits = {}
     for credit in overrides["rosterCredits"]:
-        credits.setdefault(credit["season"], {}).setdefault(
-            credit["rosterId"], []
-        ).append(credit["creditTo"])
+        credits.setdefault(credit["season"], {})[credit["rosterId"]] = {
+            "to": credit["creditTo"],
+            "mode": credit.get("mode", "transfer"),
+        }
 
     def bucket(name):
         return out.setdefault(name, blank())
@@ -156,7 +161,13 @@ def sleeper_era(overrides):
 
         holders = {}
         for team in doc["teams"]:
-            names = [team["manager"]] + season_credits.get(team["rosterId"], [])
+            credit = season_credits.get(team["rosterId"])
+            if credit is None:
+                names = [team["manager"]]
+            elif credit["mode"] == "share":
+                names = [team["manager"], credit["to"]]
+            else:
+                names = [credit["to"]]
             holders[team["rosterId"]] = names
             for name in names:
                 entry = bucket(name)

@@ -22,7 +22,8 @@
       "season": "2021",
       "rosterId": 4,
       "creditTo": "Leo",
-      "note": "Leo co-managed Jay's team; the league credits the 6-8 to both. Verified: 2021 roster 4 is the only non-null co_owners in the chain."
+      "mode": "transfer",
+      "note": "Leo managed this team in 2021, so the season is his and not Jay's: the record, the tenure and any playoff games all move. mode 'transfer' removes it from the roster owner; mode 'share' would credit both and is what makes league totals fail to balance. Verified: 2021 roster 4 is the only non-null co_owners in the chain."
     }
   ],
 

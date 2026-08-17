@@ -17,7 +17,7 @@ OVERRIDES = build_stats.load_overrides()
 # The career table as the league has always recorded it.
 CAREER = {
     "Charlie": (54, 55), "Nick": (52, 31), "Stove": (46, 50), "Matt": (41, 68),
-    "Jay": (59, 50), "Tyler": (56, 53), "Devin": (61, 48), "Kap": (59, 50),
+    "Jay": (53, 42), "Tyler": (56, 53), "Devin": (61, 48), "Kap": (59, 50),
     "Bij": (50, 59), "Leo": (21, 21), "Chaf": (42, 39),
 }
 ESPN_SPLIT = {
@@ -96,20 +96,36 @@ class TestBuild(unittest.TestCase):
         c = self.by_name["Charlie"]["total"]
         self.assertAlmostEqual(c["pct"], 54 / 109, places=5)
 
-    def test_sleeper_totals_balance_once_the_shared_season_is_removed(self):
+    def test_sleeper_totals_balance_exactly(self):
+        """Every game makes exactly one win and one loss, so these must match.
+
+        They only balance because the 2021 roster credit is a transfer rather
+        than a share: crediting both Jay and Leo would double-count 6-8.
+        """
         w = sum(m["sleeper"]["wins"] for m in self.doc["managers"])
         l = sum(m["sleeper"]["losses"] for m in self.doc["managers"])
-        # Jay's 2021 roster (6-8) is credited to Leo as well, by league rule.
-        self.assertEqual((w - 6, l - 8), (415, 415))
+        self.assertEqual((w, l), (415, 415))
 
     def test_playoff_years(self):
         for name, years in PLAYOFF_YEARS.items():
             self.assertEqual(self.by_name[name]["playoffs"]["years"], years, name)
 
-    def test_jays_denominator_counts_his_2018_season(self):
-        # gordon korman is Jay, so his tenure is 8 seasons, not 7.
-        self.assertEqual(self.by_name["Jay"]["playoffs"]["possible"], 8)
+    def test_jays_tenure_excludes_the_season_leo_managed(self):
+        """2018 (as gordon korman) counts; 2021 does not, because it is Leo's.
+
+        Those two cancel out to the 5/7 the league has always recorded.
+        """
+        self.assertEqual(self.by_name["Jay"]["playoffs"]["possible"], 7)
         self.assertEqual(self.by_name["Jay"]["playoffs"]["made"], 5)
+        self.assertNotIn(2021, self.by_name["Jay"]["playoffs"]["years"])
+
+    def test_the_transferred_season_belongs_to_exactly_one_manager(self):
+        """2021 is Leo's, so Jay must not also be paid for it."""
+        jay = self.by_name["Jay"]["sleeper"]
+        # 39-44 across all six seasons, less the 6-8 that is Leo's.
+        self.assertEqual((jay["wins"], jay["losses"]), (33, 36))
+        leo = self.by_name["Leo"]["sleeper"]
+        self.assertEqual((leo["wins"], leo["losses"]), (21, 21))
 
     def test_nine_playoff_records_match_the_curated_values(self):
         agreed = 0

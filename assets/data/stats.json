@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-17T20:22:36+00:00",
+ "generatedAt": "2026-08-17T20:29:11+00:00",
  "seasons": {
   "espn": [
    2018,
@@ -51,44 +51,6 @@
      "year": 2021,
      "mickeyMouse": false,
      "note": ""
-    }
-   ]
-  },
-  {
-   "name": "Jay",
-   "espn": {
-    "wins": 20,
-    "losses": 6
-   },
-   "sleeper": {
-    "wins": 39,
-    "losses": 44
-   },
-   "total": {
-    "wins": 59,
-    "losses": 50,
-    "pct": 0.541284
-   },
-   "playoffs": {
-    "made": 5,
-    "possible": 8,
-    "years": [
-     2018,
-     2019,
-     2020,
-     2022,
-     2024
-    ],
-    "record": {
-     "wins": 5,
-     "losses": 4
-    }
-   },
-   "rings": [
-    {
-     "year": 2022,
-     "mickeyMouse": true,
-     "note": "Damar Hamlin Mickey Mouse Ring"
     }
    ]
   },
@@ -202,6 +164,44 @@
      "year": 2025,
      "mickeyMouse": false,
      "note": ""
+    }
+   ]
+  },
+  {
+   "name": "Jay",
+   "espn": {
+    "wins": 20,
+    "losses": 6
+   },
+   "sleeper": {
+    "wins": 33,
+    "losses": 36
+   },
+   "total": {
+    "wins": 53,
+    "losses": 42,
+    "pct": 0.557895
+   },
+   "playoffs": {
+    "made": 5,
+    "possible": 7,
+    "years": [
+     2018,
+     2019,
+     2020,
+     2022,
+     2024
+    ],
+    "record": {
+     "wins": 5,
+     "losses": 4
+    }
+   },
+   "rings": [
+    {
+     "year": 2022,
+     "mickeyMouse": true,
+     "note": "Damar Hamlin Mickey Mouse Ring"
     }
    ]
   },
