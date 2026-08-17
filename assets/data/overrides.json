@@ -1,0 +1,56 @@
+{
+  "_comment": "The entire hand-maintained surface of the generated stats. Everything else is derived. Read by tools/build_seasons.py and tools/build_stats.py - this is the single source of truth for manager identity.",
+
+  "leagueId": "1354540358725308416",
+
+  "managers": {
+    "Charlie": { "sleeper": ["566433163276656640"], "espn": ["Charlie Demurjian"] },
+    "Nick":    { "sleeper": ["596540594256396288"], "espn": [] },
+    "Stove":   { "sleeper": ["596527482476220416"], "espn": ["Stephen Macejko"] },
+    "Matt":    { "sleeper": ["567084260707282944"], "espn": ["Matthew Fuchs"] },
+    "Jay":     { "sleeper": ["566438163756843008"], "espn": ["gordon korman", "Jay Korman"] },
+    "Tyler":   { "sleeper": ["411612739752955904"], "espn": ["Tyler Huhtanen"] },
+    "Devin":   { "sleeper": ["545776737189720064"], "espn": ["devin pallanck"] },
+    "Kap":     { "sleeper": ["596556815018278912"], "espn": ["Joe  Foe"] },
+    "Bij":     { "sleeper": ["596540312357232640"], "espn": ["Justin Bijari"] },
+    "Leo":     { "sleeper": ["566439156912316416"], "espn": [] },
+    "Chaf":    { "sleeper": ["596444370052374528", "1042849693107150848"], "espn": ["Max Chafiian"] }
+  },
+
+  "rosterCredits": [
+    {
+      "season": "2021",
+      "rosterId": 4,
+      "creditTo": "Leo",
+      "note": "Leo co-managed Jay's team; the league credits the 6-8 to both. Verified: 2021 roster 4 is the only non-null co_owners in the chain."
+    }
+  ],
+
+  "curatedPlayoffRecords": {
+    "_comment": "Checked against the derived values; the build FAILS on a mismatch. Add to playoffRecordOverrides to accept a curated value instead.",
+    "Charlie": "6-4", "Nick": "6-5", "Stove": "4-2", "Matt": "3-2",
+    "Jay": "4-3", "Tyler": "3-4", "Devin": "3-5", "Kap": "3-5",
+    "Bij": "1-4", "Leo": "0-1", "Chaf": "4-4"
+  },
+
+  "playoffRecordOverrides": {
+    "Charlie": {
+      "accept": "derived",
+      "why": "Curated 6-4 implies an ESPN-era loss that does not exist in either export. 2019 was a week-14 loss to Chaf then two consolation wins; there is no second title-path loss."
+    },
+    "Jay": {
+      "accept": "derived",
+      "why": "Curated 4-3 omits his 2019 run entirely (beat Bij wk14, lost to Stove wk15). 4-3 is exactly 2018 (0-1) plus his Sleeper record (4-2)."
+    }
+  },
+
+  "rings": [
+    { "year": 2018, "manager": "Charlie", "mickeyMouse": true,
+      "note": "Inception of League Mickey Mouse Ring" },
+    { "year": 2019, "manager": "Stove", "mickeyMouse": false, "note": "" },
+    { "year": 2022, "manager": "Jay", "mickeyMouse": true,
+      "note": "Damar Hamlin Mickey Mouse Ring" },
+    { "year": 2023, "manager": "Tyler", "mickeyMouse": true,
+      "note": "Chaf Council of Shitters Mickey Mouse Ring" }
+  ]
+}

@@ -23,7 +23,7 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "assets/data")
 API = "https://api.sleeper.app/v1"
-LEAGUE_ID = "1354540358725308416"
+
 
 SCHEMA = "season-view/1"
 TITLE_TIER = "WINNERS_BRACKET"
@@ -34,22 +34,21 @@ REGULAR_TIER = "REGULAR"
 # Placements that are NOT the championship path.
 CONSOLATION_PLACEMENTS = (3, 5, 7, 9)
 
-# Sleeper user_id -> the nickname the rest of the site uses. Verified stable
-# across seasons. Chaf plays under two accounts.
-NICKNAMES = {
-    "566433163276656640": "Charlie",
-    "596540594256396288": "Nick",
-    "596527482476220416": "Stove",
-    "567084260707282944": "Matt",
-    "566438163756843008": "Jay",
-    "411612739752955904": "Tyler",
-    "545776737189720064": "Devin",
-    "596556815018278912": "Kap",
-    "596540312357232640": "Bij",
-    "566439156912316416": "Leo",
-    "596444370052374528": "Chaf",
-    "1042849693107150848": "Chaf",
-}
+OVERRIDES_PATH = os.path.join(ROOT, "assets/data/overrides.json")
+
+
+def load_nicknames():
+    """Sleeper user_id -> nickname, from the single source of truth."""
+    with open(OVERRIDES_PATH, encoding="utf-8") as handle:
+        overrides = json.load(handle)
+    out = {}
+    for nickname, entry in overrides["managers"].items():
+        for user_id in entry.get("sleeper", []):
+            out[user_id] = nickname
+    return out
+
+
+NICKNAMES = load_nicknames()
 
 
 def get(path):
@@ -423,7 +422,9 @@ def main():
     parser.add_argument("--check", action="store_true", help="verify, do not write")
     args = parser.parse_args()
 
-    chain = fetch_chain(LEAGUE_ID)
+    with open(OVERRIDES_PATH, encoding="utf-8") as handle:
+        league_id = json.load(handle)["leagueId"]
+    chain = fetch_chain(league_id)
     print(f"completed seasons: {[lg['season'] for lg in chain]}")
 
     all_problems = []

@@ -907,3 +907,9 @@ body {
 .season-meta-link:hover {
   background: var(--accent-soft);
 }
+
+.stats-message {
+  padding: 1rem;
+  text-align: center;
+  color: var(--ink-muted);
+}

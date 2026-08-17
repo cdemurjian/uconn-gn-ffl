@@ -4,7 +4,8 @@ League site for the UCONN-GN-FFL: stats, champions, history, docs, and Canton da
 
 ## Pages
 - `index.html` — landing with quick nav cards.
-- `stats.html` — sortable stats table fed by `assets/data/stats.csv`.
+- `stats.html` — sortable career table fed by generated `assets/data/stats.json`.
+- `seasons.html` — per-season standings, matchups and draft boards, 2018–2025.
 - `canton.html` — Team, Awards, Positional, and Player views with search/filter.
 - `docs.html` — league rules and info.
 
@@ -26,3 +27,62 @@ Awards are in `assets/js/canton.js` under `AWARDS_DATA`:
 { year, mvp, mvpPoints, sbMvp, sbNotes }
 ```
 Fill those fields to update the Awards view and the awards indicators/tooltips across Canton views.
+
+## Generated data
+
+Two files are generated. **Do not hand-edit them.**
+
+| File | Built by | Source |
+|---|---|---|
+| `assets/data/2020.json` … `2025.json` | `tools/build_seasons.py` | Sleeper API |
+| `assets/data/stats.json` | `tools/build_stats.py` | the season files + the ESPN exports |
+
+`assets/data/2018.json` and `2019.json` are raw ESPN exports, normalized in the
+browser by `assets/js/season-data.js`. They never change.
+
+### Refreshing after a season ends
+
+```bash
+python3 tools/build_seasons.py     # pull the Sleeper era (~25 API calls)
+python3 tools/build_stats.py       # rebuild the career table
+```
+
+Then verify and commit:
+
+```bash
+python3 tools/check_theme.py
+node --test tools/season-data.test.js
+cd tools && python3 -m unittest test_build_stats; cd ..
+git add assets/data && git commit -m "data: refresh through <season>"
+```
+
+Both scripts refuse to write anything if their self-checks fail. `--check`
+verifies without writing.
+
+### The only hand-maintained data
+
+`assets/data/overrides.json` is the single source of truth for manager
+identity, read by both scripts:
+
+- `managers` — nickname → Sleeper `user_id` and ESPN name. Chaf has two Sleeper
+  accounts; Jay has two ESPN names.
+- `rosterCredits` — a co-owned roster credited to a second manager (Leo, 2021).
+- `rings` — ring lore and asterisks, plus the two ESPN-era rings.
+- `curatedPlayoffRecords` — checked against the derived values. The build
+  **fails** on a mismatch; record the decision in `playoffRecordOverrides`.
+
+### A rule the whole pipeline enforces
+
+Consolation games count for nothing — no record, no appearance, no ring. A bye
+is not a game and is never a loss. `test_build_stats.py` proves it the strong
+way: delete every consolation game from the inputs and the output is identical.
+
+`assets/data/stats.csv` is the pre-generation record. Nothing loads it.
+
+## Logo
+
+`assets/img/logo-source.png` is the original. `tools/make_logo.py` clears its
+white background (flood-filling inward from the border, so white *inside* the
+husky survives) and `tools/make_favicon.py` builds `favicon.ico` from the
+result. The site palette is derived from this image — see
+`docs/superpowers/specs/2026-08-17-logo-theme-seasons-stats-design.md` §4.
