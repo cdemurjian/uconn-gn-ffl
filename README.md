@@ -96,4 +96,20 @@ way: delete every consolation game from the inputs and the output is identical.
 white background (flood-filling inward from the border, so white *inside* the
 husky survives) and `tools/make_favicon.py` builds `favicon.ico` from the
 result. The site palette is derived from this image — see
-`docs/superpowers/specs/2026-08-17-logo-theme-seasons-stats-design.md` §4.
+`_planning/specs/2026-08-17-logo-theme-seasons-stats-design.md` §4.
+
+## Planning documents
+
+The design spec and implementation plans live in `_planning/`:
+
+```
+_planning/specs/   the design this site was built from
+_planning/plans/   the three implementation plans (theme, seasons, stats)
+```
+
+They sit outside `docs/` deliberately: `docs/` is the public rules page at
+`/docs`, and anything under it would be published. GitHub Pages runs Jekyll,
+which does not copy paths beginning with `_` into the built site, so
+`_planning/` is versioned but never served. **If a `.nojekyll` file is ever
+added to this repo, that exclusion stops applying** and `_planning/` would
+become public — rename it to `.planning/` at that point.

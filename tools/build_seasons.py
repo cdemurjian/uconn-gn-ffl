@@ -11,7 +11,7 @@ with schemaVersion so the browser passes them straight through.
 
 Consolation games count for nothing: they are emitted and labelled, but the
 title path is only winners-bracket matches with no placement or p == 1.
-See docs/superpowers/specs/2026-08-17-logo-theme-seasons-stats-design.md §6.4.1.
+See _planning/specs/2026-08-17-logo-theme-seasons-stats-design.md §6.4.1.
 """
 
 import argparse

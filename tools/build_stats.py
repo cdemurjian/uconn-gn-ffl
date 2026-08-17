@@ -15,7 +15,7 @@ build_seasons.py's job, and this reads what it wrote.
 Consolation games count for nothing. The title path is ESPN's WINNERS_BRACKET
 tier and Sleeper's winners-bracket matches with no placement or p == 1; a bye
 is not a game and is never a loss. See
-docs/superpowers/specs/2026-08-17-logo-theme-seasons-stats-design.md §6.4.1.
+_planning/specs/2026-08-17-logo-theme-seasons-stats-design.md §6.4.1.
 """
 
 import argparse

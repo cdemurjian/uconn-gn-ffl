@@ -1,5 +1,5 @@
 // Renders the season view model produced by season-data.js.
-// See docs/superpowers/specs/2026-08-17-logo-theme-seasons-stats-design.md §5.
+// See _planning/specs/2026-08-17-logo-theme-seasons-stats-design.md §5.
 
 const VIEWS = ["standings", "matchups", "draft"];
 

@@ -1,6 +1,6 @@
 // Turns a raw ESPN league export into a plain view model.
 // No DOM access lives in this file, so it can be unit-tested under node.
-// See docs/superpowers/specs/2026-08-17-logo-theme-seasons-stats-design.md §5.
+// See _planning/specs/2026-08-17-logo-theme-seasons-stats-design.md §5.
 
 // The title path. Consolation tiers contribute to no record: spec §6.4.1.
 const TITLE_TIER = "WINNERS_BRACKET";
