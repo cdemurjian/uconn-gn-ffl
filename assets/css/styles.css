@@ -710,3 +710,28 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Home hero logo. index.html only — inner pages stay text-first.
+   257px is the source width; scaling beyond it softens the image. */
+.app-logo {
+  display: block;
+  width: 100%;
+  max-width: 257px;
+  height: auto;
+  margin: 0 auto 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .app-logo {
+    max-width: 200px;
+  }
+}
+
+.page-shell > .app-header:has(.app-logo) {
+  align-items: center;
+  text-align: center;
+}
+
+.page-shell > .app-header:has(.app-logo) .app-nav {
+  justify-content: center;
+}
