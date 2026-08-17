@@ -1,3 +1,13 @@
+// Tests for the season view model, run with:  node --test tools/season-data.test.js
+//
+// Covers both producers of that model and holds them to one contract:
+//   2018/2019  raw ESPN exports, normalized here by assets/js/season-data.js
+//   2020+      pre-normalized by tools/build_seasons.py, passed through
+//
+// The contract tests near the bottom are the load-bearing ones: they are what
+// stop the two producers drifting apart, and what keeps seasons.js free of
+// per-era branching.
+
 const test = require("node:test");
 const assert = require("node:assert");
 const fs = require("node:fs");

@@ -1,3 +1,18 @@
+/* UCONN-GN-FFL — the whole stylesheet for the site.
+ *
+ * Every colour is defined once, as a custom property on :root below, and the
+ * palette is derived from the league logo (assets/img/logo-source.png).
+ * tools/check_theme.py FAILS if any colour literal appears outside that block,
+ * so the theme can be changed in one place and cannot quietly rot.
+ *
+ * One hard constraint: red (--accent) on navy (--ink) is 2.36:1, a WCAG
+ * failure. Red appears on white or --bg only; active states are navy fill with
+ * white text. --rule is 2.04:1 and is for borders, never text.
+ *
+ * Sections: tokens · header/nav · home grid · stats table · canton · seasons.
+ * See _planning/specs/2026-08-17-logo-theme-seasons-stats-design.md §4.
+ */
+
 :root {
   /* Palette derived from assets/img/logo.png. See
      docs/superpowers/specs/2026-08-17-logo-theme-seasons-stats-design.md §4.1.
