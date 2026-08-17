@@ -56,10 +56,33 @@ class TestIdentities(unittest.TestCase):
         jay = sorted(n for n, who in self.ids["espn"].items() if who == "Jay")
         self.assertEqual(jay, ["Jay Korman", "gordon korman"])
 
-    def test_no_identity_is_claimed_twice(self):
-        for era in ("sleeper", "espn"):
-            keys = list(self.ids[era])
-            self.assertEqual(len(keys), len(set(keys)), era)
+    def test_a_duplicate_sleeper_id_is_rejected(self):
+        """Two managers claiming one account must abort, not last-writer-win.
+
+        The previous version of this test compared a dict's keys to a set of
+        the same keys, which is true by construction and could never fail.
+        """
+        broken = copy.deepcopy(OVERRIDES)
+        stolen = OVERRIDES["managers"]["Charlie"]["sleeper"][0]
+        broken["managers"]["Nick"]["sleeper"].append(stolen)
+        with self.assertRaises(build_stats.SelfCheckError):
+            build_stats.resolve_identities(broken)
+
+    def test_a_duplicate_espn_name_is_rejected(self):
+        broken = copy.deepcopy(OVERRIDES)
+        broken["managers"]["Nick"]["espn"].append("Charlie Demurjian")
+        with self.assertRaises(build_stats.SelfCheckError):
+            build_stats.resolve_identities(broken)
+
+    def test_season_docs_must_use_known_manager_names(self):
+        """Guards the seam where identity is baked in by build_seasons.py."""
+        ids = build_stats.resolve_identities(OVERRIDES)
+        renamed = copy.deepcopy(OVERRIDES)
+        renamed["managers"]["Bartholomew"] = renamed["managers"].pop("Kap")
+        with self.assertRaises(build_stats.SelfCheckError):
+            build_stats.check_season_docs_agree(
+                renamed, build_stats.resolve_identities(renamed)
+            )
 
 
 class TestBuild(unittest.TestCase):

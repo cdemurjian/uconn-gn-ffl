@@ -279,3 +279,30 @@ test("each season has its own ffwrapped league id", () => {
   assert.strictEqual(new Set(ids).size, ids.length, "league ids must be distinct");
   assert.strictEqual(ids.length, 6, "six Sleeper seasons");
 });
+
+// season-data.js carries its own ESPN nickname map because a classic script
+// cannot read overrides.json synchronously. overrides.json calls itself the
+// single source of truth, so the duplicate must not be allowed to drift.
+test("the JS nickname map matches overrides.json", () => {
+  const src = fs.readFileSync(
+    path.join(ROOT, "assets/js/season-data.js"), "utf8");
+  const block = src.match(/const ESPN_NICKNAMES = \{([\s\S]*?)\};/);
+  assert.ok(block, "ESPN_NICKNAMES block not found");
+
+  const inJs = {};
+  for (const [, name, nick] of block[1].matchAll(/"([^"]+)":\s*"([^"]+)"/g)) {
+    inJs[name] = nick;
+  }
+
+  const overrides = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "assets/data/overrides.json"), "utf8"));
+  const expected = {};
+  for (const [nick, entry] of Object.entries(overrides.managers)) {
+    if (nick.startsWith("_")) continue;
+    for (const name of entry.espn || []) expected[name] = nick;
+  }
+
+  assert.deepStrictEqual(
+    inJs, expected,
+    "ESPN_NICKNAMES has drifted from overrides.json managers.*.espn");
+});

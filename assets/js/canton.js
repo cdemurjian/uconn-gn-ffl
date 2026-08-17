@@ -331,8 +331,8 @@ function buildTeamTable() {
 
     cells.forEach((val, idx) => {
       const td = document.createElement("td");
-      // The 2018 and 2019 champions have a full season archive. Spec §5.7.
-      if (idx === 0 && (val === 2018 || val === 2019)) {
+      // Every season now has an archive page, both eras.
+      if (idx === 0 && typeof val === "number") {
         const link = document.createElement("a");
         link.className = "champ-link";
         link.href = `/seasons/#${val}`;

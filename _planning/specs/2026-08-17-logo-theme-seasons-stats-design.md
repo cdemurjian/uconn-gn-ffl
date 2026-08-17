@@ -1,7 +1,32 @@
 # UCONN-GN-FFL — Logo, Theme, Seasons Archive, and Generated Stats
 
 **Date:** 2026-08-17
-**Status:** Design — awaiting approval
+**Status:** Implemented, with the amendments below
+
+> ## Amendments after approval
+>
+> This document records the design as approved. Five decisions changed during
+> implementation; **where this spec and the code disagree, the code is right.**
+>
+> 1. **The League Settings view was dropped** (§5.1, §5.3). Seasons ships three
+>    views: Standings, Matchups, Draft.
+> 2. **Seasons 2020–2025 were added** from the Sleeper API, pre-normalized by
+>    `tools/build_seasons.py` into the same view model. The page covers
+>    2018–2025, not just the two ESPN years, and each Sleeper year links to its
+>    own ffwrapped league id. ffwrapped cannot read the ESPN era, so 2018/2019
+>    carry no link.
+> 3. **The 2021 roster credit is a transfer, not a share** (§6.3, §7.3, §7.8).
+>    That season is Leo's, not Jay's: the record, the tenure and any playoff
+>    games all move. This is what makes the Sleeper columns balance at 415-415,
+>    so §7.3's "The CSV is correct" at 421/423 is superseded — the CSV
+>    double-counted one 6-8 season. Jay is **5/7**, not the 5/8 this spec
+>    concluded: 2018 as `gordon korman` adds a season and 2021 removes one.
+> 4. **`build_stats.py` does not touch the network** (§6.1–§6.5). Fetching is
+>    `build_seasons.py`'s job; the stats generator reads the season documents
+>    it wrote. There is no `tools/fixtures/sleeper_raw.json`.
+> 5. **Pages are directories with extensionless URLs** (`/stats`, not
+>    `/stats.html`), paths are root-relative, and this spec now lives in
+>    `_planning/` so it is not published with the site.
 **Repo:** `uconn-gn-ffl` (static site, GitHub Pages, no build step)
 
 ---

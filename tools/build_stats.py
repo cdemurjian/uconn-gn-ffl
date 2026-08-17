@@ -47,14 +47,28 @@ def load_overrides(path=OVERRIDES_PATH):
 
 
 def resolve_identities(overrides):
-    """Invert the manager map into one lookup table per era."""
+    """Invert the manager map into one lookup table per era.
+
+    Raises if one identity is claimed by two managers: a silent last-writer-
+    wins there would quietly reassign someone's whole career.
+    """
     sleeper, espn = {}, {}
     for nickname, entry in overrides["managers"].items():
         if nickname.startswith("_"):
             continue
         for user_id in entry.get("sleeper", []):
+            if user_id in sleeper:
+                raise SelfCheckError(
+                    f"Sleeper id {user_id} is claimed by both "
+                    f"{sleeper[user_id]} and {nickname}"
+                )
             sleeper[user_id] = nickname
         for name in entry.get("espn", []):
+            if name in espn:
+                raise SelfCheckError(
+                    f'ESPN name "{name}" is claimed by both '
+                    f"{espn[name]} and {nickname}"
+                )
             espn[name] = nickname
     return {"sleeper": sleeper, "espn": espn}
 
@@ -175,7 +189,9 @@ def sleeper_era(overrides):
                 entry["wins"] += team["wins"]
                 entry["losses"] += team["losses"]
             if team["finalRank"] == 1:
-                champions[year] = team["manager"]
+                # Credit the ring to whoever the season belongs to, which is
+                # not the roster owner when the season was transferred.
+                champions[year] = names[0]
 
         for week in doc["weeks"]:
             for game in week["games"]:
@@ -201,8 +217,29 @@ def sleeper_era(overrides):
     return out, champions
 
 
+def check_season_docs_agree(overrides, ids):
+    """The season docs carry nicknames baked in by build_seasons.py.
+
+    Those must be the same names overrides.json knows, or editing an id here
+    and rebuilding only this script would silently change nothing.
+    """
+    known = {n for n in overrides["managers"] if not n.startswith("_")}
+    known |= {c["creditTo"] for c in overrides["rosterCredits"]}
+    unknown = set()
+    for year in sleeper_years():
+        doc = load_json(os.path.join(DATA, f"{year}.json"))
+        unknown |= {t["manager"] for t in doc["teams"]} - known
+    if unknown:
+        raise SelfCheckError(
+            "season documents name managers that overrides.json does not know: "
+            + ", ".join(sorted(unknown))
+            + "\nRe-run tools/build_seasons.py after changing manager identity."
+        )
+
+
 def build(overrides):
     ids = resolve_identities(overrides)
+    check_season_docs_agree(overrides, ids)
     espn = espn_era(ids)
     sleeper, champions = sleeper_era(overrides)
 

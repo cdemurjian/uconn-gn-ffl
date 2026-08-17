@@ -29,7 +29,7 @@ python3 -m http.server 8000
 
 ## Editing notes
 - Assets: CSS in `assets/css/styles.css`; JS in `assets/js/`; data in `assets/data/`.
-- Keep HTML/JS using relative paths for GitHub Pages.
+- Use root-relative paths (`/assets/…`, `/stats/`) so a page works from any directory depth; `CNAME` puts the site at a domain root, which is what makes this safe.
 - Use double quotes in JS and 2-space indentation across HTML/CSS/JS.
 
 ## Canton awards data
