@@ -233,7 +233,7 @@ const SEASON_CACHE = {};
 // year costs about one photo over the wire. Spec §5.2.
 function loadSeason(year) {
   if (!SEASON_CACHE[year]) {
-    SEASON_CACHE[year] = fetch(`assets/data/${year}.json`)
+    SEASON_CACHE[year] = fetch(`/assets/data/${year}.json`)
       .then((resp) => {
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         return resp.json();

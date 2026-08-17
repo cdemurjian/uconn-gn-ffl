@@ -97,7 +97,7 @@ function renderStandings(season) {
     if (t.finalRank === 1) {
       // Champion links back to Canton. Spec §5.7.
       const link = el("a", "champ-link");
-      link.href = "canton.html";
+      link.href = "/canton/";
       link.textContent = `🏆 ${t.teamName}`;
       nameCell = link;
     }

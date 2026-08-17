@@ -335,7 +335,7 @@ function buildTeamTable() {
       if (idx === 0 && (val === 2018 || val === 2019)) {
         const link = document.createElement("a");
         link.className = "champ-link";
-        link.href = `seasons.html#${val}`;
+        link.href = `/seasons/#${val}`;
         link.textContent = String(val);
         td.appendChild(link);
       } else {

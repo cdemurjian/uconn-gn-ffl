@@ -3,7 +3,7 @@
 // previous comparator stripped non-digits, so an en-dash in one cell made the
 // PLAYOFFS column sort by 581,819,212,425. Spec §6.6.
 
-const STATS_PATH = "assets/data/stats.json";
+const STATS_PATH = "/assets/data/stats.json";
 
 const COLUMNS = [
   {

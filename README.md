@@ -3,17 +3,28 @@
 League site for the UCONN-GN-FFL: stats, champions, history, docs, and Canton data views. The site is static HTML/CSS/JS served as-is (no build step).
 
 ## Pages
-- `index.html` — landing with quick nav cards.
-- `stats.html` — sortable career table fed by generated `assets/data/stats.json`.
-- `seasons.html` — per-season standings, matchups and draft boards, 2018–2025.
-- `canton.html` — Team, Awards, Positional, and Player views with search/filter.
-- `docs.html` — league rules and info.
+
+Each page is a directory with an `index.html`, so URLs are extensionless
+(`/stats`, not `/stats.html`). The old `<name>.html` paths remain as redirect
+stubs so previously shared links keep working.
+
+| URL | File | What it is |
+|---|---|---|
+| `/` | `index.html` | landing with quick nav cards |
+| `/stats` | `stats/index.html` | career table from generated `assets/data/stats.json` |
+| `/seasons` | `seasons/index.html` | per-season standings, matchups and draft boards, 2018–2025 |
+| `/canton` | `canton/index.html` | Team, Awards, Positional and Player views |
+| `/docs` | `docs/index.html` | league rules and info |
+
+Asset and link paths are **root-relative** (`/assets/…`), which is what lets a
+page work from any directory depth. That is safe here because `CNAME` puts the
+site at a domain root rather than under `/<repo>/`.
 
 ## Run locally
 From the repo root:
 ```bash
 python3 -m http.server 8000
-# open http://localhost:8000/index.html
+# open http://localhost:8000/  (then /stats, /seasons, /canton, /docs)
 ```
 
 ## Editing notes

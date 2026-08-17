@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <title>CANTON</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script defer src="/assets/js/canton.js?v=3"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="app-header">
+        <div class="app-title">
+          CANTON
+          <span class="app-title-pill">CHAMPIONS</span>
+        </div>
+        <p class="app-subtitle">
+          Team, positional, and player views. The players that BROUGHT IT HOME.
+        </p>
+        <nav class="app-nav">
+          <a href="/">HOME</a>
+          <a href="/stats/">STATS</a>
+          <a href="/seasons/">SEASONS</a>
+          <a class="active" href="/canton/">CANTON</a>
+          <a href="/docs/">DOCS</a>
+        </nav>
+      </header>
+
+      <section class="content-card">
+        <div class="canton-container">
+          <div class="stats-controls">
+            <div class="stats-search">
+              <span class="stats-search-icon">&#128269;</span>
+              <input
+                id="canton-search-input"
+                type="search"
+                placeholder="Search teams, players, years..."
+              />
+            </div>
+            <div class="stats-meta">
+              <span id="canton-count-label">0</span> rows
+            </div>
+          </div>
+
+          <div class="view-toggle-bar">
+            <button class="view-button active" data-view="team">
+              Team View
+            </button>
+            <button class="view-button" data-view="awards">
+              Awards View
+            </button>
+            <button class="view-button" data-view="positional">
+              Positional View
+            </button>
+            <button class="view-button" data-view="player">
+              Player View
+            </button>
+          </div>
+
+          <!-- Team View -->
+          <div id="team-view" class="view-container">
+            <div class="table-container">
+              <table id="team-table" class="dataframe team-view"></table>
+            </div>
+          </div>
+
+          <!-- Awards View -->
+          <div id="awards-view" class="view-container">
+            <div class="table-container">
+              <table id="awards-table" class="dataframe awards-view"></table>
+            </div>
+          </div>
+
+          <!-- Positional View -->
+          <div id="positional-view" class="view-container">
+            <div class="table-container">
+              <table
+                id="positional-table"
+                class="dataframe position-view"
+              ></table>
+            </div>
+          </div>
+
+          <!-- Player View -->
+          <div id="player-view" class="view-container">
+            <div class="player-filter-bar">
+              <label for="position-filter">Position:</label>
+              <select id="position-filter">
+                <option value="ALL">All positions</option>
+                <option value="QB">QB</option>
+                <option value="RB">RB</option>
+                <option value="WR">WR</option>
+                <option value="TE">TE</option>
+                <option value="FLEX">FLEX</option>
+                <option value="DST">D/ST</option>
+                <option value="K">K</option>
+              </select>
+            </div>
+            <div class="table-container">
+              <table id="player-table" class="dataframe player-view"></table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta charset="utf-8" />
+    <title>STATS</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <!-- CSS + JS from assets/ with cache-busting -->
+    <link rel="stylesheet" href="/assets/css/styles.css?v=9" />
+    <script src="/assets/js/stats.js?v=9" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="app-header">
+        <div class="app-title">
+          STATS
+          <span class="app-title-pill">DATA</span>
+        </div>
+        <p class="app-subtitle">
+          Full League Stats, including ESPN 2018 and 2019 seasons.
+        </p>
+        <nav class="app-nav">
+          <a href="/">HOME</a>
+          <a class="active" href="/stats/">STATS</a>
+          <a href="/seasons/">SEASONS</a>
+          <a href="/canton/">CANTON</a>
+          <a href="/docs/">DOCS</a>
+        </nav>
+      </header>
+
+      <section class="content-card">
+        <div class="stats-wrapper">
+          <div class="stats-controls">
+            <div class="stats-search">
+              <span class="stats-search-icon">&#128269;</span>
+              <input
+                id="stats-search-input"
+                type="search"
+                placeholder="Search by manager / team / note..."
+              />
+            </div>
+            <div class="stats-meta">
+              <span id="stats-count-label">0</span> rows
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table id="stats-table" class="stats-table">
+              <thead>
+                <tr id="stats-header-row">
+                  <!-- populated from CSV first row -->
+                </tr>
+              </thead>
+              <tbody>
+                <!-- populated from CSV -->
+              </tbody>
+            </table>
+          </div>
+
+          <div style="font-size: 0.78rem; color: var(--muted);">
+            Tip: tap a column header to sort; drag sideways on mobile to see all
+            columns.
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
